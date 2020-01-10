@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="external-links ua-brand-icons" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Grid Template for UA Bootstrap</title>
+    <!-- Bootstrap core CSS-->
+    <link href="https://cdn.uadigital.arizona.edu/lib/ua-brand-icons/v1.1.0/ua-brand-icons.min.css" rel="stylesheet">
+    <link href="lib/ua-bootstrap.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <!-- HighlightJS-->
+    <link rel="stylesheet" href="css/googlecode.css">
+    <script src="js/highlight.pack.min.js"></script>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+  </head>
+  <body><a class="sr-only sr-only-focusable" id="skippy" href="#content"></a>
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="row">
+              <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span>
+                  <!-- span.icon-bar-->
+                  <!-- span.icon-bar-->
+                  <!-- span.icon-bar--><span class="text">MAIN MENU</span>
+                </button>
+              </div>
+              <div class="navbar-collapse collapse" id="main-navbar">
+                <ul class="nav navbar-nav">
+                  <li><a href="index.html">Getting Started</a></li>
+                  <li class="active"><a href="css.html">CSS</a></li>
+                  <li><a href="components.html">Components</a></li>
+                  <li><a href="javascript.html">Javascript</a></li>
+                  <li><a href="fonts.html">Fonts</a></li>
+                  <li><a href="interior-example.html">Example</a></li>
+                  <li><a href="colors.html">Color</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div class="page-title"></div>
+    <div class="container">
+      <div class="page-header">
+        <h1>UA Bootstrap grid examples</h1>
+        <p class="lead">Basic grid layouts to get you familiar with building within the UA Bootstrap grid system.</p>
+      </div>
+      <h3>Three equal columns</h3>
+      <p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
+      <div class="row show-grid">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+      <h3>Three unequal columns</h3>
+      <p>Get three columns <strong>starting at desktops and scaling to large desktops</strong> of various widths. Remember, grid columns should add up to twelve for a single horizontal block, more than that, and columns start stacking no matter the viewport.</p>
+      <div class="row show-grid">
+        <div class="col-md-3">.col-md-3</div>
+        <div class="col-md-6">.col-md-6</div>
+        <div class="col-md-3">.col-md-3</div>
+      </div>
+      <h3>Two columns</h3>
+      <p>Get two columns <strong>starting at desktops and scaling to large fesktops</strong>.</p>
+      <div class="row show-grid">
+        <div class="col-md-8">.col-md-8</div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+      <h3>Full width, single column</h3>
+      <p>No grid classes are necessary for full-width elements.</p>
+      <hr>
+      <h3>Two columns with two nested columns</h3>
+      <p>Per documentation, nesting is easy-just put a row of columns within an existing column. This gives you two columns <strong>starting at desktops and scaling to large desktops</strong>, with another two (equal widths) within the larger column.</p>
+      <p>At mobile device sizes, tablets and down, these columns and their nested columns will stack.</p>
+      <div class="row show-grid">
+        <div class="col-md-8">.col-md-8
+          <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-6">.col-md-6</div>
+          </div>
+        </div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+      <hr>
+      <h3>Mixed: mobile and desktop</h3>
+      <p>The UA Bootstrap 3 grid system has four tiers of classes: xs (phones), sm (tablets), md (desktops), and lg (larger desktops). You can use nearly any combination of these classes to create more dynamic and flexible layouts</p>
+      <p>Each tier of classes tiers up, meaning if you plan on setting the same widths for xs and sm, you only need to specify xs.</p>
+      <div class="row">
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      </div>
+      <hr>
+      <h3>Mixed: mobile, tablet, and desktop</h3>
+      <p></p>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-8">.col-xs-12 .col-sm-6 .col-lg-8</div>
+        <div class="col-xs-6 col-lg-4">.col-xs-6 .col-lg-4</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+      </div>
+      <hr>
+      <h3>Column clearing</h3>
+      <p><a href="#">Clear Floats</a> at specific breakpoints to prevent awkard wrapping with uneven content.</p>
+      <div class="row">
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3<br>                    Resize your viewport or check it out on your phone for an example.</div>
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <!-- Add te extra clearfix for only the required viewport-->
+        <div clss="clearfix visible-xs"></div>
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+      </div>
+      <hr>
+      <h3>Offset, push, and pull resets</h3>
+      <p>Resets offsets, pushes, and pulls at specific breakpoints.</p>
+      <div class="row">
+        <div class="col-sm-5 col-md-6">.colsm-5 .col-md-6</div>
+        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+        <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
+      </div>
+    </div>
+    <!-- END OF CONTAINER--><footer role="contentinfo" class="bs-footer">
+  <div class="container text-center">
+    <hr>
+    <p><a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap</a> originally designed and built by&nbsp;<a href="http://twitter.com/mdo" target="_blank">@mdo</a>&nbsp;and&nbsp;<a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+    <p>The University of Arizona flavor built and maintained by the UA Digital group.</p>
+    <p>Code licensed under&nbsp;<a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, documentation under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+    <ul class="footer-links muted list-inline list-unstyled">
+      <li>Currently v1.0.0-beta.26</li>
+      <li>·</li>
+      <li><a href="https://bitbucket.org/uadigital/ua-bootstrap" target="_blank">Bitbucket</a></li>
+      <li>·</li>
+      <li><a href="https://jira.arizona.edu/browse/UADIGITAL-145?jql=component%20%3D%20%22UA%20Bootstrap%22%20AND%20project%20%3D%20UADIGITAL" target="_blank">Issues</a></li>
+      <li>·</li>
+      <li><a href="https://bitbucket.org/uadigital/ua-bootstrap/downloads/?tab=tags" target="_blank">Tagged Releases</a></li>
+    </ul>
+  </div>
+</footer>
+
+    <!-- Google Tag Manager-->
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-ML2BZB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="lib/ua-bootstrap.js"></script>
+    <script src="js/specimen.js"></script>
+    <script src="js/holder.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
+      $('body').scrollspy({ target: '#catstrap-sidebar' });
+      
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-ML2BZB');
+    </script>
+  </body>
+</html>

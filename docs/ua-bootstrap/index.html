@@ -1,0 +1,264 @@
+<!DOCTYPE html><!--[if lte IE 9]><html lang="en" dir="ltr" class="lte-ie9 external-links ua-brand-icons sticky-footer"><![endif]-->
+<!--[if (gt IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr" class="external-links ua-brand-icons sticky-footer"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+  <title>UA Bootstrap</title>
+  <!-- Bootstrap core CSS-->
+  <link href="https://cdn.uadigital.arizona.edu/lib/ua-brand-icons/v1.1.0/ua-brand-icons.min.css" rel="stylesheet">
+  <link href="lib/ua-bootstrap.css" rel="stylesheet">
+  <link href="css/docs.css" rel="stylesheet">
+  <!-- HighlightJS-->
+  <link rel="stylesheet" href="css/googlecode.css">
+  <script src="js/highlight.pack.min.js"></script>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body class="css-page" data-spy="scroll" data-target="#catstrap-sidebar"><a class="sr-only sr-only-focusable" id="skippy" href="#content"></a>
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span>
+              <!-- span.icon-bar-->
+              <!-- span.icon-bar-->
+              <!-- span.icon-bar--><span class="text">MAIN MENU</span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="main-navbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Getting Started</a></li>
+              <li><a href="css.html">CSS</a></li>
+              <li><a href="components.html">Components</a></li>
+              <li><a href="javascript.html">Javascript</a></li>
+              <li><a href="fonts.html">Fonts</a></li>
+              <li><a href="interior-example.html">Example</a></li>
+              <li><a href="colors.html">Color</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="page-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+          <h1>UA Bootstrap</h1>
+          <p>How to download and use. Plus basic templates, examples, and more.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9"><h2 id="getting-started">Getting Started</h2>
+<p><p class="lead">UA Bootstrap is the University of Arizona&#39;s flavor of
+<a href="https://getbootstrap.com" target="_blank">Bootstrap</a> (aka &quot;Twitter Bootstrap&quot;), a popular HTML,
+CSS, and JS framework for developing responsive, mobile first projects on the
+web.</p>
+<p>The UA Bootstrap CSS code is hosted from a central University of Arizona
+repository.  Source code can be found on
+<a href="https://bitbucket.org/uadigital/ua-bootstrap" target="_blank">BitBucket</a>. Any issues or
+questions about the University of Arizona flavor of Bootstrap can be submitted
+through <a href="https://bitbucket.org/uadigital" target="_blank">BitBucket</a> or by emailing
+<a href="mailto:&#x62;&#114;&#97;&#x6e;&#100;&#64;&#x65;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x61;&#114;&#x69;&#x7a;&#111;&#110;&#x61;&#46;&#101;&#100;&#x75;">&#x62;&#114;&#97;&#x6e;&#100;&#64;&#x65;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x61;&#114;&#x69;&#x7a;&#111;&#110;&#x61;&#46;&#101;&#100;&#x75;</a>.</p>
+<p>Before using UA Bootstrap, please complete the <a href="https://brand.arizona.edu/font-license-agreement" target="_blank">font license agreement form</a>. <span class="label
+label-warning">Important</span></p>
+<h3 id="ua-bootstrap-reference-links">UA Bootstrap Reference Links</h3>
+<p>Use these reference links to start your project. Pay attention to the appended
+version name (&quot;version&quot;). When new versions are released, accompanying
+documentation for new or updated items will include a <span class="label
+label-default">New</span> or <span class="label label-info">Updated</span>
+label.</p>
+<pre><code class="lang-html">&lt;!-- Latest icon font stylesheet --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.uadigital.arizona.edu/lib/ua-brand-icons/v1.1.0/ua-brand-icons.min.css&quot;&gt;
+
+&lt;!-- Compiled and minified UA Bootstrap CSS, icon font not included --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.uadigital.arizona.edu/lib/ua-bootstrap/v1.0.0-beta.26/ua-bootstrap.min.css&quot;&gt;
+
+&lt;!-- jQuery --&gt;
+&lt;script src=&quot;https://code.jquery.com/jquery-2.2.4.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Latest compiled and minified JavaScript --&gt;
+&lt;script src=&quot;https://cdn.uadigital.arizona.edu/lib/ua-bootstrap/v1.0.0-beta.26/ua-bootstrap.min.js&quot;&gt;&lt;/script&gt;
+
+</code></pre>
+<h3 id="html5-doctype">HTML5 doctype</h3>
+<p>UA Bootstrap utilizes certain HTML elements and CSS properties that require the
+use of the HTML5 doctype. Include it at the beginning of all of your projects.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+...
+&lt;/html&gt;
+</code></pre>
+<h3 id="mobile-first">Mobile First</h3>
+<p>You can disable zooming capabilities on mobile devices by adding
+<code>user-scalable=no</code> to the viewport meta tag. This disables zooming—meaning users
+are only able to scroll—and results in your site feeling a bit more like
+a native application. Overall, we don&#39;t recommend this on every site, so use
+caution!</p>
+<pre><code class="lang-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1,
+maximum-scale=1, user-scalable=no&quot;&gt;
+</code></pre>
+<p>To ensure proper rendering and touch zooming, add the viewport meta tag to your
+<code>&lt;head&gt;</code></p>
+<pre><code class="lang-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1,
+maximum-scale=1, user-scalable=yes&quot;&gt;
+</code></pre>
+<h3 id="basic-template">Basic Template</h3>
+<p>Start with this basic HTML template, which has been customized for the UA brand.
+Copy the HTML below to begin working with a minimal Bootstrap document.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; class=&quot;external-links ua-brand-icons&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+
+    &lt;!-- Latest icon font stylesheet --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.uadigital.arizona.edu/lib/ua-brand-icons/v1.1.0/ua-brand-icons.min.css&quot;&gt;
+    &lt;!-- Compiled and minified UA Bootstrap CSS, icon font not included --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.uadigital.arizona.edu/lib/ua-bootstrap/v1.0.0-beta.26/ua-bootstrap.min.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+    &lt;!-- jQuery --&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-2.2.4.min.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- Latest compiled and minified JavaScript --&gt;
+    &lt;script src=&quot;https://cdn.uadigital.arizona.edu/lib/ua-bootstrap/v1.0.0-beta.26/ua-bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="sticky-footer-template">Sticky Footer Template</h3>
+<p>The following template adds a technique to push the footer to the bottom of the
+page without having to set a footer height.
+This solves for the issue depicted in the image below using
+the <code>flex</code> value for the <code>display</code> property, with a <code>flex-direction</code> of <code>column</code>.</p>
+<p>To add padding around the page rows you can add <code>.page-row-padding-top</code> and <code>.page-row-padding-bottom</code>.</p>
+<div class="callout callout-warning">
+  <h4>Compatibility Information</h4>
+  <p>UA Bootstrap&#39;s default sticky footer implementation uses the CSS Flexible Box layout module (flexbox) and is incompatible with older versions of Microsoft Internet Explorer (versions older than IE10). In order for sticky footers to work correctly in older versions of IE, the following line needs to be included at the top of all HTML files.<br><code><code>&lt;!--[if lte IE 9]&gt;&lt;html class=&quot;lte-ie9 sticky-footer&quot;&gt;&lt;![endif]--&gt;</code></code></p>
+</div>
+
+
+<p><img src="img/sticky-footer-basic.svg"><img src="img/sticky-footer-sticky.svg"></p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;!--[if lte IE 9]&gt;&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot; class=&quot;lte-ie9 external-links ua-brand-icons sticky-footer&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|(gt IEMobile 7)]&gt;&lt;!--&gt;&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot; class=&quot;external-links ua-brand-icons sticky-footer&quot;&gt;&lt;!--&lt;![endif]--&gt;
+
+&lt;html lang=&quot;en&quot; class=&quot;external-links ua-brand-icons sticky-footer&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+
+    &lt;!-- Latest icon font stylesheet --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.uadigital.arizona.edu/lib/ua-brand-icons/v1.1.0/ua-brand-icons.min.css&quot;&gt;
+    &lt;!-- Compiled and minified UA Bootstrap CSS, icon font not included --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.uadigital.arizona.edu/lib/ua-bootstrap/v1.0.0-beta.26/ua-bootstrap.min.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header class=&quot;page-row&quot;&gt;
+        This is a header.
+    &lt;/header&gt;
+
+    &lt;section id=&quot;content&quot; class=&quot;page-row page-row-expanded&quot;&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;page-row&quot;&gt;
+        This is the footer.
+    &lt;/footer&gt;
+
+    &lt;!-- jQuery --&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-2.2.4.min.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- Latest compiled and minified JavaScript --&gt;
+    &lt;script src=&quot;https://cdn.uadigital.arizona.edu/lib/ua-bootstrap/v1.0.0-beta.26/ua-bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+          <!--include:marked _includes/examples.md--><h2 id="want-to-contribute-">Want to Contribute?</h2>
+<p class="lead">Any release of UA Bootstrap is tested and ready to use. But improvements to the framework are in everyone&#39;s best interest.</p>
+
+<p>A team of web-focused volunteers known as Arizona Digital meets weekly to build and
+test products like UA Bootstrap and <a href="https://quickstart.arizona.edu" target="_blank">UA
+Quickstart</a>. We&#39;re also working on next generation versions: <a href="https://bitbucket.org/uadigital/arizona-bootstrap/src/master/" target="_blank">Arizona Bootstrap</a> (based on Bootstrap 4) and Arizona Quickstart (Drupal 8).</p>
+
+<h3 id="if-you-want-to-get-involved-you-can-"><strong>If you want to get involved, you can:</strong></h3>
+<ul>
+    <li><a href="https://quickstart.arizona.edu/join-us-on-slack" target="_blank">Request access</a> to join the discussion on Slack</li>
+    <li>Participate in Friday meetings and Wednesday pull request review sessions (<a href="https://uarizona.slack.com/messages/C0SAACCMS" target="_blank">ask for more details in Slack</a>)</li>
+    <li>Submit pull requests on <a href="https://bitbucket.org/uadigital/ua-bootstrap/src" target="_blank">Bitbucket</a></li>
+</ul>
+
+<p>Questions, bug reports or suggestions can also be emailed to <a href="mailto:uadigital@email.arizona.edu">uadigital@email.arizona.edu</a> or (preferably!) <a href="
+https://uarizona.slack.com/messages/C0SAC323G" target="_blank">reported on Slack</a>.</p>
+        </div>
+        <div class="col-md-3"><div id="catstrap-sidebar" class="affix hidden-print hidden-xs hidden-sm affix" data-spy='affix'  data-offset-top='303'>
+    <ul class="nav bs-docs-sidenav">
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul class="nav">
+        <li><a href="#ua-bootstrap-reference-links">UA Bootstrap Reference Links</a></li>
+        <li><a href="#html5-doctype">HTML5 Doctype</a></li>
+        <li><a href="#mobile-first">Mobile First</a></li>
+        <li><a href="#basic-template">Basic Template</a></li>
+        <li><a href="#sticky-footer-template">Sticky Footer Template<span class="label label-default">New</span></a></li>
+      </ul>
+    </li>
+    <li><a href="#want-to-contribute-">Want to Contribute?</a></li>
+    <li class="back-to-top"><a href="#top">Back to top</a></li>
+  </ul>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+  </div><footer role="contentinfo" class="bs-footer">
+  <div class="container text-center">
+    <hr>
+    <p><a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap</a> originally designed and built by&nbsp;<a href="http://twitter.com/mdo" target="_blank">@mdo</a>&nbsp;and&nbsp;<a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+    <p>The University of Arizona flavor built and maintained by the UA Digital group.</p>
+    <p>Code licensed under&nbsp;<a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, documentation under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+    <ul class="footer-links muted list-inline list-unstyled">
+      <li>Currently v1.0.0-beta.26</li>
+      <li>·</li>
+      <li><a href="https://bitbucket.org/uadigital/ua-bootstrap" target="_blank">Bitbucket</a></li>
+      <li>·</li>
+      <li><a href="https://jira.arizona.edu/browse/UADIGITAL-145?jql=component%20%3D%20%22UA%20Bootstrap%22%20AND%20project%20%3D%20UADIGITAL" target="_blank">Issues</a></li>
+      <li>·</li>
+      <li><a href="https://bitbucket.org/uadigital/ua-bootstrap/downloads/?tab=tags" target="_blank">Tagged Releases</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <!-- Google Tag Manager-->
+  <noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-ML2BZB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="lib/ua-bootstrap.js"></script>
+  <script src="js/specimen.js"></script>
+  <script src="js/holder.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+    $('body').scrollspy({ target: '#catstrap-sidebar' });
+    
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-ML2BZB');
+  </script>
+</body>

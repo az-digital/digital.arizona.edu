@@ -1,0 +1,656 @@
+<!DOCTYPE html><!--[if lte IE 9]><html lang="en" dir="ltr" class="lte-ie9 external-links ua-brand-icons sticky-footer"><![endif]-->
+<!--[if (gt IE 9)|(gt IEMobile 7)]><!--><html lang="en" dir="ltr" class="external-links ua-brand-icons sticky-footer"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+  <title>UA Bootstrap - Example Page</title>
+  <!-- Bootstrap core CSS-->
+  <link href="https://cdn.uadigital.arizona.edu/lib/ua-brand-icons/v1.1.0/ua-brand-icons.min.css" rel="stylesheet">
+  <link href="lib/ua-bootstrap.css" rel="stylesheet">
+  <link href="css/docs.css" rel="stylesheet">
+  <!-- HighlightJS-->
+  <link rel="stylesheet" href="css/googlecode.css">
+  <script src="js/highlight.pack.min.js"></script>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+  <header class="l-arizona-header bg-red" id="region_header_ua">
+    <section class="container l-container">
+      <div class="row"><a class="arizona-logo" href="http://www.arizona.edu" title="The University of Arizona homepage"><img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.uadigital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg"></a></div>
+    </section>
+  </header>
+  <!-- START CODE EXAMPLE-->
+  <div class="container">
+    <div class="row unselectable">
+      <div class="collapse collapseCode">
+        <div class="code-only">
+          <h5>Arizona Banner</h5><pre><code class="lang-html">&lt;body&gt;
+  &lt;!--   ++++++++++++++ Place inside body tag ++++++++++++++   --&gt;
+  &lt;header id=&quot;region_header_ua&quot; class=&quot;l-arizona-header bg-red&quot;&gt;
+    &lt;section class=&quot;container l-container&quot;&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;a href=&quot;http://www.arizona.edu&quot; title=&quot;The University of Arizona homepage&quot; class=&quot;arizona-logo&quot;&gt;
+           &lt;img alt=&quot;The University of Arizona Wordmark Line Logo White&quot; src=&quot;https://cdn.uadigital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg&quot; class=&quot;arizona-line-logo&quot;&gt;
+        &lt;/a&gt;
+       &lt;/div&gt;
+     &lt;/section&gt;
+  &lt;/header&gt;
+</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END CODE EXAMPLE-->
+  <div id="l_page">
+    <div id="header_site">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div id="site_identifier"><a href="#"><img src="img/placeholder-logo.png"></a></div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-xs-12">
+                <div id="utility_links">
+                  <ul>
+                    <li><a href="#">Utility Link 1</a></li>
+                    <li><a href="#">Utility Link 2</a></li>
+                    <li><a href="#">Utility Link 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-4 col-md-6 col-md-offset-6 col-lg-5 col-lg-offset-7">
+                <div class="form-group">
+                  <label class="sr-only" for="ua-bootstrap-search">Search</label>
+                  <div class="search-form">
+                    <input class="form-control input-search" id="ua-bootstrap-search" type="text" placeholder="Search for...">
+                    <input class="btn-search" type="submit" name="op" value="Search">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- START CODE EXAMPLE-->
+        <div class="row unselectable">
+          <div class="collapse collapseCode">
+            <div class="highlight">
+              <h5>LOGO CODE</h5><pre><code class="lang-html">&lt;div id=&quot;site_identifier&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;img/placeholder-logo.png&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+            </div>
+          </div>
+          <!-- END CODE EXAMPLE-->
+          <!-- START CODE EXAMPLE-->
+          <div class="collapse collapseCode">
+            <div class="highlight">
+              <h5>UTILITY LINKS CODE</h5><pre><code class="lang-html">&lt;div id=&quot;header_site&quot;&gt;
+ &lt;!--   ++++++++++++++ Below Required Container #header_site ++++++++++++++   --&gt;
+    &lt;div id=&quot;utility_links&quot;&gt;
+     &lt;ul&gt;
+       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Utility Link 1&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Utility Link 2&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Utility Link 3&lt;/a&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+   &lt;/div&gt;
+</code></pre>
+
+            </div>
+          </div>
+          <!-- END CODE EXAMPLE-->
+          <!-- START CODE EXAMPLE-->
+          <div class="collapse collapseCode">
+            <div class="highlight">
+              <h5>SEARCH BOX CODE</h5><pre><code class="lang-html">&lt;div id=&quot;header_site&quot;&gt;
+&lt;!--   ++++++++++++++ Below Required Container #header_site ++++++++++++++   --&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;sr-only&quot; for=&quot;ua-bootstrap-search&quot;&gt;Search&lt;/label&gt;
+    &lt;div class=&quot;search-form&quot;&gt;
+      &lt;input class=&quot;form-control input-search&quot; id=&quot;ua-bootstrap-search&quot; type=&quot;text&quot; placeholder=&quot;Search for...&quot;&gt;
+      &lt;input class=&quot;btn-search&quot; type=&quot;submit&quot; name=&quot;op&quot; value=&quot;Search&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+
+            </div>
+          </div>
+        </div>
+        <!-- END CODE EXAMPLE-->
+        <div class="row">
+          <div class="col-xs-12"><a class="sr-only sr-only-focusable" id="skippy" href="#content"></a>
+                        <div class="navbar navbar-default navbar-static-top" role="navigation">
+                          <div class="container">
+                            <div class="row">
+                              <div class="navbar-header">
+                                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span>
+                                  <!-- span.icon-bar-->
+                                  <!-- span.icon-bar-->
+                                  <!-- span.icon-bar--><span class="text">MAIN MENU</span>
+                                </button>
+                              </div>
+                              <div class="navbar-collapse collapse" id="main-navbar">
+                                <ul class="nav navbar-nav">
+                                  <li><a href="index.html">Getting Started</a></li>
+                                  <li><a href="css.html">CSS</a></li>
+                                  <li><a href="components.html">Components</a></li>
+                                  <li><a href="javascript.html">Javascript</a></li>
+                                  <li><a href="fonts.html">Fonts</a></li>
+                                  <li class="active"><a href="interior-example.html">Example</a></li>
+                                  <li><a href="colors.html">Color</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+          </div>
+        </div>
+        <!-- START CODE EXAMPLE-->
+        <div class="row">
+          <div class="collapse collapseCode">
+            <div class="highlight">
+              <h5>MENU CODE</h5><pre><code class="lang-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+      &lt;div class=&quot;navbar-header&quot;&gt;
+        &lt;button type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#navbar&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;navbar&quot; class=&quot;navbar-toggle collapsed&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div id=&quot;navbar&quot; class=&quot;navbar-collapse collapse&quot;&gt;
+        &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+          &lt;li class=&quot;false&quot;&gt;&lt;a href=&quot;index.html&quot;&gt;Getting Started&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;false&quot;&gt;&lt;a href=&quot;css.html&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;false&quot;&gt;&lt;a href=&quot;fonts.html&quot;&gt;Fonts&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;interior-example.html&quot;&gt;Example&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- /.nav-collapse--&gt;
+&lt;/div&gt;
+</code></pre>
+
+            </div>
+          </div>
+        </div>
+        <!-- END CODE EXAMPLE-->
+      </div>
+      <!-- /.container-->
+    </div>
+    <!-- /#header_site-->
+    <div id="content_featured">
+      <div class="interior-featured-bg text-center">
+        <button class="btn btn-red" style="margin-top: 5em;" type="button" data-toggle="collapse" data-target=".collapseCode" aria-expanded="false" aria-controls="collapseCode">Expose Code</button>
+      </div>
+    </div>
+    <div id="content_main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 col-md-push-3" id="content">
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Parent Page</a></li>
+              <li class="active">Page Title</li>
+            </ol>
+            <!-- START CODE EXAMPLE-->
+            <div class="collapse collapseCode">
+              <div class="highlight">
+                <h5>BREADCRUMB CODE</h5><pre><code class="lang-html">&lt;ol class=&quot;breadcrumb&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Parent Page&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;active&quot;&gt;Page Title&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <!-- END CODE EXAMPLE-->
+            <h1>Page Title</h1>
+            <p class="lead">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+            <!-- START CODE EXAMPLE-->
+            <div class="collapse collapseCode">
+              <div class="highlight">
+                <h5>Subheading Example</h5><pre><code class="lang-html">&lt;p class=&quot;lead&quot;&gt;...&lt;/p&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <!-- END CODE EXAMPLE-->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><img class="img-responsive pull-left" src="img/example-image.jpg" style="margin: 0.5rem 2rem 0.5rem 0">
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi&nbsp;<a href="#">this is how a link looks</a>&nbsp;architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et.</p>
+            <p><a class="btn btn-lg btn-red" href="#">Button style</a><a class="btn btn-lg btn-blue" href="#" style="margin-left: 8px;">Button style</a></p>
+            <p>&nbsp;</p>
+            <h3>Paragraph Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <ul>
+              <li>Nam eu vehicula risus</li>
+              <li><a href="#">Integer sodales magna lacus</a></li>
+              <li>Efficitur auctor augue ornare at</li>
+            </ul>
+            <ul class="triangle">
+              <li>Nam quis auctor justo</li>
+              <li><a href="#">Aenean lobortis est sit amet ipsum porttitor</a></li>
+              <li>Sed fringilla lorem consequat</li>
+            </ul>
+            <ol>
+              <li>Quisque leo sapien, mattis vitae nulla</li>
+              <li><a href="#">Tempus ullamcorper purus</a></li>
+              <li>Aliquam vulputate suscipit ex, ut laoreet enim accumsan nec</li>
+            </ol>
+            <!-- START CODE EXAMPLE-->
+            <div class="collapse collapseCode">
+              <div class="highlight">
+                <h5>LIST STRUCTURE</h5><pre><code class="lang-html">&lt;ul&gt;
+  &lt;li&gt;Nam eu vehicula risus&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Integer sodales magna lacus&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Efficitur auctor augue ornare at&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class=&quot;triangle&quot;&gt;
+  &lt;li&gt;Nam quis auctor justo&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Aenean lobortis est sit amet ipsum porttitor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Sed fringilla lorem consequat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;Quisque leo sapien, mattis vitae nulla&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tempus ullamcorper purus&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Aliquam vulputate suscipit ex, ut laoreet enim accumsan nec&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <!-- END CODE EXAMPLE-->
+            <p>&nbsp;</p>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Building</th>
+                    <th>Year Built</th>
+                    <th>Fun Fact</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Old Main</td>
+                    <td>1891</td>
+                    <td>Declared unsafe in 1938 and almost demolished</td>
+                  </tr>
+                  <tr>
+                    <td>Nugent Building</td>
+                    <td>1937</td>
+                    <td>Originally the Administration Building</td>
+                  </tr>
+                  <tr>
+                    <td>Koffler Building</td>
+                    <td>1992</td>
+                    <td>The large arch represents research breakthroughs made by UA scientists</td>
+                  </tr>
+                  <tr>
+                    <td>Bear Down Gym</td>
+                    <td>1926</td>
+                    <td><a href="#">The main sports arena for basketball until 1970</a></td>
+                  </tr>
+                  <tr>
+                    <td>Meinel Optical Sciences</td>
+                    <td>1970</td>
+                    <td>2007 AIA National Honor Award for Architecture</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- START CODE EXAMPLE-->
+            <div class="collapse collapseCode">
+              <div class="highlight">
+                <h5>TABLE CODE</h5><pre><code class="lang-html">&lt;table class=&quot;table table-striped&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Building&lt;/th&gt;
+            &lt;th&gt;Year Built&lt;/th&gt;
+            &lt;th&gt;Fun Fact&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Old Main&lt;/td&gt;
+            &lt;td&gt;1891&lt;/td&gt;
+            &lt;td&gt;Declared unsafe in 1938 and almost demolished&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Nugent Building&lt;/td&gt;
+            &lt;td&gt;1937&lt;/td&gt;
+            &lt;td&gt;Originally the Administration Building&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Koffler Building&lt;/td&gt;
+            &lt;td&gt;1992&lt;/td&gt;
+            &lt;td&gt;The large arch represents research breakthroughs made by UA scientists&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bear Down Gym&lt;/td&gt;
+            &lt;td&gt;1926&lt;/td&gt;
+            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;The main sports arena for basketball until 1970&lt;/a&gt;
+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Meinel Optical Sciences&lt;/td&gt;
+            &lt;td&gt;1970&lt;/td&gt;
+            &lt;td&gt;2007 AIA National Honor Award for Architecture&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <!-- END CODE EXAMPLE-->
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Input Title</label>
+                <input class="form-control" id="exampleInputEmail1" type="email" placeholder="Placeholder text">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Input Title</label>
+                <textarea class="form-control" rows="5" placeholder="Placeholder text"></textarea>
+              </div><br>
+              <!-- START CODE EXAMPLE-->
+              <div class="collapse collapseCode">
+                <div class="highlight">
+                  <h5>INPUT FORM CODE</h5><pre><code class="lang-html">&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;exampleInputEmail1&quot;&gt;Input Title&lt;/label&gt;
+    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail1&quot; placeholder=&quot;Placeholder text&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;exampleInputEmail1&quot;&gt;Input Title&lt;/label&gt;
+    &lt;textarea class=&quot;form-control&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+</code></pre>
+
+                </div>
+              </div>
+              <!-- END CODE EXAMPLE-->
+              <div class="input-group">
+                <label>Checkboxes<span class="form-required" title="This field is required.">*</span></label>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">    Option one is this and that—be sure to include why it's great
+                  </label>
+                </div>
+                <div class="checkbox disabled">
+                  <label>
+                    <input type="checkbox" value="" disabled="">    Option two is disabled
+                  </label>
+                </div>
+              </div>
+              <!-- START CODE EXAMPLE-->
+              <div class="collapse collapseCode">
+                <div class="highlight">
+                  <h5>CHECKBOX CODE</h5><pre><code class="lang-html">&lt;!-- For the checkboxes to render properly the minimum requirements are shown. --&gt;
+&lt;div class=&quot;input-group&quot;&gt;
+  &lt;label&gt;Checkboxes&lt;span title=&quot;This field is required.&quot; class=&quot;form-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+  &lt;div class=&quot;checkbox&quot;&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;    Option one is this and that—be sure to include why it&#39;s great
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox disabled&quot;&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;checkbox&quot; value=&quot;&quot; disabled=&quot;&quot;&gt;    Option two is disabled
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                </div>
+              </div>
+              <!-- END CODE EXAMPLE INLINE CHECKBOXES-->
+              <div class="form-group">
+                <label>Inline Checkboxes<span class="form-required" title="This field is required.">*</span></label>
+                <div class="checkbox checkbox-inline">
+                  <label>
+                    <input type="checkbox" value="">Check box 1
+                  </label>
+                </div>
+                <div class="checkbox checkbox-inline">
+                  <label>
+                    <input type="checkbox" value="">Check box 2
+                  </label>
+                </div>
+                <div class="checkbox checkbox-inline">
+                  <label>
+                    <input type="checkbox" value="">Checkbox 3
+                  </label>
+                </div>
+              </div>
+              <div class="input-group"></div>
+              <!-- START CODE EXAMPLE-->
+              <div class="collapse collapseCode">
+                <div class="highlight">
+                  <h5>INLINE CHECKBOX CODE</h5><pre><code class="lang-html">&lt;div class=&quot;form-group&quot;&gt;
+  &lt;label&gt;Inline Checkboxes&lt;span title=&quot;This field is required.&quot; class=&quot;form-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+  &lt;div class=&quot;checkbox checkbox-inline&quot;&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;Check box 1
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox checkbox-inline&quot;&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;Check box 2
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox checkbox-inline&quot;&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;Checkbox 3
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                </div>
+              </div>
+              <!-- END CODE EXAMPLE-->
+              <div class="input-group">
+                <label>Radios<span class="form-required" title="This field is required.">*</span>
+                  <div class="radio">
+                    <label>
+                      <input id="optionsRadios1" type="radio" name="optionsRadios" value="option1" checked="">    Option one is this and that—be sure to include why it's great
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input id="optionsRadios2" type="radio" name="optionsRadios" value="option2">    Option two can be something else and selecting it will deselect option one
+                    </label>
+                  </div>
+                  <div class="radio disabled">
+                    <label>
+                      <input id="optionsRadios3" type="radio" name="optionsRadios" value="option3" disabled="">    Option three is disabled
+                    </label>
+                  </div>
+                </label>
+              </div>
+              <!-- START CODE EXAMPLE-->
+              <div class="collapse collapseCode">
+                <div class="highlight">
+                  <h5>RADIO CODE</h5><pre><code class="lang-html">&lt;div class=&quot;input-group&quot;&gt;
+  &lt;label&gt;Radios&lt;span title=&quot;This field is required.&quot; class=&quot;form-required&quot;&gt;*&lt;/span&gt;
+    &lt;div class=&quot;radio&quot;&gt;
+      &lt;label&gt;
+        &lt;input id=&quot;optionsRadios1&quot; type=&quot;radio&quot; name=&quot;optionsRadios&quot; value=&quot;option1&quot; checked=&quot;&quot;&gt;    Option one is this and that—be sure to include why it&#39;s great
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;radio&quot;&gt;
+      &lt;label&gt;
+        &lt;input id=&quot;optionsRadios2&quot; type=&quot;radio&quot; name=&quot;optionsRadios&quot; value=&quot;option2&quot;&gt;    Option two can be something else and selecting it will deselect option one
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;radio disabled&quot;&gt;
+      &lt;label&gt;
+        &lt;input id=&quot;optionsRadios3&quot; type=&quot;radio&quot; name=&quot;optionsRadios&quot; value=&quot;option3&quot; disabled=&quot;&quot;&gt;    Option three is disabled
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+</code></pre>
+
+                </div>
+              </div>
+              <!-- END CODE EXAMPLE-->
+              <div class="input-group">
+                <label>Inline Radios<span class="form-required" title="This field is required.">*</span></label>
+                <label class="radio-inline">
+                  <input id="inlineRadio1" type="radio" name="inlineRadioOptions" value="option1"> Radio 1
+                </label>
+                <label class="radio-inline">
+                  <input id="inlineRadio2" type="radio" name="inlineRadioOptions" value="option2"> Radio 2
+                </label>
+                <label class="radio-inline">
+                  <input id="inlineRadio3" type="radio" name="inlineRadioOptions" value="option3"> Radio 3
+                </label>
+              </div>
+              <!-- START CODE EXAMPLE-->
+              <div class="collapse collapseCode">
+                <div class="highlight">
+                  <h5>INLINE RADIO CODE</h5><pre><code class="lang-html">&lt;div class=&quot;input-group&quot;&gt;
+  &lt;label&gt;Inline Radios&lt;span title=&quot;This field is required.&quot; class=&quot;form-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+  &lt;label class=&quot;radio-inline&quot;&gt;
+    &lt;input id=&quot;inlineRadio1&quot; type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; value=&quot;option1&quot;&gt; Radio 1
+  &lt;/label&gt;
+  &lt;label class=&quot;radio-inline&quot;&gt;
+    &lt;input id=&quot;inlineRadio2&quot; type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; value=&quot;option2&quot;&gt; Radio 2
+  &lt;/label&gt;
+  &lt;label class=&quot;radio-inline&quot;&gt;
+    &lt;input id=&quot;inlineRadio3&quot; type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; value=&quot;option3&quot;&gt; Radio 3
+  &lt;/label&gt;
+&lt;/div&gt;
+</code></pre>
+
+                </div>
+              </div>
+              <!-- END CODE EXAMPLE-->
+              <input class="btn btn-md btn-red" type="submit" value="Submit">
+            </form>
+          </div>
+          <!-- /.col-md-9-->
+          <!-- Sidebar-->
+          <div class="col-md-3 col-md-pull-9" id="sidebar_first">
+            <div class="quick-links">
+              <h3>Sidebar Title</h3>
+              <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="#">Sidebar Navigation 2</a></li>
+                <li role="presentation"><a href="#">Sidebar Navigation 3</a></li>
+                <li class="active" role="presentation"><a href="#">Sidebar Navigation 1</a></li>
+                <li role="presentation"><a href="#">Sidebar Navigation 4</a></li>
+                <li role="presentation"><a href="#">Sidebar Navigation 5</a></li>
+                <li role="presentation"><a href="#">Sidebar Navigation 6</a></li>
+                <li role="presentation"><a href="#">Sidebar Navigation 7</a></li>
+                <li role="presentation"><a href="#">Sidebar Navigation 8</a></li>
+              </ul>
+            </div>
+            <!-- START CODE EXAMPLE-->
+            <p>&nbsp;</p>
+            <div class="collapseCode collapse">
+              <div class="highlight">
+                <h5>SIDEBAR STRUCTURE</h5><pre><code class="lang-html">&lt;div id=&quot;sidebar_first&quot; class=&quot;col-md-3 pull-left&quot;&gt;
+  &lt;div class=&quot;quick-links&quot;&gt;
+    &lt;h3&gt;Sidebar Title&lt;/h3&gt;
+    &lt;ul class=&quot;nav nav-pills nav-stacked&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sidebar Navigation 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sidebar Navigation 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sidebar Navigation 3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sidebar Navigation 4&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sidebar Navigation 5&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sidebar Navigation 6&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sidebar Navigation 7&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sidebar Navigation 8&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <!-- END CODE EXAMPLE-->
+          </div>
+          <!-- End Sidebar-->
+        </div>
+      </div>
+    </div>
+    <!-- /#content_main-->
+    <footer id="footer_site">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="text-center-sm text-center-xs text-left" id="footer_logo"><a href="#"><img src="img/placeholder-logo.png"></a></div>
+          </div>
+          <div class="col-md-6">
+            <div class="text-center-sm text-center-xs text-right" id="footer_menu">
+              <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+                <li class="last"><a href="#">Link 5</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center" id="footer_copyright">
+              Wilbur Building, Room 1891   |   The University of Arizona   |   Tucson, AZ USA 85721    <br>
+              Phone: (520) 621-2211  |   Email:&nbsp;<a href="#">department.name@email.arizona.edu <br></a>© 2016 The Arizona Board of Regents on behalf of the University of Arizona   |&nbsp;<a href="#">Feedback</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-->
+    </footer>
+  </div>
+  <!-- /#l_page--><footer role="contentinfo" class="bs-footer">
+  <div class="container text-center">
+    <hr>
+    <p><a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap</a> originally designed and built by&nbsp;<a href="http://twitter.com/mdo" target="_blank">@mdo</a>&nbsp;and&nbsp;<a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+    <p>The University of Arizona flavor built and maintained by the UA Digital group.</p>
+    <p>Code licensed under&nbsp;<a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, documentation under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+    <ul class="footer-links muted list-inline list-unstyled">
+      <li>Currently v1.0.0-beta.26</li>
+      <li>·</li>
+      <li><a href="https://bitbucket.org/uadigital/ua-bootstrap" target="_blank">Bitbucket</a></li>
+      <li>·</li>
+      <li><a href="https://jira.arizona.edu/browse/UADIGITAL-145?jql=component%20%3D%20%22UA%20Bootstrap%22%20AND%20project%20%3D%20UADIGITAL" target="_blank">Issues</a></li>
+      <li>·</li>
+      <li><a href="https://bitbucket.org/uadigital/ua-bootstrap/downloads/?tab=tags" target="_blank">Tagged Releases</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <!-- Google Tag Manager-->
+  <noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-ML2BZB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="lib/ua-bootstrap.js"></script>
+  <script src="js/specimen.js"></script>
+  <script src="js/holder.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+    $('body').scrollspy({ target: '#catstrap-sidebar' });
+    
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-ML2BZB');
+  </script>
+</body>

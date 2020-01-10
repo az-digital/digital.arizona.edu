@@ -1,0 +1,569 @@
+body.download-page {
+    background: #ab0520 url('../img/tri-fade-right.png')100% 0% repeat-y;
+}
+body {
+  position: relative!important;
+  overflow: auto!important;
+  display:block!important;
+  height: 100%;
+}
+.js-specimen-modal-trigger {
+        margin-top: 0.4em;
+            margin-bottom: .5em;
+        }
+
+.example-label {
+  margin-bottom: 1.5em;
+}
+
+h3.example-label {
+        padding: 0 0 10px 0;
+    }
+.example-label .label-info {
+  position: absolute;
+  top: 0px;
+  left: -0.5em;
+  background-color: #f7f9f9;
+  color: #49595E;
+}
+.example-modal .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block;
+}
+.show-grid [class^=col-] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #eee;
+  background-color: rgba(132, 210, 226, 0.6);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(132, 210, 226,1);
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 16px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f7f9f9;
+  border: 1px solid #ccc;
+  margin: -1px 0 16px;
+}
+code, kbd, pre, samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 0.9em;
+}
+pre {
+  overflow: auto;
+}
+pre code {
+  padding: 0;
+  font-size: .9em;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+}
+.code-only pre {
+  padding: 2.2em 0 0;
+  position: relative;
+}
+.code-only pre:after {
+  content: 'Example code';
+  position: absolute;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #49595E;
+  font-family: MiloWeb;
+  font-weight: bold;
+  padding: .2em .6em .3em;
+  font-size: 1.1em;
+}
+.code-only pre code {
+  padding: 1em;
+}
+
+/* change code background color if it is in an odd row (#eef1f1 background) */
+.table-dark.table-striped > tbody > tr:nth-of-type(odd) code {
+	background-color: #ffffff;
+}
+
+/* line 5, ../sass/components/_type.scss */
+.milo-serif-web-text {
+  font-family: MiloSerifWeb, TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+}
+
+/* line 8, ../sass/components/_type.scss */
+.milo-serif-web-text-normal {
+  font-family: MiloSerifWeb, TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 13, ../sass/components/_type.scss */
+.milo-serif-web-text-medium {
+  font-family: MiloSerifWeb, TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* line 18, ../sass/components/_type.scss */
+.milo-serif-web-text-bold {
+  font-family: MiloSerifWeb, TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* line 23, ../sass/components/_type.scss */
+.milo-serif-web-black {
+  font-family: MiloSerifWeb-Black, TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-weight: 900;
+}
+
+/* line 27, ../sass/components/_type.scss */
+.milo-serif-web-black-italics {
+  font-family: MiloSerifWeb-Black, TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* line 32, ../sass/components/_type.scss */
+.milo-web {
+  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-weight: 400;
+}
+
+/* line 38, ../sass/components/_type.scss */
+.milo-web-medium {
+  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* line 43, ../sass/components/_type.scss */
+.milo-web-bold {
+  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-weight: 700;
+}
+
+/* line 49, ../sass/components/_type.scss */
+.milo-web-italic {
+  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* line 54, ../sass/components/_type.scss */
+.milo-web-text {
+  font-family: MiloWeb-Text, Verdana, Geneva, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-weight: 400;
+}
+.example .navbar-fixed-bottom, .example .navbar-fixed-top {
+     position: absolute;
+ }
+.download-area {
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+.download-area p.download-lead {
+    width: 80%;
+    font-size: 30px;
+    margin: 0 auto 1em;
+}
+.download-area img {
+    padding-bottom: 2em;
+}
+.download-area .btn {
+    font-size: 28px;
+  padding: 24px 40px;
+  padding: 1.5rem 2.5rem;
+  margin: 0 0 1em;
+}
+.download-area .form-control.cdn-link {
+  width: 100%;
+  background: #fff;
+  padding: 1.3rem;
+  cursor: pointer;
+}
+.btn-outline-inverse {
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+.btn-outline-inverse:hover, .btn-outline-inverse:focus, .btn-outline-inverse:active {
+    color: #ab0520;
+    text-shadow: none;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+/*=====================================
+BACKGROUND WRAPPER IMAGES
+=====================================*/
+
+.img-night-sky {
+    background-image: url('../img/night-sky.jpg');
+}
+
+
+.img-old-main {
+    background-image: url('../img/old-main.jpg');
+}
+@media (min-width: 768px) {
+.img-night-sky {
+    background-position: 10% 55%;
+}
+.img-old-main {
+    background-position: 10% 35%;
+}
+}
+.page-title {
+    padding: 3em 0;
+  /*  background: #ab0520 url('../img/tri-fade-right.png')100% 0% no-repeat;*/
+  /*background: url('../img/tri-bg.jpg');*/
+    color: #fff;
+    margin-bottom: 2em;
+    background: #8f1124; /* Old browsers */
+    background: -moz-linear-gradient(top,  #8f1124 0%, #ab0520 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #8f1124 0%,#ab0520 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #8f1124 0%,#ab0520 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8f1124', endColorstr='#ab0520',GradientType=0 ); /* IE6-9 */
+
+}
+.page-title h1 {
+    color: #fff;
+    font-size: 3.8rem;
+    margin: 0 0 .1em;
+    line-height: 1;
+}
+
+@media (min-width:768px) {
+  .page-title h1 {
+    font-size: 4rem;
+  }
+}
+.page-title p {
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 0;
+  line-height: 1.2em;
+}
+
+@media (min-width: 768px) {
+  .page-title p {
+    font-size: 1.7rem;
+  }
+}
+.example {
+    position: relative;
+    padding: 15px 15px 15px;
+    border: 1px solid #ddd;
+    box-shadow: none;
+}
+.example .card {
+        max-width: 20rem;
+    }
+
+#catstrap-sidebar {
+    margin-top: 1.5em;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+}
+#catstrap-sidebar.affix {
+    top: 0;
+    width: 263px;
+}
+#catstrap-sidebar ul li a {
+    color: #49595E;
+    font-size: .9em;
+    font-weight: normal;
+    padding: 3px 15px;
+}
+
+#catstrap-sidebar ul > li {
+    position: relative;
+    display: block;
+}
+#catstrap-sidebar ul li a:hover,
+#catstrap-sidebar ul ul li a:hover {
+  color: #0d6772;
+}
+#catstrap-sidebar ul li.active a {
+    border-left: 3px solid #0d6772;
+    font-weight: bold;
+    color: #0d6772;
+}
+
+#catstrap-sidebar ul li.active ul li a {
+    border-left: 1px solid #0d6772;
+    font-weight: normal;
+    color: #49595E;
+    padding: 0.3rem 0.5rem 0.3rem 1.1rem;
+    font-size: 0.9em;
+}
+
+#catstrap-sidebar ul li.active ul li.active a {
+    border-left: 3px solid #0d6772;
+    font-weight: bold;
+    color: #0d6772;
+}
+
+#catstrap-sidebar li ul {
+    display: none;
+}
+
+#catstrap-sidebar li.active ul {
+    display: block;
+}
+
+#catstrap-sidebar {
+  display: none;
+}
+
+@media (min-width: 60em) {
+  .affix {
+   position: fixed;
+  }
+  .affix-bottom {
+        position: absolute;
+  }
+  .affix-top {
+   position: absolute;
+   top: 0;
+   width: 100%;
+  }
+  #catstrap-sidebar {
+   display: block;
+  }
+}
+h4.example-heading {
+  color: #bbb;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#content_featured {
+  margin-bottom: 24px;
+  margin-bottom: 2rem;
+}
+#content_featured.flexslider {
+  margin-bottom: 0rem;
+}
+#content_featured .interior-featured-bg {
+  clear: both;
+  height: 180px;
+  width: 100%;
+  background: url('../img/interior-bg.jpg') no-repeat 50% 90%;
+  background-size: cover;
+}
+@media (min-width: 48em) {
+  #content_featured .interior-featured-bg {
+    height: 250px;
+  }
+  #catstrap-sidebar ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  #catstrap-sidebar ul > li {
+    position: relative;
+    display: block;
+  }
+  #catstrap-sidebar ul > li > a {
+    position: relative;
+    display: block;
+  }
+  #catstrap-sidebar ul > li > a:hover,
+  #catstrap-sidebar ul > li > a:focus {
+    text-decoration: none;
+    background-color: #dbe8ea;
+  }
+  #catstrap-sidebar ul > li.disabled > a:hover,
+  #catstrap-sidebar ul > li.disabled > a:focus {
+    color: #777;
+    text-decoration: none;
+    cursor: not-allowed;
+    background-color: transparent;
+  }
+  #catstrap-sidebar ul .open > a,
+  #catstrap-sidebar ul .open > a:hover,
+  #catstrap-sidebar ul .open > a:focus {
+    background-color: #eee;
+    border-color: #428bca;
+  }
+}
+@media (max-width: 479px) {
+  .starter-template img {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/*=================================
+FRANKIE'S ADDED CSS
+=================================*/
+.padding-top-70 {
+  padding-top: 70px;
+}
+
+/* This is here to make card header not bold only in our UABootstrap site. */
+.card-header {
+  font-weight: normal;
+}
+
+h1[id], h2[id], h3[id] {
+    margin-top: 2em;
+    margin-bottom: .25em;
+}
+
+@media (min-width: 768px) {
+  h1[id], h2[id], h3[id] {
+      margin-top: 2em;
+      margin-bottom: .25em;
+  }
+}
+
+@media (max-width: 768px) {
+  footer p{
+    text-align: left; 
+    font-size: .88em;
+  }
+  footer li{ 
+    font-size: .88em;
+    float: left;
+  }
+}
+
+
+/* Tooltips and popovers */
+.bs-example-tooltips {
+  text-align: center;
+}
+
+.bs-example-tooltips > .btn {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+
+.bs-example-popover-static {
+  padding-bottom: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.bs-example-popover-static .popover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 260px;
+  margin: 1.25rem;
+}
+
+.tooltip-demo a {
+  white-space: nowrap;
+}
+
+.bs-example-tooltip-static .tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 10px 20px;
+  opacity: 1;
+}
+
+/* Callout */
+.bs-callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eef1f1;
+  border-left-width: .25rem;
+  border-radius: 0;
+}
+
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: .25rem;
+}
+
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.bs-callout code {
+  border-radius: .25rem;
+}
+
+.bs-callout + .bs-callout {
+  margin-top: -.25rem;
+}
+
+.bs-callout-info {
+  border-left-color: #84D2E2;
+}
+
+.bs-callout-info h4 {
+  color: #84D2E2;
+}
+
+.bs-callout-warning {
+  border-left-color: #F19E1F;
+}
+
+.bs-callout-warning h4 {
+  color: #F19E1F;
+}
+
+.bs-callout-danger {
+  border-left-color: #B75527;
+}
+
+.bs-callout-danger h4 {
+  color: #B75527;
+}
+
+html.ua-brand-icons.external-links .override-ua-brand-icons .remove-external-link-icon[target=_blank]:after {
+  display: none;
+}
+
+html.ua-brand-icons.external-links .override-ua-brand-icons .psuedo-link, 
+html.ua-brand-icons.external-links .override-ua-brand-icons [target=_blank], 
+html.ua-brand-icons.external-links .override-ua-brand-icons span.external, 
+html.ua-brand-icons.external-links .override-ua-brand-icons a.external {
+    position: relative;
+    display: inline-block;
+    padding-right: .6em;
+}
+
+html.ua-brand-icons.external-links .override-ua-brand-icons [target=_blank]:after, 
+html.ua-brand-icons.external-links .override-ua-brand-icons .remove-external-link-icon[target=_blank] .psuedo-link span:after {
+  content: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  border-width: inherit;
+  border-bottom: 0.3125em solid transparent;
+  border-left: 0.3125em solid transparent;
+  border-right: 0.3125em solid #8F1124;
+  border-top: 0.3125em solid #8F1124;
+  content: '';
+  display: inline-block;
+  height: 0px;
+  position: absolute;
+  top: .38em;
+  width: 0px;
+}
