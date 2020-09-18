@@ -24,7 +24,7 @@ jobs:
       - name: Get new updates from arizona-bootstrap
         uses: actions/checkout@v2
         with:
-          repository: az-digital/az-bootstrap
+          repository: az-digital/arizona-bootstrap
           path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}
           ref: ${{ github.event.client_payload.sha }}
 
