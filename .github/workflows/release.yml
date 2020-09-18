@@ -1,0 +1,69 @@
+name: Create Release
+on:
+  repository_dispatch:
+    types: az_bootstrap_release
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.SELF_DEPLOY_KEY }}
+
+      - name: Build variables
+        run: |
+          stem='arizona-bootstrap'
+          echo "::set-env name=AZ_REVIEW_BASEURL::/${stem}"
+          echo "::set-env name=AZ_REVIEW_STEM::${stem}"
+          echo "::set-env name=AZ_BOOTSTRAP_CLONE_DIR::arizona-bootstrap"
+
+      - name: Get new updates from arizona-bootstrap
+        uses: actions/checkout@v2
+        with:
+          repository: az-digital/az-bootstrap-test
+          path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}
+          ref: ${{ github.event.client_payload.sha }}
+
+      - name: Set variables for Docker images
+        # Can't currently use hashFiles(). See: https://github.community/t/hashfiles-with-multiple-patterns/17168
+        run: |
+          lockhash=$(cd ${AZ_BOOTSTRAP_CLONE_DIR} && find Dockerfile Gemfile.lock package-lock.json scripts -type f -exec sha256sum {} \; | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }')
+          registry='docker.pkg.github.com'
+          imageprefix="${registry}/arizona-bootstrap/"
+          imagename='az-nodejs-ephemeral'
+          echo "::set-env name=AZ_DOCKER_REGISTRY::${registry}"
+          echo "::set-env name=AZ_EPHEMERAL_IMAGE::${imageprefix}${imagename}:${lockhash}"
+          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
+
+      - name: Docker authentication
+        run: |
+          docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Search for Docker image
+        id: dockerpull
+        continue-on-error: true
+        run: |
+          docker pull "$AZ_EPHEMERAL_IMAGE"
+
+      - name: Conditionally rebuild the Docker image
+        if: ${{ steps.dockerpull.outcome == 'failure' }}
+        run: |
+          cd "${AZ_BOOTSTRAP_CLONE_DIR}"
+          docker build -t "$AZ_EPHEMERAL_IMAGE" .
+
+      - name: Build and deploy documentation site artifact
+        run: |
+          (
+            cd "${AZ_BOOTSTRAP_CLONE_DIR}"
+            docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v "$(pwd):/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
+          )
+          rsync --recursive --delete "${AZ_BOOTSTRAP_CLONE_DIR}/_site/" "docs${AZ_REVIEW_BASEURL}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add .
+          git commit -m "Arizona Bootstrap updates for ${{ github.event.client_payload.version }}"
+          git push
