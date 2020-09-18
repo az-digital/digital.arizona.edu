@@ -55,7 +55,7 @@ jobs:
           cd "${AZ_BOOTSTRAP_CLONE_DIR}"
           docker build -t "$AZ_EPHEMERAL_IMAGE" .
 
-      - name: Build review site and sync
+      - name: Build and deploy documentation site artifact
         run: |
           (
             cd "${AZ_BOOTSTRAP_CLONE_DIR}"
