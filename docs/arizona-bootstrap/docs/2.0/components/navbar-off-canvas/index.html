@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Guidance and suggestions for using icon libraries with Arizona Bootstrap.">
+<meta name="description" content="Documentation and examples for Arizona Bootstrap’s main menu navigation component">
 <meta name="author" content="Arizona Digital contributors">
 <meta name="generator" content="Jekyll v4.1.1">
 
-<title>Icons · Arizona Bootstrap</title>
+<title>Navbar Off Canvas · Arizona Bootstrap</title>
 
-<link rel="canonical" href="/docs/2.0/extend/icons/">
+<link rel="canonical" href="/docs/2.0/components/navbar-off-canvas/">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Arizona Bootstrap core CSS -->
@@ -33,14 +33,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@">
 <meta name="twitter:creator" content="@">
-<meta name="twitter:title" content="Icons">
-<meta name="twitter:description" content="Guidance and suggestions for using icon libraries with Arizona Bootstrap.">
+<meta name="twitter:title" content="Navbar Off Canvas">
+<meta name="twitter:description" content="Documentation and examples for Arizona Bootstrap’s main menu navigation component">
 <meta name="twitter:image" content="/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social-logo.png">
 
 <!-- Facebook -->
-<meta property="og:url" content="/docs/2.0/extend/icons/">
-<meta property="og:title" content="Icons">
-<meta property="og:description" content="Guidance and suggestions for using icon libraries with Arizona Bootstrap.">
+<meta property="og:url" content="/docs/2.0/components/navbar-off-canvas/">
+<meta property="og:title" content="Navbar Off Canvas">
+<meta property="og:description" content="Documentation and examples for Arizona Bootstrap’s main menu navigation component">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social.png">
 <meta property="og:image:secure_url" content="/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social.png">
@@ -213,7 +213,7 @@
               Figures
             </a>
           </li></ul>
-    </div><div class="bd-toc-item">
+    </div><div class="bd-toc-item active">
       <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/components/alerts/">
         Components
       </a>
@@ -298,7 +298,7 @@
             <a href="/arizona-bootstrap/docs/2.0/components/navbar/">
               Navbar
             </a>
-          </li><li>
+          </li><li class="active bd-sidenav-active">
             <a href="/arizona-bootstrap/docs/2.0/components/navbar-off-canvas/">
               Navbar Off Canvas
             </a>
@@ -417,7 +417,7 @@
               Visibility
             </a>
           </li></ul>
-    </div><div class="bd-toc-item active">
+    </div><div class="bd-toc-item">
       <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/extend/approach/">
         Extend
       </a>
@@ -426,7 +426,7 @@
             <a href="/arizona-bootstrap/docs/2.0/extend/approach/">
               Approach
             </a>
-          </li><li class="active bd-sidenav-active">
+          </li><li>
             <a href="/arizona-bootstrap/docs/2.0/extend/icons/">
               Icons
             </a>
@@ -448,36 +448,142 @@
         </div>
 
         
+          <nav class="d-none d-xl-block col-xl-2 bd-toc" aria-label="Secondary navigation">
+            <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#off-canvas-mobile-nav">Off-Canvas Mobile Nav</a></li>
+</ul>
+          </nav>
+        
 
         <main class="col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-          <h1 class="bd-title" id="content">Icons</h1>
-          <p class="bd-lead">Guidance and suggestions for using icon libraries with Arizona Bootstrap.</p>
-          <p>These icons have been approved to use within Arizona web assets like Arizona
-Quickstart, and Arizona Bootstrap.</p>
+          <h1 class="bd-title" id="content">Navbar Off Canvas</h1>
+          <p class="bd-lead">Documentation and examples for Arizona Bootstrap’s main menu navigation component</p>
+          <h3 id="off-canvas-mobile-nav">Off-Canvas Mobile Nav</h3>
 
-<ul>
-  <li><a href="https://github.com/az-digital/az-icons">Arizona Icons</a> (Arizona branded icons)</li>
-  <li><a href="https://material.io/resources/icons/?style=sharp">Google Material icons (Sharp)</a></li>
-</ul>
-
-<h2 id="material-icons-implementation">Material Icons Implementation</h2>
-
-<p>Include a the Material Icons’ stylesheet to your project in order to use the font icons. <a href="https://google.github.io/material-design-icons/#icon-font-for-the-web">Refer to Material Icons docs</a> for more information.</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/icon?family=Material+Icons"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span></code></pre></figure>
-
-<p>Google’s Material font icons can be implemented just like text, in that they can combined with any utility class available to text.</p>
-
-<p>Your <code class="language-plaintext highlighter-rouge">span</code> should include the <code class="language-plaintext highlighter-rouge">.material-icons</code> class along with any utility classes you want to include. The text inside the <code class="language-plaintext highlighter-rouge">span</code> should be the ID/name of the icon you want to use. <a href="https://material.io/resources/icons/?style=sharp">Browse the font icon library (sharp style)</a> to find the ID of your desired icon.</p>
+<p>Adding the <code class="language-plaintext highlighter-rouge">.navbar-offcanvas</code> class to your <code class="language-plaintext highlighter-rouge">&lt;nav&gt;</code> will incorporate an off-canvas experience for mobile devices.</p>
 
 <div class="bd-example">
-<span class="material-icons text-sky display-4">accessible_forward</span>
-<span class="material-icons text-azurite display-3">accessible_forward</span>
-<span class="material-icons text-blue display-1">accessible_forward</span>
+<div class="d-lg-none d-flex justify-content-end">
+  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
+    <span class="material-icons"> menu </span>
+  </button>
 </div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons text-sky display-4"</span><span class="nt">&gt;</span>accessible_forward<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons text-azurite display-3"</span><span class="nt">&gt;</span>accessible_forward<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons text-blue display-1"</span><span class="nt">&gt;</span>accessible_forward<span class="nt">&lt;/span&gt;</span></code></pre></figure>
+<nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
+  <div class="navbar-offcanvas-header">
+    <div class="bg-chili d-flex justify-content-between align-items-center">
+      <a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center btn btn-red">
+        <span class="material-icons">home</span>
+        <span>HOME</span>
+      </a>
+      <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-red">
+        <span class="material-icons">close</span>
+        <span>CLOSE</span>
+      </button>
+    </div>
+    <form class="navbar-offcanvas-search bg-white pr-3">
+      <div class="input-group">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+        <div class="input-group-append">
+          <button class="btn" type="submit"><span class="material-icons">search</span></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <ul class="navbar-nav flex-lg-row">
+    <li class="nav-item nav-item-parent active">
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item nav-item-parent">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item nav-item-parent dropdown keep-open">
+      <button class="nav-link dropdown-toggle" id="navbarDropdown4" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+        Admissions
+      </button>
+      <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
+        <a class="dropdown-item" href="https://www.arizona.edu/admissions-overview">Admissions Overview</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+    <li class="nav-item nav-item-parent dropdown keep-open">
+      <button class="nav-link dropdown-toggle" id="navbarDropdown5" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown5">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+    <li class="nav-item nav-item-parent">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>
+</nav>
+</div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-lg-none d-flex justify-content-end"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">data-toggle=</span><span class="s">"offcanvas"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-target=</span><span class="s">"#navbarOffcanvasDemo"</span> <span class="na">aria-controls=</span><span class="s">"navbarOffcanvasDemo"</span> <span class="na">class=</span><span class="s">"btn btn-red"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons"</span><span class="nt">&gt;</span> menu <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar-offcanvas"</span> <span class="na">id=</span><span class="s">"navbarOffcanvasDemo"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"navbar-offcanvas-header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-chili d-flex justify-content-between align-items-center"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="na">class=</span><span class="s">"navbar-offcanvas-home d-flex flex-column align-items-center btn btn-red"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons"</span><span class="nt">&gt;</span>home<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span&gt;</span>HOME<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"navbarOffcanvasDemoClose"</span> <span class="na">data-toggle=</span><span class="s">"offcanvas"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-target=</span><span class="s">"#navbarOffcanvasDemo"</span> <span class="na">aria-controls=</span><span class="s">"navbarOffcanvasDemo"</span> <span class="na">class=</span><span class="s">"d-flex flex-column align-items-center btn btn-red"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons"</span><span class="nt">&gt;</span>close<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span&gt;</span>CLOSE<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"navbar-offcanvas-search bg-white pr-3"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group-append"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"material-icons"</span><span class="nt">&gt;</span>search<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav flex-lg-row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item nav-item-parent active"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>(current)<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item nav-item-parent"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item nav-item-parent dropdown keep-open"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">id=</span><span class="s">"navbarDropdown4"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">data-display=</span><span class="s">"static"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+        Admissions
+      <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">aria-labelledby=</span><span class="s">"navbarDropdown4"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"https://www.arizona.edu/admissions-overview"</span><span class="nt">&gt;</span>Admissions Overview<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item nav-item-parent dropdown keep-open"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">id=</span><span class="s">"navbarDropdown5"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">data-display=</span><span class="s">"static"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+        Dropdown
+      <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">aria-labelledby=</span><span class="s">"navbarDropdown5"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item nav-item-parent"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link disabled"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">aria-disabled=</span><span class="s">"true"</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span></code></pre></figure>
 
 
         </main>

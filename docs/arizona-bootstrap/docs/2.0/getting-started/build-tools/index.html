@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Arizona Bootstrap core CSS -->
 <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
-<link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.css" rel="stylesheet">
+<link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.min.css" rel="stylesheet">
 <!-- Documentation extras -->
 
 <link href="/arizona-bootstrap/docs/2.0/assets/css/docs.min.css" rel="stylesheet">
@@ -49,6 +49,14 @@
 <meta property="og:image:height" content="630">
 
 <!--
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-3897372-19', 'bootstrap.arizona.edu');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
 -->
 
   </head>
@@ -82,7 +90,7 @@
         v2.0
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/arizona-bootstrap/docs/2.0/">Latest (0.0.x)</a>
+        <a class="dropdown-item active" href="/arizona-bootstrap/docs/2.0/">Latest (2.0.x)</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="http://uadigital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
       </div>
@@ -289,6 +297,10 @@
           </li><li>
             <a href="/arizona-bootstrap/docs/2.0/components/navbar/">
               Navbar
+            </a>
+          </li><li>
+            <a href="/arizona-bootstrap/docs/2.0/components/navbar-off-canvas/">
+              Navbar Off Canvas
             </a>
           </li><li>
             <a href="/arizona-bootstrap/docs/2.0/components/pagination/">
@@ -534,13 +546,13 @@
   <li><code class="language-plaintext highlighter-rouge">AZ_VERSION</code> Full current Arizona Bootstrap version number</li>
 </ul>
 
-<p>Arizona Bootstrap uses <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> for its build system. Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.2/package.json">package.json</a> includes convenient methods for working with the framework, including compiling code, running tests, and more.</p>
+<p>Arizona Bootstrap uses <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> for its build system. Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.3/package.json">package.json</a> includes convenient methods for working with the framework, including compiling code, running tests, and more.</p>
 
 <p>To use our build system and run our documentation locally, you’ll need a copy of Arizona Bootstrap’s source files and Node. Follow these steps and you should be ready to rock:</p>
 
 <ol>
   <li><a href="https://nodejs.org/en/download/">Download and install Node.js</a>, which we use to manage our dependencies.</li>
-  <li>Navigate to the root <code class="language-plaintext highlighter-rouge">/arizona-bootstrap</code> directory and run <code class="language-plaintext highlighter-rouge">npm install</code> to install our local dependencies listed in <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.2/package.json">package.json</a>.</li>
+  <li>Navigate to the root <code class="language-plaintext highlighter-rouge">/arizona-bootstrap</code> directory and run <code class="language-plaintext highlighter-rouge">npm install</code> to install our local dependencies listed in <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.3/package.json">package.json</a>.</li>
   <li><a href="https://www.ruby-lang.org/en/documentation/installation/">Install Ruby</a>, install <a href="https://bundler.io/">Bundler</a> with <code class="language-plaintext highlighter-rouge">gem install bundler</code>, and finally run <code class="language-plaintext highlighter-rouge">bundle install</code>. This will install all Ruby dependencies, such as Jekyll and plugins.
     <ul>
       <li><strong>Windows users:</strong> Read <a href="https://jekyllrb.com/docs/windows/">this guide</a> to get Jekyll up and running without problems.</li>
@@ -552,7 +564,7 @@
 
 <h2 id="using-npm-scripts">Using npm Scripts</h2>
 
-<p>Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.2/package.json">package.json</a> includes the following commands and tasks:</p>
+<p>Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.3/package.json">package.json</a> includes the following commands and tasks:</p>
 
 <table>
   <thead>
@@ -583,7 +595,7 @@
 
 <p>Arizona Bootstrap uses <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.</p>
 
-<p>We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See <a href="https://github.com/az-digital/arizona-bootstrap/raw/v2.0.2/.browserslistrc">.browserslistrc</a> for details.</p>
+<p>We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See <a href="https://github.com/az-digital/arizona-bootstrap/raw/v2.0.3/.browserslistrc">.browserslistrc</a> for details.</p>
 
 <h2 id="local-documentation">Local Documentation</h2>
 
@@ -607,14 +619,6 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.js"></script><script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/anchor.min.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/clipboard.min.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/bs-custom-file-input.min.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/application.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/ie-emulation-modes-warning.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/background-wrapper-demo.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/custom-docs.js"></script>
-
-  <script src="https://kit.fontawesome.com/8a092dcf6a.js"></script>
+<script>window.jQuery || document.write('<script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script><script src="/arizona-bootstrap/docs/2.0/assets/js/docs.min.js"></script>
   </body>
 </html>

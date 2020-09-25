@@ -121,6 +121,9 @@
 <loc>/arizona-bootstrap/docs/2.0/content/images/</loc>
 </url>
 <url>
+<loc>/arizona-bootstrap/docs/2.0/examples/navbar/</loc>
+</url>
+<url>
 <loc>/arizona-bootstrap/</loc>
 </url>
 <url>
@@ -149,6 +152,9 @@
 </url>
 <url>
 <loc>/arizona-bootstrap/docs/2.0/components/modal/</loc>
+</url>
+<url>
+<loc>/arizona-bootstrap/docs/2.0/components/navbar-off-canvas/</loc>
 </url>
 <url>
 <loc>/arizona-bootstrap/docs/2.0/components/navbar/</loc>

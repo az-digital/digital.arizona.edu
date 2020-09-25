@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Arizona Bootstrap core CSS -->
 <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
-<link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.css" rel="stylesheet">
+<link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.min.css" rel="stylesheet">
 <!-- Documentation extras -->
 
 <link href="/arizona-bootstrap/docs/2.0/assets/css/docs.min.css" rel="stylesheet">
@@ -49,6 +49,14 @@
 <meta property="og:image:height" content="630">
 
 <!--
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-3897372-19', 'bootstrap.arizona.edu');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
 -->
 
   </head>
@@ -82,7 +90,7 @@
         v2.0
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/arizona-bootstrap/docs/2.0/">Latest (0.0.x)</a>
+        <a class="dropdown-item active" href="/arizona-bootstrap/docs/2.0/">Latest (2.0.x)</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="http://uadigital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
       </div>
@@ -291,6 +299,10 @@
               Navbar
             </a>
           </li><li>
+            <a href="/arizona-bootstrap/docs/2.0/components/navbar-off-canvas/">
+              Navbar Off Canvas
+            </a>
+          </li><li>
             <a href="/arizona-bootstrap/docs/2.0/components/pagination/">
               Pagination
             </a>
@@ -438,7 +450,6 @@
         
           <nav class="d-none d-xl-block col-xl-2 bd-toc" aria-label="Secondary navigation">
             <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#compiled-css-and-js">Compiled CSS and JS</a></li>
 <li class="toc-entry toc-h2"><a href="#source-files">Source Files</a></li>
 <li class="toc-entry toc-h2"><a href="#arizona-digital-cdn">Arizona Digital CDN</a></li>
 <li class="toc-entry toc-h2"><a href="#package-managers">Package Managers</a>
@@ -454,20 +465,7 @@
         <main class="col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
           <h1 class="bd-title" id="content">Download</h1>
           <p class="bd-lead">Download Arizona Bootstrap to get the compiled CSS and JavaScript, source code, or include it with your favorite package managers like npm, RubyGems, and more.</p>
-          <h2 id="compiled-css-and-js">Compiled CSS and JS</h2>
-
-<p>Download ready-to-use compiled code for <strong>Arizona Bootstrap v2.0.2</strong> to easily drop into your project, which includes:</p>
-
-<ul>
-  <li>Compiled and minified CSS bundles (see <a href="/arizona-bootstrap/docs/2.0/getting-started/contents/#css-files">CSS files comparison</a>)</li>
-  <li>Compiled and minified JavaScript plugins</li>
-</ul>
-
-<p>This doesn’t include documentation, source files, or any optional JavaScript dependencies (jQuery and Popper.js).</p>
-
-<p><a href="" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download Arizona Bootstrap');">Download</a></p>
-
-<h2 id="source-files">Source Files</h2>
+          <h2 id="source-files">Source Files</h2>
 
 <p>Compile Arizona Bootstrap with your own asset pipeline by downloading our source Sass, JavaScript, and documentation files. This option requires some additional tooling:</p>
 
@@ -478,14 +476,14 @@
 
 <p>Should you require <a href="/arizona-bootstrap/docs/2.0/getting-started/build-tools/#tooling-setup">build tools</a>, they are included for developing Arizona Bootstrap and its docs, but they’re likely unsuitable for your own purposes.</p>
 
-<p><a href="https://github.com/az-digital/arizona-bootstrap/archive/main.zip" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a></p>
+<p><a href="https://github.com/az-digital/arizona-bootstrap/archive/v2.0.3.zip" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a></p>
 
 <h2 id="arizona-digital-cdn">Arizona Digital CDN</h2>
 
 <p>Skip the download with the UA Digital CDN to deliver cached version of Arizona Bootstrap’s compiled CSS and JS to your project.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">""</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">""</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.0.3/arizona-bootstrap.min.css"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.0.3/arizona-bootstrap.min.js"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
 
 <p>If you’re using our compiled JavaScript, don’t forget to include CDN versions of jQuery and Popper.js before it.</p>
 
@@ -523,14 +521,6 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.js"></script><script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/anchor.min.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/clipboard.min.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/bs-custom-file-input.min.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/application.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/ie-emulation-modes-warning.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/background-wrapper-demo.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/custom-docs.js"></script>
-
-  <script src="https://kit.fontawesome.com/8a092dcf6a.js"></script>
+<script>window.jQuery || document.write('<script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script><script src="/arizona-bootstrap/docs/2.0/assets/js/docs.min.js"></script>
   </body>
 </html>

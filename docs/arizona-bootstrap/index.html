@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Arizona Bootstrap core CSS -->
 <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
-<link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.css" rel="stylesheet">
+<link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.min.css" rel="stylesheet">
 <!-- Documentation extras -->
 
 <link href="/arizona-bootstrap/docs/2.0/assets/css/docs.min.css" rel="stylesheet">
@@ -49,6 +49,14 @@
 <meta property="og:image:height" content="630">
 
 <!--
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-3897372-19', 'bootstrap.arizona.edu');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
 -->
 
   </head>
@@ -82,7 +90,7 @@
         v2.0
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/arizona-bootstrap/docs/2.0/">Latest (0.0.x)</a>
+        <a class="dropdown-item active" href="/arizona-bootstrap/docs/2.0/">Latest (2.0.x)</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="http://uadigital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
       </div>
@@ -128,7 +136,7 @@
           </div>
         </div>
         <p class="text-muted mb-0">
-          Currently v2.0.2
+          Currently v2.0.3
         </p>
       </div>
     </div>
@@ -153,12 +161,12 @@
     <p>When you only need to include Arizona Bootstrap’s compiled CSS or JS, you can use the Arizona Digital CDN.</p>
 
 <h5 class="bd-content-title">CSS only</h5>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">""</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.0.3/arizona-bootstrap.min.css"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span></code></pre></figure>
 
 <h5 class="bd-content-title">JS, Popper.js, and jQuery</h5>
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.5.1.slim.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">""</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.0.3/arizona-bootstrap.min.js"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
     <hr class="half-rule">
     <a class="btn btn-outline-blue" href="/arizona-bootstrap/docs/2.0/layout/overview/">Explore the docs</a>
   </div>
@@ -184,19 +192,11 @@
     </ul>
     <p>Arizona Bootstrap is &copy; 2019 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</p>
     <p>Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</p>
-    <p>Currently v2.0.2. Code is licensed <a href="https://github.com/az-digital/arizona-bootstrap/raw/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</p>
+    <p>Currently v2.0.3. Code is licensed <a href="https://github.com/az-digital/arizona-bootstrap/raw/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</p>
   </div>
 </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.js"></script><script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/anchor.min.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/clipboard.min.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/bs-custom-file-input.min.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/application.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/ie-emulation-modes-warning.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/background-wrapper-demo.js"></script>
-  <script src="/arizona-bootstrap/docs/2.0/assets/js/src/custom-docs.js"></script>
-
-  <script src="https://kit.fontawesome.com/8a092dcf6a.js"></script>
+<script>window.jQuery || document.write('<script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script><script src="/arizona-bootstrap/docs/2.0/assets/js/docs.min.js"></script>
   </body>
 </html>
