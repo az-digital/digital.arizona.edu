@@ -33,7 +33,7 @@ jobs:
         run: |
           lockhash=$(cd ${AZ_BOOTSTRAP_CLONE_DIR} && find Dockerfile Gemfile.lock package-lock.json scripts -type f -exec sha256sum {} \; | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }')
           registry='docker.pkg.github.com'
-          imageprefix="${registry}/arizona-bootstrap/"
+          imageprefix="${registry}/az-digital/arizona-bootstrap/"
           imagename='az-nodejs-ephemeral'
           echo "::set-env name=AZ_DOCKER_REGISTRY::${registry}"
           echo "::set-env name=AZ_EPHEMERAL_IMAGE::${imageprefix}${imagename}:${lockhash}"
