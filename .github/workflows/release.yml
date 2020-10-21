@@ -17,9 +17,9 @@ jobs:
       - name: Build variables
         run: |
           stem='arizona-bootstrap'
-          echo "::set-env name=AZ_REVIEW_BASEURL::/${stem}"
-          echo "::set-env name=AZ_REVIEW_STEM::${stem}"
-          echo "::set-env name=AZ_BOOTSTRAP_CLONE_DIR::arizona-bootstrap"
+          echo "AZ_REVIEW_BASEURL=/${stem}" >> ${GITHUB_ENV}
+          echo "AZ_REVIEW_STEM=${stem}" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_CLONE_DIR=arizona-bootstrap" >> ${GITHUB_ENV}
 
       - name: Get new updates from arizona-bootstrap
         uses: actions/checkout@v2
@@ -35,9 +35,9 @@ jobs:
           registry='docker.pkg.github.com'
           imageprefix="${registry}/az-digital/arizona-bootstrap/"
           imagename='az-nodejs-ephemeral'
-          echo "::set-env name=AZ_DOCKER_REGISTRY::${registry}"
-          echo "::set-env name=AZ_EPHEMERAL_IMAGE::${imageprefix}${imagename}:${lockhash}"
-          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
+          echo "AZ_DOCKER_REGISTRY=${registry}" >> ${GITHUB_ENV}
+          echo "AZ_EPHEMERAL_IMAGE=${imageprefix}${imagename}:${lockhash}" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_SOURCE_DIR=arizona-bootstrap-src" >> ${GITHUB_ENV}
 
       - name: Docker authentication
         run: |
