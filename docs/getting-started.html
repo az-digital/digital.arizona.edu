@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arizona Digital</title>
+    <!--UA Brand Icons -->
+    <link href="https://cdn.uadigital.arizona.edu/lib/ua-brand-icons/latest/ua-brand-icons.css" rel="stylesheet">
+    <!-- Proxima Nova -->
+    <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Arizona Bootstrap -->
+    <link href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/latest/css/arizona-bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="css-page">
+    <div class="background-wrapper bg-red py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <a href="https://arizona.edu" target="_blank"><img src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" alt="The Uniersity of Arizona" width="300px"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="background-wrapper bg-gray-200 bg-triangles-top-left py-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="my-0 text-blue">Arizona Digital <small>UArizona branding assets for the web</small></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-6">
+      <h1 class="text-blue">Get Started with Quickstart 2.0</h1>
+      <h3>Quickstart provides a great technical foundation for building websites for the University of Arizona that already have all the hard work of branding and accessibility built in.</h3>
+      <a class="btn btn-default mb-3" href="https://github.com/az-digital/az_quickstart/releases">Download Quickstart</a>
+      <p><b>Looking for Quickstart hosting?</b></p>
+      <p><a href="https://it.arizona.edu/web-services-request">Campus Web Services</a> can provide hosted sandboxes to make it easy to explore Quickstart.<br><em>(Any other campus units that offer hosting, please <a href="https://github.com/az-digital/digital.arizona.edu">submit a Pull Request</a> to update this document.)</em></p>
+    </div>
+
+  <div class="background-wrapper bg-gray-200 py-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-blue">Installing Quickstart Locally</h2>
+            <p>Quickstart 2.0 has built in tooling to make it easy to use with the Docker-based local development tools <a href="https://lando.dev/">Lando</a> and <a href="https://www.ddev.com/">DDEV</a>. The configuration for these will ensure that your environment will include compatible versions of PHP, Apache and MySQL as well as all other development dependencies.</p>
+            <p>See the <a href="https://github.com/az-digital/az_quickstart/blob/main/CONTRIBUTING.md#local-development">Local Development steps in our Contributing document</a> for how to set up Quickstart in a local development environment.</p>
+            <h2 class="text-blue">Using the Quickstart Scaffolding</h2>
+            <p>Quickstart 2.0 uses a scaffolding to manage server setup before pulling in Quickstart itself. This includes server specific settings for Quickstart, such as installer paths and versions of PHP.</p>
+            <p>There is a default <a href="https://github.com/az-digital/az-quickstart-scaffolding">Quickstart Scaffolding</a> that is used by Lando and DDEV for local development. This can be used as a template for setting up your own server environment.
+            <h2 class="text-blue">Managing Quickstart with Composer</h2>
+            <p>One big change from Drupal 7 to Drupal 8 (and 9) is the adoption of <a href="https://getcomposer.org/">Composer</a> for managing dependencies. Contrib modules are now treated similarly to other PHP packages and can now be included through a composer.json file. When Composer runs, it will pull in all of the correct versions of each dependency and install them in your project. </p>
+
+            <p>In order to use Composer, it will need to be installed on the server hosting your website, or on seperate CI infrastructure.</p>
+
+            <p>Drupal.org provides an in depth <a href="https://www.drupal.org/docs/user_guide/en/install-composer.html">guide to using Composer to manage Drupal projects</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="background-wrapper py-6 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="mt-0">Get Involved</h2>
+            <p>A team of web-focused volunteers known as Arizona Digital meets weekly to build and test products like <a href="arizona-bootstrap">Arizona Bootstrap</a> and <a href="https://quickstart.arizona.edu/">UA Quickstart.</a></p>
+            <ul>
+              <li>Request an invite to the Friday Arizona Digital meetings by subscribing to the <a href="https://list.arizona.edu/sympa/info/ua-digital">UA Digital listserv</a></li>
+              <li>Join the Arizona Digital discussions on <a href="https://quickstart.arizona.edu/join-us-on-slack">Slack</a></li>
+              <li>Submit pull requests on <a href="https://github.com/az-digital">GitHub</a></li>
+            </ul>
+            <p>Questions, bugs, or suggestions can also be emailed to <a href="mailto:brand@email.arizona.edu">brand@email.arizona.edu</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- jQuery (necessary for ABootstrap JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/latest/js/arizona-bootstrap.bundle.min.js"></script>
+</html>
