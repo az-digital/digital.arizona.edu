@@ -468,34 +468,39 @@
 
 <div class="bd-example">
 <div class="d-lg-none d-flex justify-content-end">
-  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
-    <span class="material-icons-sharp"> menu </span>
+  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
+    <span class="material-icons-sharp">search</span>
+    <span>Search</span>
+  </button>
+  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
+    <span class="material-icons-sharp">menu</span>
+    <span>Menu</span>
   </button>
 </div>
 <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
   <div class="navbar-offcanvas-header">
     <div class="bg-chili d-flex justify-content-between align-items-center">
-      <a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center btn btn-red">
+      <a href="/" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
         <span class="material-icons-sharp">home</span>
-        <span>HOME</span>
+        <span>Home</span>
       </a>
-      <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-red">
-        <span class="material-icons-sharp">close</span>
-        <span>CLOSE</span>
+      <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
+        <span class="material-icons-sharp mx-auto">close</span>
+        <span class="mx-auto">Close</span>
       </button>
     </div>
-    <form class="navbar-offcanvas-search bg-white pr-3">
+    <form class="navbar-offcanvas-search bg-white">
       <div class="input-group">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
         <div class="input-group-append">
-          <button class="btn" type="submit"><span class="material-icons-sharp">search</span></button>
+          <button class="btn btn-search" type="submit"><span class="material-icons-sharp">search</span></button>
         </div>
       </div>
     </form>
   </div>
   <ul class="navbar-nav flex-lg-row">
     <li class="nav-item nav-item-parent active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item nav-item-parent">
       <a class="nav-link" href="#">Link</a>
@@ -505,7 +510,7 @@
         Admissions
       </button>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
-        <a class="dropdown-item" href="https://www.arizona.edu/admissions-overview">Admissions Overview</a>
+        <a class="dropdown-item" href="#">Admissions Overview</a>
         <a class="dropdown-item" href="#">Another action</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Something else here</a>
@@ -529,34 +534,39 @@
 </nav>
 </div>
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-lg-none d-flex justify-content-end"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">data-toggle=</span><span class="s">"offcanvas"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-target=</span><span class="s">"#navbarOffcanvasDemo"</span> <span class="na">aria-controls=</span><span class="s">"navbarOffcanvasDemo"</span> <span class="na">class=</span><span class="s">"btn btn-red"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons-sharp"</span><span class="nt">&gt;</span> menu <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">data-toggle=</span><span class="s">"offcanvas"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-target=</span><span class="s">"#navbarOffcanvasDemo"</span> <span class="na">aria-controls=</span><span class="s">"navbarOffcanvasDemo"</span> <span class="na">class=</span><span class="s">"btn btn-red btn-menu"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons-sharp"</span><span class="nt">&gt;</span>search<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;</span>Search<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">data-toggle=</span><span class="s">"offcanvas"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-target=</span><span class="s">"#navbarOffcanvasDemo"</span> <span class="na">aria-controls=</span><span class="s">"navbarOffcanvasDemo"</span> <span class="na">class=</span><span class="s">"btn btn-red btn-menu"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons-sharp"</span><span class="nt">&gt;</span>menu<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;</span>Menu<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar-offcanvas"</span> <span class="na">id=</span><span class="s">"navbarOffcanvasDemo"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"navbar-offcanvas-header"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-chili d-flex justify-content-between align-items-center"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="na">class=</span><span class="s">"navbar-offcanvas-home d-flex flex-column align-items-center btn btn-red"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="na">class=</span><span class="s">"btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons-sharp"</span><span class="nt">&gt;</span>home<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;span&gt;</span>HOME<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span&gt;</span>Home<span class="nt">&lt;/span&gt;</span>
       <span class="nt">&lt;/a&gt;</span>
-      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"navbarOffcanvasDemoClose"</span> <span class="na">data-toggle=</span><span class="s">"offcanvas"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-target=</span><span class="s">"#navbarOffcanvasDemo"</span> <span class="na">aria-controls=</span><span class="s">"navbarOffcanvasDemo"</span> <span class="na">class=</span><span class="s">"d-flex flex-column align-items-center btn btn-red"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons-sharp"</span><span class="nt">&gt;</span>close<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;span&gt;</span>CLOSE<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"navbarOffcanvasDemoClose"</span> <span class="na">data-toggle=</span><span class="s">"offcanvas"</span> <span class="na">data-target=</span><span class="s">"#navbarOffcanvasDemo"</span> <span class="na">aria-controls=</span><span class="s">"navbarOffcanvasDemo"</span> <span class="na">class=</span><span class="s">"btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"material-icons-sharp mx-auto"</span><span class="nt">&gt;</span>close<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"mx-auto"</span><span class="nt">&gt;</span>Close<span class="nt">&lt;/span&gt;</span>
       <span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"navbar-offcanvas-search bg-white pr-3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"navbar-offcanvas-search bg-white"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group-append"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"material-icons-sharp"</span><span class="nt">&gt;</span>search<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-search"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"material-icons-sharp"</span><span class="nt">&gt;</span>search<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
       <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav flex-lg-row"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item nav-item-parent active"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>(current)<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>(current)<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item nav-item-parent"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
@@ -566,7 +576,7 @@
         Admissions
       <span class="nt">&lt;/button&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">aria-labelledby=</span><span class="s">"navbarDropdown4"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"https://www.arizona.edu/admissions-overview"</span><span class="nt">&gt;</span>Admissions Overview<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Admissions Overview<span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;</span>

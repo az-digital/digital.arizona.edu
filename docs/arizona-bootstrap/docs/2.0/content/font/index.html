@@ -454,21 +454,20 @@
         
           <nav class="d-none d-xl-block col-xl-2 bd-toc" aria-label="Secondary navigation">
             <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#how-to-use">How to Use</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#reference-link">Reference link</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#centrally-managed-typekit-webfont">Centrally managed Typekit webfont</a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#notes-to-consider-when-using-the-centrally-mananged-webfont-project">Notes to consider when using the centrally mananged webfont project.</a></li>
-<li class="toc-entry toc-h4"><a href="#managing-your-own-project">Managing your own project</a></li>
-<li class="toc-entry toc-h4"><a href="#using-the-centrally-managed-project">Using the centrally managed project</a></li>
+<li class="toc-entry toc-h4"><a href="#notes-to-consider-when-using-the-centrally-managed-webfont-project">Notes to consider when using the centrally managed webfont project.</a></li>
+<li class="toc-entry toc-h3"><a href="#managing-your-own-project">Managing your own project</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#global-settings">Global settings</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#native-fallback-fonts">Native Fallback Fonts</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#how-to-use">How to Use</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#reference-link">Reference link</a></li>
 <li class="toc-entry toc-h3"><a href="#instructions">Instructions</a></li>
 <li class="toc-entry toc-h3"><a href="#proxima-nova-bold">Proxima Nova Bold</a></li>
 <li class="toc-entry toc-h3"><a href="#proxima-nova-bold-italic">Proxima Nova Bold Italic</a></li>
@@ -502,64 +501,52 @@
   your project.
 </div>
 
+<h2 id="how-to-use">How to Use</h2>
+<p>The Proxima Nova font suite is available for official use by University of Arizona
+employees through a license with Adobe Typekit.</p>
+
+<h3 id="reference-link">Reference link</h3>
+
+<p>Arizona Bootstrap uses an Adobe Typekit account with shared governance to
+manage our font reference links within Arizona Bootstrap.</p>
+
+<p>Put this within your <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag <strong>above</strong> the reference to Arizona Bootstrap.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Proxima Nova reference. --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://use.typekit.net/emv3zbo.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+<span class="c">&lt;!-- Arizona Bootstrap reference. --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.0.6/css/arizona-bootstrap.min.css"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span></code></pre></figure>
+
 <h2 id="centrally-managed-typekit-webfont">Centrally managed Typekit webfont</h2>
 
 <p>For ease of integration into web projects around campus, the Arizona Digital
 team manages a Typekit webfont project that can be referenced by your site.</p>
 
-<h4 id="notes-to-consider-when-using-the-centrally-mananged-webfont-project">Notes to consider when using the centrally mananged webfont project.</h4>
-<p>Our license with Typekit allows anyone with a netid to create their own webfont
-project in Creative Cloud Typekit and use it in all of their web projects. Of
-course there are advantages and disadvantages to each approach.</p>
-
-<h4 id="managing-your-own-project">Managing your own project</h4>
-
-<p><strong>Advantages</strong></p>
-<ul>
-  <li>You can tailor your font project to only include the fonts that your web site
-or app uses, minimizing the number of assets an end-user</li>
-  <li>If tailoring your own web project you may benefit with perfomance gains on
-first end-user page load of your site or app if the user has never visited one
-of the other websites (Arizona.edu for example) that includes the centrally
-managed font.</li>
-</ul>
-
-<p><strong>Disadvantages</strong></p>
-<ul>
-  <li>Performance loss if your end-user has already downloaded the centrally managed
-font library from one of the other sites that use the centrally managed font.</li>
-  <li>You have to manage your own font in Typekit under your netid, or a department
-managed netid, which comes with the risk with managing yet another service on
-your own.</li>
-</ul>
-
-<h4 id="using-the-centrally-managed-project">Using the centrally managed project</h4>
-
-<p>Using shared standard assets is inherently faster across multiple
-domains, and any deviation to using shared standard assets should be considered
+<p>Using shared standard assets is inherently faster in the Arizona.edu environment, and any deviation to using shared standard assets should be considered
 carefully by researching traffic-flow between institutional web properties, and
-not solely initial page-load times on one site.  In other words all sites that
+not solely initial page-load times on one site.  All sites that
 link to an arizona.edu subdomain, typically share users with the parent domain,
 and other subdomains. Modern web browsers cache assets based on the address it
 is downloaded from, so if all subdomains share the same asset, the end-user’s
 browser will access a cached copy without downloading it again across those
 subdomains.</p>
 
+<h4 id="notes-to-consider-when-using-the-centrally-managed-webfont-project">Notes to consider when using the centrally managed webfont project.</h4>
+<p>Our license with Typekit allows anyone with a netid to create their own webfont
+project in Creative Cloud Typekit and use it in all of their web projects.</p>
+
+<h3 id="managing-your-own-project">Managing your own project</h3>
+
 <p><strong>Advantages</strong></p>
 <ul>
-  <li>Worry-free font hosting.</li>
-  <li>No managing department or team-level creative cloud accounts to ensure your
-font isn’t tied to one team-member</li>
-  <li>Leverages browser caching across other domains and subdomains that use the
-shared assets.</li>
-  <li>You can easily switch to a self-managed model and back again.</li>
-  <li>Centralized documentation on how to integrate into other shared assets.</li>
+  <li>You can tailor your font project to only include the fonts that your web site or app uses, minimizing the number of assets an end-user has to download.</li>
+  <li>Faster page load for users that have never visited other Arizona.edu websites that include the centrally managed font.</li>
 </ul>
 
 <p><strong>Disadvantages</strong></p>
 <ul>
-  <li>Less flexibility in regards to which font is available to your project.</li>
-  <li>Workflow challenges with making updates to centrally managed web fonts.</li>
+  <li>Slower page load for users that have visited other Arizona.edu websites that include the centrally managed font.</li>
+  <li>You have to manage your own font in Typekit using a netid that is tied to one person, creating a single point of failure if that user leaves the university.</li>
 </ul>
 
 <h2 id="global-settings">Global settings</h2>
@@ -590,25 +577,6 @@ every device and OS. Read more about <a href="https://www.smashingmagazine.com/2
 <p>This <code class="language-plaintext highlighter-rouge">font-family</code> is applied to the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> and automatically inherited
 globally throughout Bootstrap. To switch the global <code class="language-plaintext highlighter-rouge">font-family</code>, update
 <code class="language-plaintext highlighter-rouge">$font-family-base</code> and recompile Arizona Bootstrap.</p>
-
-<h2 id="how-to-use">How to Use</h2>
-<p>The Proxima Nova font suite is available for official use by University of Arizona
-employees through a license with Adobe Typekit.</p>
-
-<h3 id="reference-link">Reference link</h3>
-
-<p>Arizona Bootstrap uses a Creative Cloud Library with shared governance to
-manage our font reference links within Arizona Bootstrap.</p>
-
-<p>Put this within your <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag <strong>above</strong> the reference to Arizona Bootstrap.</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Proxima Nova reference. --&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://use.typekit.net/emv3zbo.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
-<span class="c">&lt;!-- Arizona Bootstrap reference. --&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.0.5/css/arizona-bootstrap.min.css"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span></code></pre></figure>
-
-<p>If using the font independently from Arizona Bootstrap, below are
-instructions on how to use the different weights and styles.</p>
 
 <h3 id="instructions"><strong>Instructions</strong></h3>
 <p>The following istructions are for adding specific CSS classes for font weights
