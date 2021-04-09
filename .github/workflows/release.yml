@@ -35,7 +35,7 @@ jobs:
 
       - name: Set variables for Docker images
         run: |
-          oldhash=${{ hashFiles($AZ_BOOTSTRAP_DOCKERFILE_PATH, $AZ_BOOTSTRAP_PACKAGE_JSON_PATH, $AZ_BOOTSTRAP_PACKAGE_LOCK_PATH, $AZ_BOOTSTRAP_SCRIPTS_PATH) }}
+          oldhash=${{ hashFiles(env.AZ_BOOTSTRAP_DOCKERFILE_PATH, env.AZ_BOOTSTRAP_PACKAGE_JSON_PATH, env.AZ_BOOTSTRAP_PACKAGE_LOCK_PATH, env.AZ_BOOTSTRAP_SCRIPTS_PATH) }}
           registry='docker.pkg.github.com'
           imageprefix="${registry}/az-digital/arizona-bootstrap/"
           imagename='az-nodejs-ephemeral'
@@ -65,7 +65,7 @@ jobs:
           docker run --name "$tempname" "$workingtitle" true
           docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." "$AZ_BOOTSTRAP_CLONE_DIR"
           docker rm "$tempname"
-          lockhash=${{ hashFiles($AZ_BOOTSTRAP_DOCKERFILE_PATH, $AZ_BOOTSTRAP_PACKAGE_JSON_PATH, $AZ_BOOTSTRAP_PACKAGE_LOCK_PATH, $AZ_BOOTSTRAP_SCRIPTS_PATH) }}
+          lockhash=${{ hashFiles(env.AZ_BOOTSTRAP_DOCKERFILE_PATH, env.AZ_BOOTSTRAP_PACKAGE_JSON_PATH, env.AZ_BOOTSTRAP_PACKAGE_LOCK_PATH, env.AZ_BOOTSTRAP_SCRIPTS_PATH) }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
           docker tag "$workingtitle" "$ephemeral"
           echo "AZ_EPHEMERAL_IMAGE=${ephemeral}" >> ${GITHUB_ENV}
