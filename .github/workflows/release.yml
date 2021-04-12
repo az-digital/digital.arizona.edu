@@ -17,14 +17,15 @@ jobs:
       - name: Build variables
         run: |
           stem='arizona-bootstrap'
+          clonedir='arizona-bootstrap'
           echo "AZ_REVIEW_BASEURL=/${stem}" >> ${GITHUB_ENV}
-          echo "AZ_REVIEW_STEM=${stem}" >> ${GITHUB_ENV}
           echo "AZ_SITE_HOST=https://digital.arizona.edu" >> ${GITHUB_ENV}
-          echo "AZ_BOOTSTRAP_CLONE_DIR=arizona-bootstrap" >> ${GITHUB_ENV}
-          echo "AZ_BOOTSTRAP_DOCKERFILE_PATH=arizona-bootstrap/Dockerfile" >> ${GITHUB_ENV}
-          echo "AZ_BOOTSTRAP_PACKAGE_JSON_PATH=arizona-bootstrap/package.json" >> ${GITHUB_ENV}
-          echo "AZ_BOOTSTRAP_PACKAGE_LOCK_PATH=arizona-bootstrap/package-lock.json" >> ${GITHUB_ENV}
-          echo "AZ_BOOTSTRAP_SCRIPTS_PATH=arizona-bootstrap/scripts/*" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_CLONE_DIR=${clonedir}" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_CLONE_FULL_PATH=${GITHUB_WORKSPACE}/${clonedir}" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_DOCKERFILE_PATH=${clonedir}/Dockerfile" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_PACKAGE_JSON_PATH=${clonedir}/package.json" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_PACKAGE_LOCK_PATH=${clonedir}/package-lock.json" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_SCRIPTS_PATH=${clonedir}/scripts/*" >> ${GITHUB_ENV}
 
       - name: Get new updates from arizona-bootstrap
         uses: actions/checkout@v2
@@ -60,10 +61,10 @@ jobs:
       - name: Conditionally rebuild the Docker image
         if: ${{ steps.dockerpull.outcome == 'failure' }}
         run: |
-          workingtitle=$(docker build -q "$AZ_BOOTSTRAP_CLONE_DIR")
+          workingtitle=$(docker build -q "$AZ_BOOTSTRAP_CLONE_FULL_PATH")
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
-          docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." "$AZ_BOOTSTRAP_CLONE_DIR"
+          docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." "$AZ_BOOTSTRAP_CLONE_FULL_PATH"
           docker rm "$tempname"
           lockhash=${{ hashFiles(env.AZ_BOOTSTRAP_DOCKERFILE_PATH, env.AZ_BOOTSTRAP_PACKAGE_JSON_PATH, env.AZ_BOOTSTRAP_PACKAGE_LOCK_PATH, env.AZ_BOOTSTRAP_SCRIPTS_PATH) }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
@@ -72,7 +73,7 @@ jobs:
 
       - name: Build and deploy documentation site artifact
         run: |
-          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -e "AZ_SITE_HOST=${AZ_SITE_HOST}" -v "$AZ_BOOTSTRAP_CLONE_DIR":"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -e "AZ_SITE_HOST=${AZ_SITE_HOST}" -v "$AZ_BOOTSTRAP_CLONE_FULL_PATH":"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
           rsync --recursive --delete "${AZ_BOOTSTRAP_CLONE_DIR}/_site/" "docs${AZ_REVIEW_BASEURL}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
