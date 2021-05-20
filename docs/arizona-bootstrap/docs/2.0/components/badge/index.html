@@ -5,19 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Documentation and examples for badges, our small count and labeling component.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Jekyll v4.1.1">
+<meta name="generator" content="Hugo 0.83.1">
+
+<meta name="docsearch:language" content="en">
+<meta name="docsearch:version" content="2.0">
 
 <title>Badges · Arizona Bootstrap</title>
 
-<link rel="canonical" href="/docs/2.0/components/badge/">
+<link rel="canonical" href="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/components/badge/">
+
+
 
 <link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
 <!-- Arizona Bootstrap core CSS -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
 <link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.min.css" rel="stylesheet">
+
 <!-- Documentation extras -->
 
-<link href="/arizona-bootstrap/docs/2.0/assets/css/docs.min.css" rel="stylesheet">
+<link href="/arizona-bootstrap/docs/2.0/assets/css/docs.css" rel="stylesheet">
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" href="/arizona-bootstrap/docs/2.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -35,29 +41,18 @@
 <meta name="twitter:creator" content="@">
 <meta name="twitter:title" content="Badges">
 <meta name="twitter:description" content="Documentation and examples for badges, our small count and labeling component.">
-<meta name="twitter:image" content="/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social-logo.png">
+<meta name="twitter:image" content="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social-logo.png">
 
 <!-- Facebook -->
-<meta property="og:url" content="/docs/2.0/components/badge/">
+<meta property="og:url" content="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/components/badge/">
 <meta property="og:title" content="Badges">
 <meta property="og:description" content="Documentation and examples for badges, our small count and labeling component.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social.png">
-<meta property="og:image:secure_url" content="/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social.png">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
-<!--
-<script>
-  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-  ga('create', 'UA-3897372-19', 'bootstrap.arizona.edu');
-  ga('set', 'anonymizeIp', true);
-  ga('send', 'pageview');
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-
--->
 
   </head>
   <body>
@@ -70,17 +65,14 @@
   <div class="navbar-nav-scroll">
     <ul class="navbar-nav bd-navbar-nav flex-row">
       <li class="nav-item">
-        <a class="nav-link " href="/arizona-bootstrap/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Arizona Bootstrap');">Home</a>
+        <a class="nav-link" href="/arizona-bootstrap/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Arizona Bootstrap');">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="/arizona-bootstrap/docs/2.0/about/overview" onclick="ga('send', 'event', 'Navbar', 'Community links', 'About');">About</a>
+        <a class="nav-link" href="/arizona-bootstrap/docs/2.0/about/overview" onclick="ga('send', 'event', 'Navbar', 'Community links', 'About');">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/arizona-bootstrap/docs/2.0/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
+        <a class="nav-link active" href="/arizona-bootstrap/docs/2.0/getting-started/introduction" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link " href="/arizona-bootstrap/docs/2.0/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Examples</a>
-      </li> -->
     </ul>
   </div>
 
@@ -90,9 +82,9 @@
         v2.0
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/arizona-bootstrap/docs/2.0/">Latest (2.0.x)</a>
+        <a class="dropdown-item active" href="/arizona-bootstrap/">Latest (2.0.x)</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="http://uadigital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
+        <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
       </div>
     </li>
 
@@ -102,13 +94,13 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link p-2" href="/arizona-bootstrap/docs/2.0/about/get-involved/#connect-with-us-on-slack" rel="noopener" aria-label="Slack">
+      <a class="nav-link p-2" href="https://quickstart.arizona.edu/join-us-on-slack" rel="noopener" aria-label="Slack">
         <i class="fab fa-1x fa-slack-hash text-azurite"></i>
       </a>
     </li>
   </ul>
 
-  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/arizona-bootstrap/docs/2.0/getting-started/download/">Download</a>
+  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/arizona-bootstrap/docs/2.0/getting-started/download">Download</a>
 </header>
 
 
@@ -116,349 +108,176 @@
       <div class="row flex-xl-nowrap">
         <div class="col-md-3 col-xl-2 bd-sidebar">
           <div class="bd-search d-flex align-items-center">
-  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg></button>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
 </div>
 
-<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation"><div class="bd-toc-item">
-      <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/getting-started/introduction/">
-        Getting Started
-      </a>
+<div class="collapse d-md-block row" id="bd-docs-nav">
+  <nav class="bd-links" aria-label="Main navigation">
 
-      <ul class="nav bd-sidenav"><li>
-            <a href="/arizona-bootstrap/docs/2.0/getting-started/introduction/">
-              Introduction
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/getting-started/accessibility/">
-              Accessibility
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/getting-started/color-contrast/">
-              Color Contrast
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/getting-started/download/">
-              Download
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/getting-started/contents/">
-              Contents
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/getting-started/browsers-devices/">
-              Browsers & Devices
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/getting-started/javascript/">
-              JavaScript
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/getting-started/build-tools/">
-              Build Tools
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/getting-started/webpack/">
-              Webpack
-            </a>
-          </li></ul>
-    </div><div class="bd-toc-item">
-      <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/layout/overview/">
-        Layout
-      </a>
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/getting-started/introduction/">
+          Getting Started
+        </a>
+      </div>
 
-      <ul class="nav bd-sidenav"><li>
-            <a href="/arizona-bootstrap/docs/2.0/layout/overview/">
-              Overview
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/layout/grid/">
-              Grid
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/layout/utilities-for-layout/">
-              Utilities for Layout
-            </a>
-          </li></ul>
-    </div><div class="bd-toc-item">
-      <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/content/reboot/">
-        Content
-      </a>
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/layout/overview/">
+          Layout
+        </a>
+      </div>
 
-      <ul class="nav bd-sidenav"><li>
-            <a href="/arizona-bootstrap/docs/2.0/content/reboot/">
-              Reboot
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/content/font/">
-              Font
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/content/typography/">
-              Typography
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/content/code/">
-              Code
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/content/images/">
-              Images
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/content/tables/">
-              Tables
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/content/figures/">
-              Figures
-            </a>
-          </li></ul>
-    </div><div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/components/arizona-header/">
-        Components
-      </a>
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/content/reboot/">
+          Content
+        </a>
+      </div>
 
-      <ul class="nav bd-sidenav"><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/arizona-header/">
-              Arizona Header
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/alerts/">
-              Alerts
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/background-wrappers/">
-              Background Wrappers
-            </a>
-          </li><li class="active bd-sidenav-active">
-            <a href="/arizona-bootstrap/docs/2.0/components/badge/">
-              Badge
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/breadcrumb/">
-              Breadcrumb
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/buttons/">
-              Buttons
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/button-group/">
-              Button Group
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/callouts/">
-              Callouts
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/card/">
-              Card
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/carousel/">
-              Carousel
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/collapse/">
-              Collapse
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/dropdowns/">
-              Dropdowns
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/forms/">
-              Forms
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/horizontal-rule/">
-              Horizontal Rule
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/input-group/">
-              Input Group
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/jumbotron/">
-              Jumbotron
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/list-group/">
-              List Group
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/media-object/">
-              Media Object
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/modal/">
-              Modal
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/navs/">
-              Navs
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/navbar/">
-              Navbar
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/navbar-off-canvas/">
-              Navbar Off Canvas
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/pagination/">
-              Pagination
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/photo-gallery/">
-              Photo Gallery
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/popovers/">
-              Popovers
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/progress/">
-              Progress
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/scrollspy/">
-              Scrollspy
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/spinners/">
-              Spinners
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/toasts/">
-              Toasts
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/components/tooltips/">
-              Tooltips
-            </a>
-          </li></ul>
-    </div><div class="bd-toc-item">
-      <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/utilities/borders/">
-        Utilities
-      </a>
+      <div class="bd-toc-item active">
+        <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/components/arizona-header/">
+          Components
+        </a>
+        <ul class="nav bd-sidenav">
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/arizona-header/">Arizona Header</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/alerts/">Alerts</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/background-wrappers/">Background Wrappers</a>
+            </li>
+            <li class="active bd-sidenav-active">
+              <a href="/arizona-bootstrap/docs/2.0/components/badge/">Badge</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/breadcrumb/">Breadcrumb</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/buttons/">Buttons</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/button-group/">Button Group</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/callouts/">Callouts</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/card/">Card</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/carousel/">Carousel</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/collapse/">Collapse</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/dropdowns/">Dropdowns</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/forms/">Forms</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/horizontal-rule/">Horizontal Rule</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/input-group/">Input Group</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/jumbotron/">Jumbotron</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/list-group/">List Group</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/media-object/">Media Object</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/modal/">Modal</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/navs/">Navs</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/navbar/">Navbar</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/navbar-off-canvas/">Navbar Off Canvas</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/pagination/">Pagination</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/photo-gallery/">Photo Gallery</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/popovers/">Popovers</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/progress/">Progress</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/scrollspy/">Scrollspy</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/spinners/">Spinners</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/toasts/">Toasts</a>
+            </li>
+            <li>
+              <a href="/arizona-bootstrap/docs/2.0/components/tooltips/">Tooltips</a>
+            </li>
+        </ul>
+      </div>
 
-      <ul class="nav bd-sidenav"><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/borders/">
-              Borders
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/clearfix/">
-              Clearfix
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/close-icon/">
-              Close Icon
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/colors/">
-              Colors
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/display/">
-              Display
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/embed/">
-              Embed
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/flex/">
-              Flex
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/float/">
-              Float
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/image-replacement/">
-              Image Replacement
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/overflow/">
-              Overflow
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/position/">
-              Position
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/screen-readers/">
-              Screen Readers
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/shadows/">
-              Shadows
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/sizing/">
-              Sizing
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/spacing/">
-              Spacing
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/stretched-link/">
-              Stretched Link
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/text/">
-              Text
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/vertical-align/">
-              Vertical Align
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/utilities/visibility/">
-              Visibility
-            </a>
-          </li></ul>
-    </div><div class="bd-toc-item">
-      <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/extend/approach/">
-        Extend
-      </a>
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/utilities/borders/">
+          Utilities
+        </a>
+      </div>
 
-      <ul class="nav bd-sidenav"><li>
-            <a href="/arizona-bootstrap/docs/2.0/extend/approach/">
-              Approach
-            </a>
-          </li><li>
-            <a href="/arizona-bootstrap/docs/2.0/extend/icons/">
-              Icons
-            </a>
-          </li></ul>
-    </div><div class="bd-toc-item">
-      <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/migration/">
-        Migration
-      </a>
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/extend/approach/">
+          Extend
+        </a>
+      </div>
 
-      <ul class="nav bd-sidenav"></ul>
-    </div><div class="bd-toc-item">
-      <a class="bd-toc-link" href="/arizona-bootstrap/docs/2.0/backwards-compatibility/">
-        Backwards Compatibility
-      </a>
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/migration">
+          Migration
+        </a>
+      </div>
 
-      <ul class="nav bd-sidenav"></ul>
-    </div></nav>
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/backwards-compatibility">
+          Backwards Compatibility
+        </a>
+      </div>
+  </nav>
+</div>
 
         </div>
 
         
           <nav class="d-none d-xl-block col-xl-2 bd-toc" aria-label="Secondary navigation">
-            <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#example">Example</a></li>
-<li class="toc-entry toc-h2"><a href="#contextual-variations">Contextual Variations</a></li>
-<li class="toc-entry toc-h2"><a href="#pill-badges">Pill Badges</a></li>
-<li class="toc-entry toc-h2"><a href="#links">Links</a></li>
-</ul>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#contextual-variations">Contextual Variations</a></li>
+    <li><a href="#pill-badges">Pill Badges</a></li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav>
           </nav>
         
 
@@ -466,9 +285,7 @@
           <h1 class="bd-title" id="content">Badges</h1>
           <p class="bd-lead">Documentation and examples for badges, our small count and labeling component.</p>
           <h2 id="example">Example</h2>
-
-<p>Badges scale to match the size of the immediate parent element by using relative font sizing and <code class="language-plaintext highlighter-rouge">em</code> units.</p>
-
+<p>Badges scale to match the size of the immediate parent element by using relative font sizing and <code>em</code> units.</p>
 <div class="bd-example">
 <h1>Example heading <span class="badge badge-blue">New</span></h1>
 <h2>Example heading <span class="badge badge-blue">New</span></h2>
@@ -476,97 +293,72 @@
 <h4>Example heading <span class="badge badge-blue">New</span></h4>
 <h5>Example heading <span class="badge badge-blue">New</span></h5>
 <h6>Example heading <span class="badge badge-blue">New</span></h6>
-</div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-blue"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h1&gt;</span>
-<span class="nt">&lt;h2&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-blue"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h2&gt;</span>
-<span class="nt">&lt;h3&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-blue"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h3&gt;</span>
-<span class="nt">&lt;h4&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-blue"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h4&gt;</span>
-<span class="nt">&lt;h5&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-blue"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h5&gt;</span>
-<span class="nt">&lt;h6&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-blue"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h6&gt;</span></code></pre></figure>
-
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Example heading <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-blue&#34;</span><span class="p">&gt;</span>New<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Example heading <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-blue&#34;</span><span class="p">&gt;</span>New<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Example heading <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-blue&#34;</span><span class="p">&gt;</span>New<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Example heading <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-blue&#34;</span><span class="p">&gt;</span>New<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Example heading <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-blue&#34;</span><span class="p">&gt;</span>New<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>Example heading <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-blue&#34;</span><span class="p">&gt;</span>New<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span></code></pre></div>
 <p>Badges can be used as part of links or buttons to provide a counter.</p>
-
 <div class="bd-example">
 <button type="button" class="btn btn-red">
   Notifications <span class="badge badge-light">4</span>
 </button>
-</div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-red"</span><span class="nt">&gt;</span>
-  Notifications <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-light"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/button&gt;</span></code></pre></figure>
-
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-red&#34;</span><span class="p">&gt;</span>
+  Notifications <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-light&#34;</span><span class="p">&gt;</span>4<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></div>
 <p>Note that depending on how they are used, badges may be confusing for users of screen readers and similar assistive technologies. While the styling of badges provides a visual cue as to their purpose, these users will simply be presented with the content of the badge. Depending on the specific situation, these badges may seem like random additional words or numbers at the end of a sentence, link, or button.</p>
-
-<p>Unless the context is clear (as with the “Notifications” example, where it is understood that the “4” is the number of notifications), consider including additional context with a visually hidden piece of additional text.</p>
-
+<p>Unless the context is clear (as with the &ldquo;Notifications&rdquo; example, where it is understood that the &ldquo;4&rdquo; is the number of notifications), consider including additional context with a visually hidden piece of additional text.</p>
 <div class="bd-example">
 <button type="button" class="btn btn-red">
   Profile <span class="badge badge-light">9</span>
   <span class="sr-only">unread messages</span>
 </button>
-</div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-red"</span><span class="nt">&gt;</span>
-  Profile <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-light"</span><span class="nt">&gt;</span>9<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>unread messages<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/button&gt;</span></code></pre></figure>
-
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-red&#34;</span><span class="p">&gt;</span>
+  Profile <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-light&#34;</span><span class="p">&gt;</span>9<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;sr-only&#34;</span><span class="p">&gt;</span>unread messages<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></div>
 <h2 id="contextual-variations">Contextual Variations</h2>
-
 <p>Add any of the below mentioned modifier classes to change the appearance of a badge.</p>
-
 <div class="bd-example">
-<span class="badge badge-red">Red</span>
-<span class="badge badge-blue">Blue</span>
+
 <span class="badge badge-success">Success</span>
 <span class="badge badge-danger">Danger</span>
 <span class="badge badge-warning">Warning</span>
 <span class="badge badge-info">Info</span>
 <span class="badge badge-light">Light</span>
 <span class="badge badge-dark">Dark</span>
-</div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-red"</span><span class="nt">&gt;</span>Red<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-blue"</span><span class="nt">&gt;</span>Blue<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-light"</span><span class="nt">&gt;</span>Light<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-dark"</span><span class="nt">&gt;</span>Dark<span class="nt">&lt;/span&gt;</span></code></pre></figure>
-
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-success&#34;</span><span class="p">&gt;</span>Success<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-danger&#34;</span><span class="p">&gt;</span>Danger<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-warning&#34;</span><span class="p">&gt;</span>Warning<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-info&#34;</span><span class="p">&gt;</span>Info<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-light&#34;</span><span class="p">&gt;</span>Light<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-dark&#34;</span><span class="p">&gt;</span>Dark<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span></code></pre></div>
 <div class="bd-callout bd-callout-warning">
 <h5 id="conveying-meaning-to-assistive-technologies">Conveying meaning to assistive technologies</h5>
-
-<p>Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (e.g. the visible text), or is included through alternative means, such as additional text hidden with the <code class="language-plaintext highlighter-rouge">.sr-only</code> class.</p>
+<p>Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (e.g. the visible text), or is included through alternative means, such as additional text hidden with the <code>.sr-only</code> class.
 </div>
 
 <h2 id="pill-badges">Pill Badges</h2>
-
-<p>Use the <code class="language-plaintext highlighter-rouge">.badge-pill</code> modifier class to make badges more rounded (with a larger <code class="language-plaintext highlighter-rouge">border-radius</code> and additional horizontal <code class="language-plaintext highlighter-rouge">padding</code>). Useful if you miss the badges from v3.</p>
-
+<p>Use the <code>.badge-pill</code> modifier class to make badges more rounded (with a larger <code>border-radius</code> and additional horizontal <code>padding</code>). Useful if you miss the badges from v3.</p>
 <div class="bd-example">
-<span class="badge badge-pill badge-red">Red</span>
-<span class="badge badge-pill badge-blue">Blue</span>
+
 <span class="badge badge-pill badge-success">Success</span>
 <span class="badge badge-pill badge-danger">Danger</span>
 <span class="badge badge-pill badge-warning">Warning</span>
 <span class="badge badge-pill badge-info">Info</span>
 <span class="badge badge-pill badge-light">Light</span>
 <span class="badge badge-pill badge-dark">Dark</span>
-</div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-red"</span><span class="nt">&gt;</span>Red<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-blue"</span><span class="nt">&gt;</span>Blue<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-light"</span><span class="nt">&gt;</span>Light<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-dark"</span><span class="nt">&gt;</span>Dark<span class="nt">&lt;/span&gt;</span></code></pre></figure>
-
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-pill badge-success&#34;</span><span class="p">&gt;</span>Success<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-pill badge-danger&#34;</span><span class="p">&gt;</span>Danger<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-pill badge-warning&#34;</span><span class="p">&gt;</span>Warning<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-pill badge-info&#34;</span><span class="p">&gt;</span>Info<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-pill badge-light&#34;</span><span class="p">&gt;</span>Light<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-pill badge-dark&#34;</span><span class="p">&gt;</span>Dark<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span></code></pre></div>
 <h2 id="links">Links</h2>
-
-<p>Using the contextual <code class="language-plaintext highlighter-rouge">.badge-*</code> classes on an <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> element quickly provide <em>actionable</em> badges with hover and focus states.</p>
-
+<p>Using the contextual <code>.badge-*</code> classes on an <code>&lt;a&gt;</code> element quickly provide <em>actionable</em> badges with hover and focus states.</p>
 <div class="bd-example">
+
 <a href="#" class="badge badge-link badge-red">Red</a>
 <a href="#" class="badge badge-link badge-blue">Blue</a>
 <a href="#" class="badge badge-link badge-success">Success</a>
@@ -575,22 +367,28 @@
 <a href="#" class="badge badge-link badge-info">Info</a>
 <a href="#" class="badge badge-link badge-light">Light</a>
 <a href="#" class="badge badge-link badge-dark">Dark</a>
-</div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-link badge-red"</span><span class="nt">&gt;</span>Red<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-link badge-blue"</span><span class="nt">&gt;</span>Blue<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-link badge-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-link badge-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-link badge-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-link badge-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-link badge-light"</span><span class="nt">&gt;</span>Light<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-link badge-dark"</span><span class="nt">&gt;</span>Dark<span class="nt">&lt;/a&gt;</span></code></pre></figure>
-
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-link badge-red&#34;</span><span class="p">&gt;</span>Red<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-link badge-blue&#34;</span><span class="p">&gt;</span>Blue<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-link badge-success&#34;</span><span class="p">&gt;</span>Success<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-link badge-danger&#34;</span><span class="p">&gt;</span>Danger<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-link badge-warning&#34;</span><span class="p">&gt;</span>Warning<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-link badge-info&#34;</span><span class="p">&gt;</span>Info<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-link badge-light&#34;</span><span class="p">&gt;</span>Light<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-link badge-dark&#34;</span><span class="p">&gt;</span>Dark<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span></code></pre></div>
 
         </main>
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/arizona-bootstrap/docs/2.0/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script><script src="/arizona-bootstrap/docs/2.0/assets/js/docs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="\/arizona-bootstrap\/docs\/2.0\/assets\/js\/vendor\/jquery.slim.min.js"><\/script>')</script>
+
+<script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+
+<script src="https://kit.fontawesome.com/8a092dcf6a.js"></script>
+
+<script src="/arizona-bootstrap/docs/2.0/assets/js/docs.min.js"></script>
+
   </body>
 </html>
