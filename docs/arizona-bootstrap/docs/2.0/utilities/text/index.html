@@ -245,6 +245,7 @@
     <li><a href="#text-alignment">Text Alignment</a></li>
     <li><a href="#text-wrapping-and-overflow">Text Wrapping and Overflow</a></li>
     <li><a href="#word-break">Word Break</a></li>
+    <li><a href="#hyphenate-word">Hyphenate Word</a></li>
     <li><a href="#text-transform">Text Transform</a></li>
     <li><a href="#font-weight-and-italics">Font Weight and Italics</a></li>
     <li><a href="#font-families">Font Families</a>
@@ -331,6 +332,19 @@
 <div class="bd-example">
 <p class="text-break">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
 </div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-break&#34;</span><span class="p">&gt;</span>mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code></pre></div>
+<h2 id="hyphenate-word">Hyphenate Word</h2>
+<p>Allow long strings of text to break to the next line with a hyphen automatically placed at the break point by using <code>.text-hyphen</code> to set <code>hyphens: auto</code>. This should only be applied as a span on a single word that may be longer than the column width at some screen sizes. Do not use on paragraphs or longer spans of text.</p>
+<div class="bd-example">
+<div class="card col-2">
+  <div class="card-body">
+    <p>We should all learn about <span class="text-hyphen">Tranformationaltotality</span>.</p>
+  </div>
+</div>
+</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card col-2&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-body&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>We should all learn about <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-hyphen&#34;</span><span class="p">&gt;</span>Tranformationaltotality<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
 <h2 id="text-transform">Text Transform</h2>
 <p>Transform text in components with text capitalization classes.</p>
 <div class="bd-example">
