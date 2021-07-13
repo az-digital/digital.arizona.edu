@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, Sass variables and mixins, and dozens of predefined classes.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.83.1">
+<meta name="generator" content="Hugo 0.85.0">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -841,13 +841,13 @@
 <p>Here&rsquo;s the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">attribute selector</a>. While this generates a more specific selector, column padding can still be further customized with <a href="/arizona-bootstrap/docs/2.0/utilities/spacing">spacing utilities</a>.</p>
 <p><strong>Need an edge-to-edge design?</strong> Drop the parent <code>.container</code> or <code>.container-fluid</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.no-gutters</span> <span class="p">{</span>
-  <span class="nt">margin-right</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
-  <span class="nt">margin-left</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+  <span class="na">margin-right</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="na">margin-left</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
 
   <span class="o">&gt;</span> <span class="nc">.col</span><span class="o">,</span>
   <span class="o">&gt;</span> <span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&#34;col-&#34;</span><span class="o">]</span> <span class="p">{</span>
-    <span class="nt">padding-right</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
-    <span class="nt">padding-left</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
+    <span class="na">padding-right</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="na">padding-left</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><p>In practice, here&rsquo;s how it looks. Note you can continue to use this with all other predefined grid classes (including column widths, responsive tiers, reorders, and more).</p>
@@ -1115,22 +1115,22 @@
 
 <span class="nv">$grid-breakpoints</span><span class="o">:</span> <span class="p">(</span>
   <span class="c1">// Extra small screen / phone</span>
-  <span class="n">xs</span><span class="o">:</span> <span class="mi">0</span><span class="o">,</span>
+  <span class="na">xs</span><span class="o">:</span> <span class="mi">0</span><span class="o">,</span>
   <span class="c1">// Small screen / phone</span>
-  <span class="n">sm</span><span class="o">:</span> <span class="mi">576</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">sm</span><span class="o">:</span> <span class="mi">576</span><span class="kt">px</span><span class="o">,</span>
   <span class="c1">// Medium screen / tablet</span>
-  <span class="n">md</span><span class="o">:</span> <span class="mi">768</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">md</span><span class="o">:</span> <span class="mi">768</span><span class="kt">px</span><span class="o">,</span>
   <span class="c1">// Large screen / desktop</span>
-  <span class="n">lg</span><span class="o">:</span> <span class="mi">992</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">lg</span><span class="o">:</span> <span class="mi">992</span><span class="kt">px</span><span class="o">,</span>
   <span class="c1">// Extra large screen / wide desktop</span>
-  <span class="n">xl</span><span class="o">:</span> <span class="mi">1200</span><span class="kt">px</span>
+  <span class="na">xl</span><span class="o">:</span> <span class="mi">1200</span><span class="kt">px</span>
 <span class="p">);</span>
 
 <span class="nv">$container-max-widths</span><span class="o">:</span> <span class="p">(</span>
-  <span class="n">sm</span><span class="o">:</span> <span class="mi">540</span><span class="kt">px</span><span class="o">,</span>
-  <span class="n">md</span><span class="o">:</span> <span class="mi">720</span><span class="kt">px</span><span class="o">,</span>
-  <span class="n">lg</span><span class="o">:</span> <span class="mi">960</span><span class="kt">px</span><span class="o">,</span>
-  <span class="n">xl</span><span class="o">:</span> <span class="mi">1140</span><span class="kt">px</span>
+  <span class="na">sm</span><span class="o">:</span> <span class="mi">540</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">md</span><span class="o">:</span> <span class="mi">720</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">lg</span><span class="o">:</span> <span class="mi">960</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">xl</span><span class="o">:</span> <span class="mi">1140</span><span class="kt">px</span>
 <span class="p">);</span>
 </code></pre></div><h3 id="mixins">Mixins</h3>
 <p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.</p>
@@ -1146,7 +1146,7 @@
 </code></pre></div><h3 id="example-usage">Example Usage</h3>
 <p>You can modify the variables to your own custom values, or just use the mixins with their default values. Here&rsquo;s an example of using the default settings to create a two-column layout with a gap between.</p>
 <div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.example-container</span> <span class="p">{</span>
-  <span class="nt">width</span><span class="nd">:</span> <span class="nt">800px</span><span class="p">;</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">800</span><span class="kt">px</span><span class="p">;</span>
   <span class="k">@include</span><span class="nd"> make-container</span><span class="p">();</span>
 <span class="p">}</span>
 
@@ -1192,21 +1192,21 @@
 <p>Using our built-in grid Sass variables and maps, it&rsquo;s possible to completely customize the predefined grid classes. Change the number of tiers, the media query dimensions, and the container widths—then recompile.</p>
 <h3 id="columns-and-gutters">Columns and Gutters</h3>
 <p>The number of grid columns can be modified via Sass variables. <code>$grid-columns</code> is used to generate the widths (in percent) of each individual column while <code>$grid-gutter-width</code> sets the width for the column gutters.</p>
-<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$grid-columns</span><span class="o">:</span> <span class="mi">12</span> <span class="nv">!default</span><span class="p">;</span>
-<span class="nv">$grid-gutter-width</span><span class="o">:</span> <span class="mi">30</span><span class="kt">px</span> <span class="nv">!default</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$grid-columns</span><span class="o">:</span> <span class="mi">12</span> <span class="k">!default</span><span class="p">;</span>
+<span class="nv">$grid-gutter-width</span><span class="o">:</span> <span class="mi">30</span><span class="kt">px</span> <span class="k">!default</span><span class="p">;</span>
 </code></pre></div><h3 id="grid-tiers">Grid Tiers</h3>
 <p>Moving beyond the columns themselves, you may also customize the number of grid tiers. If you wanted just four grid tiers, you&rsquo;d update the <code>$grid-breakpoints</code> and <code>$container-max-widths</code> to something like this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$grid-breakpoints</span><span class="o">:</span> <span class="p">(</span>
-  <span class="n">xs</span><span class="o">:</span> <span class="mi">0</span><span class="o">,</span>
-  <span class="n">sm</span><span class="o">:</span> <span class="mi">480</span><span class="kt">px</span><span class="o">,</span>
-  <span class="n">md</span><span class="o">:</span> <span class="mi">768</span><span class="kt">px</span><span class="o">,</span>
-  <span class="n">lg</span><span class="o">:</span> <span class="mi">1024</span><span class="kt">px</span>
+  <span class="na">xs</span><span class="o">:</span> <span class="mi">0</span><span class="o">,</span>
+  <span class="na">sm</span><span class="o">:</span> <span class="mi">480</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">md</span><span class="o">:</span> <span class="mi">768</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">lg</span><span class="o">:</span> <span class="mi">1024</span><span class="kt">px</span>
 <span class="p">);</span>
 
 <span class="nv">$container-max-widths</span><span class="o">:</span> <span class="p">(</span>
-  <span class="n">sm</span><span class="o">:</span> <span class="mi">420</span><span class="kt">px</span><span class="o">,</span>
-  <span class="n">md</span><span class="o">:</span> <span class="mi">720</span><span class="kt">px</span><span class="o">,</span>
-  <span class="n">lg</span><span class="o">:</span> <span class="mi">960</span><span class="kt">px</span>
+  <span class="na">sm</span><span class="o">:</span> <span class="mi">420</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">md</span><span class="o">:</span> <span class="mi">720</span><span class="kt">px</span><span class="o">,</span>
+  <span class="na">lg</span><span class="o">:</span> <span class="mi">960</span><span class="kt">px</span>
 <span class="p">);</span>
 </code></pre></div><p>When making any changes to the Sass variables or maps, you&rsquo;ll need to save your changes and recompile. Doing so will output a brand new set of predefined grid classes for column widths, offsets, and ordering. Responsive visibility utilities will also be updated to use the custom breakpoints. Make sure to set grid values in <code>px</code> (not <code>rem</code>, <code>em</code>, or <code>%</code>).</p>
 

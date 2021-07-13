@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Arizona Bootstrap includes a wide range of shorthand responsive margin and padding utility classes to modify an element&rsquo;s appearance.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.83.1">
+<meta name="generator" content="Hugo 0.85.0">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -299,20 +299,20 @@
 <h2 id="examples">Examples</h2>
 <p>Here are some representative examples of these classes:</p>
 <div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.mt-0</span> <span class="p">{</span>
-  <span class="nt">margin-top</span><span class="nd">:</span> <span class="nt">0</span> <span class="o">!</span><span class="nt">important</span><span class="p">;</span>
+  <span class="na">margin-top</span><span class="o">:</span> <span class="mi">0</span> <span class="k">!important</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.ml-1</span> <span class="p">{</span>
-  <span class="nt">margin-left</span><span class="nd">:</span> <span class="o">(</span><span class="err">$</span><span class="nt">spacer</span> <span class="o">*</span> <span class="nc">.25</span><span class="o">)</span> <span class="o">!</span><span class="nt">important</span><span class="p">;</span>
+  <span class="na">margin-left</span><span class="o">:</span> <span class="p">(</span><span class="nv">$spacer</span> <span class="o">*</span> <span class="mf">.25</span><span class="p">)</span> <span class="k">!important</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.px-2</span> <span class="p">{</span>
-  <span class="nt">padding-left</span><span class="nd">:</span> <span class="o">(</span><span class="err">$</span><span class="nt">spacer</span> <span class="o">*</span> <span class="nc">.5</span><span class="o">)</span> <span class="o">!</span><span class="nt">important</span><span class="p">;</span>
-  <span class="nt">padding-right</span><span class="nd">:</span> <span class="o">(</span><span class="err">$</span><span class="nt">spacer</span> <span class="o">*</span> <span class="nc">.5</span><span class="o">)</span> <span class="o">!</span><span class="nt">important</span><span class="p">;</span>
+  <span class="na">padding-left</span><span class="o">:</span> <span class="p">(</span><span class="nv">$spacer</span> <span class="o">*</span> <span class="mf">.5</span><span class="p">)</span> <span class="k">!important</span><span class="p">;</span>
+  <span class="na">padding-right</span><span class="o">:</span> <span class="p">(</span><span class="nv">$spacer</span> <span class="o">*</span> <span class="mf">.5</span><span class="p">)</span> <span class="k">!important</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.p-3</span> <span class="p">{</span>
-  <span class="nt">padding</span><span class="nd">:</span> <span class="err">$</span><span class="nt">spacer</span> <span class="o">!</span><span class="nt">important</span><span class="p">;</span>
+  <span class="na">padding</span><span class="o">:</span> <span class="nv">$spacer</span> <span class="k">!important</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><h3 id="padding">Padding</h3>
 <p>Padding modifies the space inside the div.</p>
@@ -367,7 +367,7 @@
 <p>In CSS, <code>margin</code> properties can utilize negative values (<code>padding</code> cannot). As of 4.2, we&rsquo;ve added negative margin utilities for every non-zero integer size listed above (e.g., <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>). These utilities are ideal for customizing grid column gutters across breakpoints.</p>
 <p>The syntax is nearly the same as the default, positive margin utilities, but with the addition of <code>n</code> before the requested size. Here&rsquo;s an example class that&rsquo;s the opposite of <code>.mt-1</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.mt-n1</span> <span class="p">{</span>
-  <span class="nt">margin-top</span><span class="nd">:</span> <span class="nt">-0</span><span class="nc">.25rem</span> <span class="o">!</span><span class="nt">important</span><span class="p">;</span>
+  <span class="na">margin-top</span><span class="o">:</span> <span class="o">-</span><span class="mi">0</span><span class="mf">.25</span><span class="kt">rem</span> <span class="k">!important</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><p>Here&rsquo;s an example of customizing the Arizona Bootstrap
    grid at the medium (<code>md</code>) breakpoint and above. We&rsquo;ve increased the <code>.col</code> padding with <code>.px-md-5</code> and then counteracted that with <code>.mx-md-n5</code> on the parent <code>.row</code>.</p>

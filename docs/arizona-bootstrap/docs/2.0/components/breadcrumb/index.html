@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Indicate the current page&rsquo;s location within a navigational hierarchy that automatically adds separators via CSS.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.83.1">
+<meta name="generator" content="Hugo 0.85.0">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -321,7 +321,7 @@
 </code></pre></div><p>It&rsquo;s also possible to use a <strong>base64 embedded SVG icon</strong>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$breadcrumb-divider</span><span class="o">:</span> <span class="sx">url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+)</span><span class="p">;</span>
 </code></pre></div><p>The separator can be removed by setting <code>$breadcrumb-divider</code> to <code>none</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$breadcrumb-divider</span><span class="o">:</span> <span class="no">none</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$breadcrumb-divider</span><span class="o">:</span> <span class="ni">none</span><span class="p">;</span>
 </code></pre></div><h2 id="accessibility">Accessibility</h2>
 <p>Since breadcrumbs provide a navigation, it&rsquo;s a good idea to add a meaningful label such as <code>aria-label=&quot;breadcrumb&quot;</code> to describe the type of navigation provided in the <code>&lt;nav&gt;</code> element, as well as applying an <code>aria-current=&quot;page&quot;</code> to the last item of the set to indicate that it represents the current page.</p>
 <p>For more information, see the <a href="https://www.w3.org/TR/wai-aria-practices#breadcrumb">WAI-ARIA Authoring Practices for the breadcrumb pattern</a>.</p>
