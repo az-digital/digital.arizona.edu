@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Learn how to use Arizona Bootstrap&rsquo;s included npm scripts to build our documentation, compile source code, run tests, and more.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.85.0">
+<meta name="generator" content="Hugo 0.88.1">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -17,6 +17,7 @@
 
 
 <link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
+<link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
 <!-- Arizona Bootstrap core CSS -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
 <link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.min.css" rel="stylesheet">
@@ -168,6 +169,13 @@
 
       <div class="bd-toc-item">
         <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/icons">
+          Icons
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
           href="/arizona-bootstrap/docs/2.0/components/arizona-header/">
           Components
         </a>
@@ -238,14 +246,14 @@
 <p>A custom local Docker image provides the complete development environment.</p>
 <h3 id="building-the-docker-image">Building the Docker image</h3>
 <p>You can build the image from a shell command line after changing to the directory that includes the <code>Dockerfile</code> by running</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">scripts/build-container.sh
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">scripts/build-container.sh
 </code></pre></div><p>The script tries to discover if you have already built an image using the current versions of several important configuration files, and doesn&rsquo;t try to re-build this if it already exists.</p>
 <p>The initial build will be relatively slow, and may require reasonably fast Internet access. If you see errors that complain about failing to download various resources, and these errors aren&rsquo;t consistent from one build attempt to the next, you may be suffering a connection speed problem.</p>
 <p>The build environment uses a huge set of Node.js packages (under the control of the commonly used <code>npm</code> uutility). Setting these packages up causes most of the delay, but ideally the image will provide you with Docker containers that start up quickly pre-configured with the build environment you need.</p>
 <h3 id="viewing-the-locally-built-documentation-review-site">Viewing the locally built documentation review site</h3>
 <p>If everything works, the script should spin up a review site showing the Arizona Bootstrap
    documentation at a local URL. It should display something like</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">&gt; hugo server --bind &#39;0.0.0.0&#39; --port 9001 --disableFastRender
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">&gt; hugo server --bind &#39;0.0.0.0&#39; --port 9001 --disableFastRender
 
 Start building sites … 
 
@@ -271,7 +279,7 @@ Press Ctrl+C to stop
 <h3 id="other-docker-commands-to-help-local-development">Other Docker commands to help local development</h3>
 <p>If the image build succeeds, you can re-use it to run additional development steps within a Docker container. The build should finish by showing the image ID code, which you should note (copy) as the most convenirnt means of referring to the image, since the usual tagged name will be very long (it includes the full hex checksum hash of the configuration files). In the examples that follow, this code is <code>f855e50fb65e</code>, but you should substitute the ID from your own image build.</p>
 <p>The following command duplicates what happens in the container-building script, but lets you see the additional details that you might want to modify. In a command-line shell, make sure you&rsquo;re in the top-level directory of your local working Arizona Bootstrap copy (the one containing the <code>Dockerfile</code>), then enter a command like</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -t -i --rm -p 9001:9001 -v <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&#34;</span>:/arizona-bootstrap-src f855e50fb65e serve-review-site
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run -t -i --rm -p 9001:9001 -v <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&#34;</span>:/arizona-bootstrap-src f855e50fb65e serve-review-site
 </code></pre></div><ul>
 <li>The <code>-t</code> and <code>-i</code> flags are the usual additions for a container that will be at least semi-interactive.</li>
 <li><code>--rm</code> makes sure the container will not persist after it has stopped.</li>
@@ -282,7 +290,7 @@ Press Ctrl+C to stop
 </ul>
 <p>If everything works, you should see the message telling you the static web site is available at a particular URL, something like <code>http://localhost:9001...</code> if you used the <code>-p 9001:9001</code> option with the <code>docker run</code> command, or choose whatever port you specified there if you modified this option.</p>
 <p>You can specify a prefix to include in all the URLs of the static site by setting an environment variable within the container. For example to include the prefix <code>/bootstrap/localwip</code> the command would be</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -t -i --rm -e <span class="s2">&#34;AZ_SITE_BASE_URL=/bootstrap/localwip&#34;</span> -p 9001:9001 -v <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&#34;</span>:/arizona-bootstrap-src f855e50fb65e serve-review-site
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run -t -i --rm -e <span class="s2">&#34;AZ_SITE_BASE_URL=/bootstrap/localwip&#34;</span> -p 9001:9001 -v <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&#34;</span>:/arizona-bootstrap-src f855e50fb65e serve-review-site
 </code></pre></div><p>There are a few more convenience commands to use with <code>docker run</code> in addition to <code>serve-review-site</code></p>
 <ul>
 <li><code>expose-review-site</code> saves the built files of the documentation review site to the <code>_site</code> directory subtree.</li>
@@ -301,15 +309,15 @@ Press Ctrl+C to stop
 <li><code>AZ_VERSION</code> Full current Arizona Bootstrap version number</li>
 </ul>
 <p>Arizona Bootstrap
-   uses <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> for its build system. Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.11/package.json">package.json</a> includes convenient methods for working with the framework, including compiling code, running tests, and more.</p>
+   uses <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> for its build system. Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.12/package.json">package.json</a> includes convenient methods for working with the framework, including compiling code, running tests, and more.</p>
 <p>To use our build system and run our documentation locally, you&rsquo;ll need a copy of Arizona Bootstrap
   &rsquo;s source files and Node. Follow these steps and you should be ready to rock:</p>
 <ol>
 <li><a href="https://nodejs.org/en/download/">Download and install Node.js</a>, which we use to manage our dependencies.</li>
-<li>Navigate to the root <code>/arizona-bootstrap</code> directory and run <code>npm install</code> to install our local dependencies listed in <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.11/package.json">package.json</a>.</li>
+<li>Navigate to the root <code>/arizona-bootstrap</code> directory and run <code>npm install</code> to install our local dependencies listed in <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.12/package.json">package.json</a>.</li>
 </ol>
 <h2 id="using-npm-scripts">Using npm Scripts</h2>
-<p>Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.11/package.json">package.json</a> includes the following commands and tasks:</p>
+<p>Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.12/package.json">package.json</a> includes the following commands and tasks:</p>
 <table>
 <thead>
 <tr>
@@ -336,7 +344,7 @@ Press Ctrl+C to stop
 <h2 id="autoprefixer">Autoprefixer</h2>
 <p>Arizona Bootstrap
    uses <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.</p>
-<p>We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See <a href="https://github.com/az-digital/arizona-bootstrap/raw/v2.0.11/.browserslistrc">.browserslistrc</a> for details.</p>
+<p>We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See <a href="https://github.com/az-digital/arizona-bootstrap/raw/v2.0.12/.browserslistrc">.browserslistrc</a> for details.</p>
 <h2 id="local-documentation">Local Documentation</h2>
 <p>Running our documentation locally requires the use of Hugo, a decently flexible static site generator that provides us: basic includes, Markdown-based files, templates, and more. Here&rsquo;s how to get it started:</p>
 <ol>

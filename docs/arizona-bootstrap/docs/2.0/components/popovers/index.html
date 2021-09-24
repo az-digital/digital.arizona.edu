@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Documentation and examples for adding Bootstrap popovers, like those found in iOS, to any element on your site.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.85.0">
+<meta name="generator" content="Hugo 0.88.1">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -17,6 +17,7 @@
 
 
 <link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
+<link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
 <!-- Arizona Bootstrap core CSS -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
 <link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.min.css" rel="stylesheet">
@@ -134,6 +135,13 @@
         <a class="bd-toc-link"
           href="/arizona-bootstrap/docs/2.0/content/reboot/">
           Content
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/icons">
+          Icons
         </a>
       </div>
 
@@ -335,12 +343,12 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <p>Keep reading to see how popovers work with some examples.</p>
 <h2 id="example-enable-popovers-everywhere">Example: Enable Popovers Everywhere</h2>
 <p>One way to initialize all popovers on a page would be to select them by their <code>data-toggle</code> attribute:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-toggle=&#34;popover&#34;]&#39;</span><span class="p">).</span><span class="nx">popover</span><span class="p">()</span>
 <span class="p">})</span>
 </code></pre></div><h2 id="example-using-the-container-option">Example: Using the <code>container</code> Option</h2>
 <p>When you have some styles on a parent element that interfere with a popover, you&rsquo;ll want to specify a custom <code>container</code> so that the popover&rsquo;s HTML appears within that element instead.</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.example-popover&#39;</span><span class="p">).</span><span class="nx">popover</span><span class="p">({</span>
     <span class="nx">container</span><span class="o">:</span> <span class="s1">&#39;body&#39;</span>
   <span class="p">})</span>
@@ -348,7 +356,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 </code></pre></div><h2 id="example">Example</h2>
 <div class="bd-example">
 <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-lg btn-danger&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;popover&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Popover title&#34;</span> <span class="na">data-content</span><span class="o">=</span><span class="s">&#34;And here&#39;s some amazing content. It&#39;s very engaging. Right?&#34;</span><span class="p">&gt;</span>Click to toggle popover<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></div>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-lg btn-danger&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;popover&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Popover title&#34;</span> <span class="na">data-content</span><span class="o">=</span><span class="s">&#34;And here&#39;s some amazing content. It&#39;s very engaging. Right?&#34;</span><span class="p">&gt;</span>Click to toggle popover<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></div>
 <h3 id="four-directions">Four Directions</h3>
 <p>Four options are available: top, right, bottom, and left aligned.</p>
 <div class="bd-example popover-demo">
@@ -367,7 +375,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
     </button>
   </div>
 </div>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-blue&#34;</span> <span class="na">data-container</span><span class="o">=</span><span class="s">&#34;body&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;popover&#34;</span> <span class="na">data-placement</span><span class="o">=</span><span class="s">&#34;top&#34;</span> <span class="na">data-content</span><span class="o">=</span><span class="s">&#34;Vivamus sagittis lacus vel augue laoreet rutrum faucibus.&#34;</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-blue&#34;</span> <span class="na">data-container</span><span class="o">=</span><span class="s">&#34;body&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;popover&#34;</span> <span class="na">data-placement</span><span class="o">=</span><span class="s">&#34;top&#34;</span> <span class="na">data-content</span><span class="o">=</span><span class="s">&#34;Vivamus sagittis lacus vel augue laoreet rutrum faucibus.&#34;</span><span class="p">&gt;</span>
   Popover on top
 <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 
@@ -392,8 +400,8 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 
 <div class="bd-example">
 <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
-</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-lg btn-danger&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;popover&#34;</span> <span class="na">data-trigger</span><span class="o">=</span><span class="s">&#34;focus&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Dismissible popover&#34;</span> <span class="na">data-content</span><span class="o">=</span><span class="s">&#34;And here&#39;s some amazing content. It&#39;s very engaging. Right?&#34;</span><span class="p">&gt;</span>Dismissible popover<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span></code></pre></div>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.popover-dismiss&#39;</span><span class="p">).</span><span class="nx">popover</span><span class="p">({</span>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-lg btn-danger&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;popover&#34;</span> <span class="na">data-trigger</span><span class="o">=</span><span class="s">&#34;focus&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Dismissible popover&#34;</span> <span class="na">data-content</span><span class="o">=</span><span class="s">&#34;And here&#39;s some amazing content. It&#39;s very engaging. Right?&#34;</span><span class="p">&gt;</span>Dismissible popover<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.popover-dismiss&#39;</span><span class="p">).</span><span class="nx">popover</span><span class="p">({</span>
   <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;focus&#39;</span>
 <span class="p">})</span>
 </code></pre></div><h3 id="disabled-elements">Disabled Elements</h3>
@@ -403,7 +411,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
   <button class="btn btn-red" style="pointer-events: none;" type="button" disabled>Disabled button</button>
 </span>
-</div><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-inline-block&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;popover&#34;</span> <span class="na">data-content</span><span class="o">=</span><span class="s">&#34;Disabled popover&#34;</span><span class="p">&gt;</span>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-inline-block&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;popover&#34;</span> <span class="na">data-content</span><span class="o">=</span><span class="s">&#34;Disabled popover&#34;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-red&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;pointer-events: none;&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">disabled</span><span class="p">&gt;</span>Disabled button<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span></code></pre></div>
 <h2 id="usage">Usage</h2>
@@ -623,7 +631,7 @@ Note that for security reasons the <code>sanitize</code>, <code>sanitizeFn</code
     </tr>
   </tbody>
 </table>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myPopover&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.popover&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myPopover&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.popover&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="c1">// do something...
 </span><span class="c1"></span><span class="p">})</span>
 </code></pre></div>

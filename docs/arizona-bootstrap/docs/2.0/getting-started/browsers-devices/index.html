@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Learn about the browsers and devices, from modern to old, that are supported by Arizona Bootstrap, including known quirks and bugs for each.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.85.0">
+<meta name="generator" content="Hugo 0.88.1">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -17,6 +17,7 @@
 
 
 <link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
+<link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
 <!-- Arizona Bootstrap core CSS -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
 <link href="/arizona-bootstrap/docs/2.0/dist/css/arizona-bootstrap.min.css" rel="stylesheet">
@@ -168,6 +169,13 @@
 
       <div class="bd-toc-item">
         <a class="bd-toc-link"
+          href="/arizona-bootstrap/docs/2.0/icons">
+          Icons
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
           href="/arizona-bootstrap/docs/2.0/components/arizona-header/">
           Components
         </a>
@@ -246,7 +254,7 @@
 <p>Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform&rsquo;s web view API, are not explicitly supported. However, Arizona Bootstrap
    should (in most cases) display and function correctly in these browsers as well. More specific support information is provided below.</p>
 <p>You can find our supported range of browsers and their versions <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/.browserslistrc">in our <code>.browserslistrc file</code></a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"># https://github.com/browserslist/browserslist#readme
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"># https://github.com/browserslist/browserslist#readme
 
 &gt;= 1%
 last 1 major version
@@ -359,7 +367,7 @@ Opera &gt;= 30
 <h2 id="printing">Printing</h2>
 <p>Even in some modern browsers, printing can be quirky.</p>
 <p>As of Safari v8.0, use of the fixed-width <code>.container</code> class can cause Safari to use an unusually small font size when printing. See <a href="https://github.com/twbs/bootstrap/issues/14868">Twitter Bootstrap issue #14868</a> and <a href="https://bugs.webkit.org/show_bug.cgi?id=138192">WebKit bug #138192</a> for more details. One potential workaround is the following CSS:</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">media</span> <span class="nt">print</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">media</span> <span class="nt">print</span> <span class="p">{</span>
   <span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">width</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
   <span class="p">}</span>
@@ -368,7 +376,7 @@ Opera &gt;= 30
 <p>Out of the box, Android 4.1 (and even some newer releases apparently) ship with the Browser app as the default web browser of choice (as opposed to Chrome). Unfortunately, the Browser app has lots of bugs and inconsistencies with CSS in general.</p>
 <h3 id="select-menu">Select Menu</h3>
 <p>On <code>&lt;select&gt;</code> elements, the Android stock browser will not display the side controls if there is a <code>border-radius</code> and/or <code>border</code> applied. (See <a href="https://stackoverflow.com/questions/14744437/html-select-box-not-showing-drop-down-arrow-on-android-version-4-0-when-set-with">this StackOverflow question</a> for details.) Use the snippet of code below to remove the offending CSS and render the <code>&lt;select&gt;</code> as an unstyled element on the Android stock browser. The user agent sniffing avoids interference with Chrome, Safari, and Mozilla browsers.</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">nua</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span>
   <span class="kd">var</span> <span class="nx">isAndroid</span> <span class="o">=</span> <span class="p">(</span><span class="nx">nua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">nua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;Android &#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">nua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;AppleWebKit&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">nua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;Chrome&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
