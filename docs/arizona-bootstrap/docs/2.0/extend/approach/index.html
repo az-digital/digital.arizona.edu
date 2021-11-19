@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Learn about the guiding principles, strategies, and techniques used to build and maintain Bootstrap so you can more easily customize and extend it yourself.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.88.1">
+<meta name="generator" content="Hugo 0.89.4">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -229,7 +229,7 @@
 <p>Learn more about this in our <a href="/arizona-bootstrap/docs/2.0/layout/overview#z-index"><code>z-index</code> layout page</a>.</p>
 <h2 id="html-and-css-over-js">HTML and CSS Over JS</h2>
 <p>Whenever possible, we prefer to write HTML and CSS over JavaScript. In general, HTML and CSS are more prolific and accessible to more people of all different experience levels. HTML and CSS are also faster in your browser than JavaScript, and your browser generally provides a great deal of functionality for you.</p>
-<p>This principle is our first-class JavaScript API is <code>data</code> attributes. You don&rsquo;t need to write nearly any JavaScript to use our JavaScript plugins; instead, write HTML. Read more about this in <a href="/arizona-bootstrap/docs/2.0/getting-started/javascript#data-attributes">our JavaScript overview page</a>.</p>
+<p>This principle is our first-class JavaScript API using <code>data</code> attributes. You don&rsquo;t need to write nearly any JavaScript to use our JavaScript plugins; instead, write HTML. Read more about this in <a href="/arizona-bootstrap/docs/2.0/getting-started/javascript#data-attributes">our JavaScript overview page</a>.</p>
 <p>Lastly, our styles build on the fundamental behaviors of common web elements. Whenever possible, we prefer to use what the browser provides. For example, you can put a <code>.btn</code> class on nearly any element, but most elements don&rsquo;t provide any semantic value or browser functionality. So instead, we use <code>&lt;button&gt;</code>s and <code>&lt;a&gt;</code>s.</p>
 <p>The same goes for more complex components. While we <em>could</em> write our own form validation plugin to add classes to a parent element based on an input&rsquo;s state, thereby allowing us to style the text say red, we prefer using the <code>:valid</code>/<code>:invalid</code> pseudo-elements every browser provides us.</p>
 <h2 id="utilities">Utilities</h2>
@@ -237,6 +237,10 @@
 <p>Specifically regarding custom CSS, utilities can help combat increasing file size by reducing your most commonly repeated property-value pairs into single classes. This can have a dramatic effect at scale in your projects.</p>
 <h2 id="flexible-html">Flexible HTML</h2>
 <p>While not always possible, we strive to avoid being overly dogmatic in our HTML requirements for components. Thus, we focus on single classes in our CSS selectors and try to avoid immediate children selectors (<code>&gt;</code>). This gives you more flexibility in your implementation and helps keep our CSS simpler and less specific.</p>
+<h2 id="code-conventions">Code conventions</h2>
+<p><a href="https://codeguide.co/">Code Guide</a> (from Bootstrap co-creator, @mdo) documents how we write our HTML and CSS across Bootstrap. It specifices guidelines for general formatting, common sense defaults, property and attribute orders, and more.</p>
+<p>We use <a href="https://stylelint.io/">Stylelint</a> to enforce these standards and more in our Sass/CSS. <a href="https://github.com/twbs/stylelint-config-twbs-bootstrap">Our custom Stylelint config</a> is open source and available for others to use and extend.</p>
+<p>We use <a href="https://www.npmjs.com/package/vnu-jar">vnu-jar</a> to enforce standard and semantic HTML, as well as detecting common errors.</p>
 
         </main>
       </div>

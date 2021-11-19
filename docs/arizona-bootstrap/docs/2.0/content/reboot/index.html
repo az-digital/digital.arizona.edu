@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Reboot, a collection of element-specific CSS changes in a single file, kickstart Bootstrap to provide an elegant, consistent, and simple baseline to build upon.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.88.1">
+<meta name="generator" content="Hugo 0.89.4">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -217,7 +217,11 @@
     <li><a href="#lists">Lists</a></li>
     <li><a href="#preformatted-text">Preformatted Text</a></li>
     <li><a href="#tables">Tables</a></li>
-    <li><a href="#forms">Forms</a></li>
+    <li><a href="#forms">Forms</a>
+      <ul>
+        <li><a href="#pointers-on-buttons">Pointers on buttons</a></li>
+      </ul>
+    </li>
     <li><a href="#misc-elements">Misc Elements</a>
       <ul>
         <li><a href="#address">Address</a></li>
@@ -484,6 +488,11 @@
 </code></pre>
   </fieldset>
 </form>
+<h3 id="pointers-on-buttons">Pointers on buttons</h3>
+<p>Reboot includes an enhancement for <code>role=&quot;button&quot;</code> to change the default cursor to <code>pointer</code>. Add this attribute to elements to help indicate elements are interactive. This role isn&rsquo;t necessary for <code>&lt;button&gt;</code> elements, which get their own <code>cursor</code> change.</p>
+<div class="bd-example">
+<span role="button" tabindex="0">Non-button element button</span>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;0&#34;</span><span class="p">&gt;</span>Non-button element button<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span></code></pre></div>
 <h2 id="misc-elements">Misc Elements</h2>
 <h3 id="address">Address</h3>
 <p>The <code>&lt;address&gt;</code> element is updated to reset the browser default <code>font-style</code> from <code>italic</code> to <code>normal</code>. <code>line-height</code> is also now inherited, and <code>margin-bottom: 1rem</code> has been added. <code>&lt;address&gt;</code>s are for presenting contact information for the nearest ancestor (or an entire body of work). Preserve formatting by ending lines with <code>&lt;br&gt;</code>.</p>

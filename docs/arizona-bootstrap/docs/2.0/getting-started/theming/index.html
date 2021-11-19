@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Customize Bootstrap 4 with our new built-in Sass variables for global style preferences for easy theming and component changes.">
+<meta name="description" content="Customize Arizona Bootstrap with our new built-in Sass variables for global style preferences for easy theming and component changes.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.88.1">
+<meta name="generator" content="Hugo 0.89.4">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -41,13 +41,13 @@
 <meta name="twitter:site" content="@">
 <meta name="twitter:creator" content="@">
 <meta name="twitter:title" content="Theming Bootstrap">
-<meta name="twitter:description" content="Customize Bootstrap 4 with our new built-in Sass variables for global style preferences for easy theming and component changes.">
+<meta name="twitter:description" content="Customize Arizona Bootstrap with our new built-in Sass variables for global style preferences for easy theming and component changes.">
 <meta name="twitter:image" content="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social-logo.png">
 
 <!-- Facebook -->
 <meta property="og:url" content="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/getting-started/theming/">
 <meta property="og:title" content="Theming Bootstrap">
-<meta property="og:description" content="Customize Bootstrap 4 with our new built-in Sass variables for global style preferences for easy theming and component changes.">
+<meta property="og:description" content="Customize Arizona Bootstrap with our new built-in Sass variables for global style preferences for easy theming and component changes.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/assets/brand/bootstrap-social.png">
 <meta property="og:image:type" content="image/png">
@@ -231,15 +231,20 @@
             <li><a href="#required-keys">Required Keys</a></li>
           </ul>
         </li>
-        <li><a href="#functions">Functions</a></li>
-        <li><a href="#color-contrast">Color Contrast</a></li>
+        <li><a href="#functions">Functions</a>
+          <ul>
+            <li><a href="#color-contrast">Color Contrast</a></li>
+            <li><a href="#escape-svg">Escape SVG</a></li>
+            <li><a href="#add-and-subtract-functions">Add and Subtract Functions</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#sass-options">Sass Options</a></li>
     <li><a href="#color">Color</a>
       <ul>
         <li><a href="#all-colors">All Colors</a></li>
-        <li><a href="#theme-colors">Theme colors</a></li>
+        <li><a href="#theme-colors">Theme Colors</a></li>
         <li><a href="#grays">Grays</a></li>
       </ul>
     </li>
@@ -263,7 +268,7 @@
 
         <main class="col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
           <h1 class="bd-title" id="content">Theming Bootstrap</h1>
-          <p class="bd-lead">Customize Bootstrap 4 with our new built-in Sass variables for global style preferences for easy theming and component changes.</p>
+          <p class="bd-lead">Customize Arizona Bootstrap with our new built-in Sass variables for global style preferences for easy theming and component changes.</p>
           <h2 id="introduction">Introduction</h2>
 <p>In Bootstrap 3, theming was largely driven by variable overrides in LESS, custom CSS, and a separate theme stylesheet that we included in our <code>dist</code> files. With some effort, one could completely redesign the look of Bootstrap 3 without touching the core files. Bootstrap 4 provides a familiar, but slightly different approach.</p>
 <p>Now, theming is accomplished by Sass variables, Sass maps, and custom CSS. There&rsquo;s no more dedicated theme stylesheet; instead, you can enable the built-in theme to add gradients, shadows, and more.</p>
@@ -290,20 +295,24 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// Custom.scss
 </span><span class="c1">// Option A: Include all of Bootstrap
 </span><span class="c1"></span>
+<span class="c1">// Include any default variable overrides here (though functions won&#39;t be available)
+</span><span class="c1"></span>
 <span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/bootstrap&#34;</span><span class="p">;</span>
 
-<span class="c1">// Add custom code after this
+<span class="c1">// Then add additional custom code here
 </span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// Custom.scss
 </span><span class="c1">// Option B: Include parts of Bootstrap
 </span><span class="c1"></span>
-<span class="c1">// Required
+<span class="c1">// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 </span><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/functions&#34;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/variables&#34;</span><span class="p">;</span>
+
+<span class="c1">// 2. Include any default variable overrides here
+</span><span class="c1"></span>
+<span class="c1">// 3. Include remainder of required Bootstrap stylesheets
+</span><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/variables&#34;</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/mixins&#34;</span><span class="p">;</span>
 
-<span class="c1">// Include custom variable default overrides here
-</span><span class="c1"></span>
-<span class="c1">// Optional
+<span class="c1">// 4. Include any optional Bootstrap components as you like
 </span><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/reboot&#34;</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/type&#34;</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/images&#34;</span><span class="p">;</span>
@@ -315,18 +324,17 @@
 <p>You will find the complete list of Bootstrap&rsquo;s variables in <code>scss/_variables.scss</code>. Some variables are set to <code>null</code>, these variables don&rsquo;t output the property unless they are overridden in your configuration.</p>
 <p>Variable overrides must come after our functions, variables, and mixins are imported, but before the rest of the imports.</p>
 <p>Here&rsquo;s an example that changes the <code>background-color</code> and <code>color</code> for the <code>&lt;body&gt;</code> when importing and compiling Bootstrap via npm:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// Required
-</span><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/functions&#34;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/variables&#34;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/mixins&#34;</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/functions&#34;</span><span class="p">;</span>
 
-<span class="c1">// Your variable overrides
+<span class="c1">// Default variable overrides
 </span><span class="c1"></span><span class="nv">$body-bg</span><span class="o">:</span> <span class="mh">#000</span><span class="p">;</span>
 <span class="nv">$body-color</span><span class="o">:</span> <span class="mh">#111</span><span class="p">;</span>
 
-<span class="c1">// Bootstrap and its default variables
-</span><span class="c1"></span>
-<span class="c1">// Optional
+<span class="c1">// Required
+</span><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/variables&#34;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/mixins&#34;</span><span class="p">;</span>
+
+<span class="c1">// Optional Bootstrap components here
 </span><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/root&#34;</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/reboot&#34;</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">&#34;../node_modules/bootstrap/scss/type&#34;</span><span class="p">;</span>
@@ -398,7 +406,7 @@
   <span class="na">color</span><span class="o">:</span> <span class="nf">theme-color-level</span><span class="p">(</span><span class="n">primary</span><span class="o">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div><p>Additional functions could be added in the future or your own custom Sass to create level functions for additional Sass maps, or even a generic one if you wanted to be more verbose.</p>
-<h3 id="color-contrast">Color Contrast</h3>
+<h4 id="color-contrast">Color Contrast</h4>
 <p>An additional function we include in Bootstrap is the color contrast function, <code>color-yiq</code>. It utilizes the <a href="https://en.wikipedia.org/wiki/YIQ">YIQ color space</a> to automatically return a light (<code>#fff</code>) or dark (<code>#111</code>) contrast color based on the specified base color. This function is especially useful for mixins or loops where you&rsquo;re generating multiple classes.</p>
 <p>For example, to generate color swatches from our <code>$theme-colors</code> map:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@each</span> <span class="nv">$color</span><span class="o">,</span> <span class="nv">$value</span> <span class="ow">in</span> <span class="nv">$theme-colors</span> <span class="p">{</span>
@@ -414,6 +422,36 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.custom-element</span> <span class="p">{</span>
   <span class="na">color</span><span class="o">:</span> <span class="nf">color-yiq</span><span class="p">(</span><span class="nf">theme-color</span><span class="p">(</span><span class="s2">&#34;dark&#34;</span><span class="p">));</span> <span class="c1">// returns `color: #fff`
 </span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><h4 id="escape-svg">Escape SVG</h4>
+<p>We use the <code>escape-svg</code> function to escape the <code>&lt;</code>, <code>&gt;</code> and <code>#</code> characters for SVG background images. These characters need to be escaped to properly render the background images in IE. When using the <code>escape-svg</code> function, data URIs must be quoted.</p>
+<h4 id="add-and-subtract-functions">Add and Subtract Functions</h4>
+<p>We use the <code>add</code> and <code>subtract</code> functions to wrap the CSS <code>calc</code> function. The primary purpose of these functions is to avoid errors when a &ldquo;unitless&rdquo; <code>0</code> value is passed into a <code>calc</code> expression. Expressions like <code>calc(10px - 0)</code> will return an error in all browsers, despite being mathematically correct.</p>
+<p>Example where the calc is valid:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$border-radius</span><span class="o">:</span> <span class="mf">.25</span><span class="kt">rem</span><span class="p">;</span>
+<span class="nv">$border-width</span><span class="o">:</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="c1">// Output calc(.25rem - 1px) is valid
+</span><span class="c1"></span>  <span class="na">border-radius</span><span class="o">:</span> <span class="nf">calc</span><span class="p">(</span><span class="nv">$border-radius</span> <span class="o">-</span> <span class="nv">$border-width</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="c1">// Output the same calc(.25rem - 1px) as above
+</span><span class="c1"></span>  <span class="na">border-radius</span><span class="o">:</span> <span class="nf">subtract</span><span class="p">(</span><span class="nv">$border-radius</span><span class="o">,</span> <span class="nv">$border-width</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Example where the calc is invalid:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$border-radius</span><span class="o">:</span> <span class="mf">.25</span><span class="kt">rem</span><span class="p">;</span>
+<span class="nv">$border-width</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="c1">// Output calc(.25rem - 0) is invalid
+</span><span class="c1"></span>  <span class="na">border-radius</span><span class="o">:</span> <span class="nf">calc</span><span class="p">(</span><span class="nv">$border-radius</span> <span class="o">-</span> <span class="nv">$border-width</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="c1">// Output .25rem
+</span><span class="c1"></span>  <span class="na">border-radius</span><span class="o">:</span> <span class="nf">subtract</span><span class="p">(</span><span class="nv">$border-radius</span><span class="o">,</span> <span class="nv">$border-width</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div><h2 id="sass-options">Sass Options</h2>
 <p>Customize Bootstrap 4 with our built-in custom variables file and easily toggle global CSS preferences with new <code>$enable-*</code> Sass variables. Override a variable&rsquo;s value and recompile with <code>npm run test</code> as needed.</p>
 <p>You can find and customize these variables for key global options in Bootstrap&rsquo;s <code>scss/_variables.scss</code> file.</p>
@@ -493,8 +531,8 @@
 </tr>
 <tr>
 <td><code>$enable-deprecation-messages</code></td>
-<td><code>true</code> or <code>false</code> (default)</td>
-<td>Set to <code>true</code> to show warnings when using any of the deprecated mixins and functions that are planned to be removed in <code>v5</code>.</td>
+<td><code>true</code> (default) or <code>false</code></td>
+<td>Set to <code>false</code> to hide warnings when using any of the deprecated mixins and functions that are planned to be removed in <code>v5</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -635,32 +673,50 @@
 In the future, we&rsquo;ll aim to provide Sass maps and variables for shades of each color as we&rsquo;ve done with the grayscale colors below.
 </div>
 
-<h3 id="theme-colors">Theme colors</h3>
+<h3 id="theme-colors">Theme Colors</h3>
 <p>We use a subset of all colors to create a smaller color palette for generating color schemes, also available as Sass variables and a Sass map in Bootstrap&rsquo;s <code>scss/_variables.scss</code> file.</p>
 <div class="row">
   
     <div class="col-md-4">
-      <div class="p-3 mb-3 swatch-success">$Success</div>
+      <div class="p-3 mb-3 text-monospace bg-success text-white">
+        <strong class="d-block">$success</strong>
+        <small>#70b865</small>
+      </div>
     </div>
   
     <div class="col-md-4">
-      <div class="p-3 mb-3 swatch-danger">$Danger</div>
+      <div class="p-3 mb-3 text-monospace bg-danger text-white">
+        <strong class="d-block">$danger</strong>
+        <small>#a95c42</small>
+      </div>
     </div>
   
     <div class="col-md-4">
-      <div class="p-3 mb-3 swatch-warning">$Warning</div>
+      <div class="p-3 mb-3 text-monospace bg-warning text-dark">
+        <strong class="d-block">$warning</strong>
+        <small>#f19e1f</small>
+      </div>
     </div>
   
     <div class="col-md-4">
-      <div class="p-3 mb-3 swatch-info">$Info</div>
+      <div class="p-3 mb-3 text-monospace bg-info text-white">
+        <strong class="d-block">$info</strong>
+        <small>#81d3eb</small>
+      </div>
     </div>
   
     <div class="col-md-4">
-      <div class="p-3 mb-3 swatch-light">$Light</div>
+      <div class="p-3 mb-3 text-monospace bg-light text-dark">
+        <strong class="d-block">$light</strong>
+        <small>#dee2e6</small>
+      </div>
     </div>
   
     <div class="col-md-4">
-      <div class="p-3 mb-3 swatch-dark">$Dark</div>
+      <div class="p-3 mb-3 text-monospace bg-dark text-white">
+        <strong class="d-block">$dark</strong>
+        <small>#343a40</small>
+      </div>
     </div>
   
 </div>
@@ -669,23 +725,50 @@ In the future, we&rsquo;ll aim to provide Sass maps and variables for shades of 
 <div class="row mb-3">
   <div class="col-md-4">
     
-      <div class="p-3 swatch-100">100</div>
+      <div class="p-3 text-monospace swatch-100">
+        <strong class="d-block">$gray-100</strong>
+        <small>#f8f9fa</small>
+      </div>
     
-      <div class="p-3 swatch-200">200</div>
+      <div class="p-3 text-monospace swatch-200">
+        <strong class="d-block">$gray-200</strong>
+        <small>#e9ecef</small>
+      </div>
     
-      <div class="p-3 swatch-300">300</div>
+      <div class="p-3 text-monospace swatch-300">
+        <strong class="d-block">$gray-300</strong>
+        <small>#dee2e6</small>
+      </div>
     
-      <div class="p-3 swatch-400">400</div>
+      <div class="p-3 text-monospace swatch-400">
+        <strong class="d-block">$gray-400</strong>
+        <small>#ced4da</small>
+      </div>
     
-      <div class="p-3 swatch-500">500</div>
+      <div class="p-3 text-monospace swatch-500">
+        <strong class="d-block">$gray-500</strong>
+        <small>#adb5bd</small>
+      </div>
     
-      <div class="p-3 swatch-600">600</div>
+      <div class="p-3 text-monospace swatch-600">
+        <strong class="d-block">$gray-600</strong>
+        <small>#868e96</small>
+      </div>
     
-      <div class="p-3 swatch-700">700</div>
+      <div class="p-3 text-monospace swatch-700">
+        <strong class="d-block">$gray-700</strong>
+        <small>#495057</small>
+      </div>
     
-      <div class="p-3 swatch-800">800</div>
+      <div class="p-3 text-monospace swatch-800">
+        <strong class="d-block">$gray-800</strong>
+        <small>#343a40</small>
+      </div>
     
-      <div class="p-3 swatch-900">900</div>
+      <div class="p-3 text-monospace swatch-900">
+        <strong class="d-block">$gray-900</strong>
+        <small>#212529</small>
+      </div>
     
   </div>
 </div>
@@ -780,7 +863,7 @@ In the future, we&rsquo;ll aim to provide Sass maps and variables for shades of 
   <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">blue</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div><h3 id="breakpoint-variables">Breakpoint Variables</h3>
-<p>While we originally included breakpoints in our CSS variables (e.g., <code>--breakpoint-md</code>), <strong>these are not supported in media queries</strong>, but they can still be used <em>within</em> rulesets in media queries. These breakpoint variables remain in the compiled CSS for backward compatibility given they can be utilized by JavaScript. <a href="https://www.w3.org/TR/css-variables-1#using-variables">Learn more in the spec</a>.</p>
+<p>While we originally included breakpoints in our CSS variables (e.g., <code>--breakpoint-md</code>), <strong>these are not supported in media queries</strong>, but they can still be used <em>within</em> rulesets in media queries. These breakpoint variables remain in the compiled CSS for backward compatibility given they can be utilized by JavaScript. <a href="https://www.w3.org/TR/css-variables-1/#using-variables">Learn more in the spec</a>.</p>
 <p>Here&rsquo;s an example of <strong>what&rsquo;s not supported:</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">var</span><span class="o">(</span><span class="nt">--breakpoint-sm</span><span class="o">))</span> <span class="p">{</span>
   <span class="o">...</span>
