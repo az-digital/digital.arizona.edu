@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Arizona Bootstrap is a major rewrite of UA Bootstrap. The most notable changes are summarized below, followed by more specific changes to relevant components.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.89.4">
+<meta name="generator" content="Hugo 0.90.1">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -339,9 +339,11 @@
 </ul>
 <h3 id="buttons">Buttons</h3>
 <ul>
-<li>Renamed <code>.btn-default</code> to <code>.btn-secondary</code>.</li>
+<li>Replaced <code>.btn-default</code> by <code>.btn-red</code>, and <code>.btn-primary</code> by <code>.btn-blue</code>.</li>
+<li>Replaced <code>.btn-hollow-*</code> by <code>.btn-outline-*</code> classes.</li>
+<li>Dropped the <code>.btn-hollow</code> class (substitute <code>.btn-outline-red</code>).</li>
 <li>Dropped the <code>.btn-xs</code> class entirely as <code>.btn-sm</code> is proportionally much smaller than v3&rsquo;s.</li>
-<li>The <a href="http://uadigital.arizona.edu/ua-bootstrap/javascript#buttons-stateful">stateful button</a> feature of the <code>button.js</code> jQuery plugin has been dropped. This includes the <code>$().button(string)</code> and <code>$().button('reset')</code> methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
+<li>The <a href="https://digital.arizona.edu/ua-bootstrap/javascript#buttons-stateful">stateful button</a> feature of the <code>button.js</code> jQuery plugin has been dropped. This includes the <code>$().button(string)</code> and <code>$().button('reset')</code> methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
 <ul>
 <li>Note that the other features of the plugin (button checkboxes, button radios, single-toggle buttons) have been retained in v4.</li>
 </ul>
