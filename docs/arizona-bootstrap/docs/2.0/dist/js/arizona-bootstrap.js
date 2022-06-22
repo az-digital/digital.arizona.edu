@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v2.0.14 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v2.0.15 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2022 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -4503,7 +4503,7 @@
   }
 
   function _extends() {
-    _extends = Object.assign || function (target) {
+    _extends = Object.assign ? Object.assign.bind() : function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -4516,7 +4516,6 @@
 
       return target;
     };
-
     return _extends.apply(this, arguments);
   }
 
