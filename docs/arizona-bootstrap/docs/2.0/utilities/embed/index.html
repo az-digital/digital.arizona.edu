@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Create responsive video or slideshow embeds based on the width of the parent by creating an intrinsic ratio that scales on any device.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.90.1">
+<meta name="generator" content="Hugo 0.103.1">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -66,7 +66,7 @@
   <div class="navbar-nav-scroll">
     <ul class="navbar-nav bd-navbar-nav flex-row">
       <li class="nav-item">
-        <a class="nav-link" href="/arizona-bootstrap/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Arizona Bootstrap');">Home</a>
+        <a class="nav-link" href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Arizona Bootstrap');">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/arizona-bootstrap/docs/2.0/about/overview" onclick="ga('send', 'event', 'Navbar', 'Community links', 'About');">About</a>
@@ -83,7 +83,7 @@
         v2.0
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/arizona-bootstrap/">Latest (2.0.x)</a>
+        <a class="dropdown-item active" href="/">Latest (2.0.x)</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
       </div>
@@ -273,43 +273,43 @@
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
 </div>
-</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-16by9&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://www.youtube.com/embed/zpOULjyy-n8?rel=0&#34;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></div>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-16by9&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://www.youtube.com/embed/zpOULjyy-n8?rel=0&#34;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
 <h2 id="aspect-ratios">Aspect Ratios</h2>
 <p>Aspect ratios can be customized with modifier classes. By default the following ratio classes are provided:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- 21:9 aspect ratio --&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-21by9&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-<span class="c">&lt;!-- 16:9 aspect ratio --&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-16by9&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-<span class="c">&lt;!-- 4:3 aspect ratio --&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-4by3&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-<span class="c">&lt;!-- 1:1 aspect ratio --&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-1by1&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div><p>Within <code>_variables.scss</code>, you can change the aspect ratios you want to use. Here&rsquo;s an example of the <code>$embed-responsive-aspect-ratios</code> list:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$embed-responsive-aspect-ratios</span><span class="o">:</span> <span class="p">(</span>
-  <span class="p">(</span><span class="mi">21</span> <span class="mi">9</span><span class="p">)</span><span class="o">,</span>
-  <span class="p">(</span><span class="mi">16</span> <span class="mi">9</span><span class="p">)</span><span class="o">,</span>
-  <span class="p">(</span><span class="mi">4</span> <span class="mi">3</span><span class="p">)</span><span class="o">,</span>
-  <span class="p">(</span><span class="mi">1</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">)</span> <span class="k">!default</span><span class="p">;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- 21:9 aspect ratio --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-21by9&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 16:9 aspect ratio --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-16by9&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 4:3 aspect ratio --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-4by3&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 1:1 aspect ratio --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive embed-responsive-1by1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;embed-responsive-item&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Within <code>_variables.scss</code>, you can change the aspect ratios you want to use. Here&rsquo;s an example of the <code>$embed-responsive-aspect-ratios</code> list:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nv">$embed-responsive-aspect-ratios</span><span class="o">:</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="mi">21</span> <span class="mi">9</span><span class="p">)</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="mi">16</span> <span class="mi">9</span><span class="p">)</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="mi">4</span> <span class="mi">3</span><span class="p">)</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="mi">1</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span> <span class="k">!default</span><span class="p">;</span>
+</span></span></code></pre></div>
         </main>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js" integrity="sha384-MYL22lstpGhSa4+udJSGro5I+VfM13fdJfCbAzP9krCEoK5r2EDFdgTg2+DGXdj+" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="\/arizona-bootstrap\/docs\/2.0\/assets\/js\/vendor\/jquery.slim.min.js"><\/script>')</script>
 
 <script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script>
