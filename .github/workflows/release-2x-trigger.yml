@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-20.04
     uses: "trackleft/digital.arizona.edu/.github/workflows/release.yml@${{ github.event.client_payload.branch }}"
     with:
-      sha: ${{ github.event.client_payload.sha }}
-      ref: ${{ github.event.client_payload.ref }}
-      version: ${{ github.event.client_payload.version }}
+      sha: "${{ github.event.client_payload.sha }}"
+      ref: "${{ github.event.client_payload.ref }}"
+      version: "${{ github.event.client_payload.version }}"
