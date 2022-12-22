@@ -19,7 +19,7 @@ jobs:
           stem='arizona-bootstrap'
           clonedir='arizona-bootstrap'
           echo "AZ_REVIEW_BASEURL=/${stem}" >> ${GITHUB_ENV}
-          echo "AZ_SITE_HOST=https://github.com/trackleft/digital.arizona.edu" >> ${GITHUB_ENV}
+          echo "AZ_SITE_HOST=https://trackleft.github.io/digital.arizona.edu" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_CLONE_DIR=${clonedir}" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_CLONE_FULL_PATH=${GITHUB_WORKSPACE}/${clonedir}" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_DOCKERFILE_PATH=${clonedir}/Dockerfile" >> ${GITHUB_ENV}
