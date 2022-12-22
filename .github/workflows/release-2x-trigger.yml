@@ -7,7 +7,7 @@ jobs:
   release:
     name: Create Release
     runs-on: ubuntu-20.04
-    uses: trackleft/digital.arizona.edu/.github/workflows/release.yml@${{ github.event.client_payload.branch }}
+    uses: "trackleft/digital.arizona.edu/.github/workflows/release.yml@${{ github.event.client_payload.branch }}"
     with:
       sha: ${{ github.event.client_payload.sha }}
       ref: ${{ github.event.client_payload.ref }}
