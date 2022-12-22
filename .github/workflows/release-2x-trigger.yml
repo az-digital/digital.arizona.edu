@@ -11,3 +11,4 @@ jobs:
     with:
       sha: ${{ github.event.client_payload.sha }}
       ref: ${{ github.event.client_payload.ref }}
+      version: ${{ github.event.client_payload.version }}
