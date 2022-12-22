@@ -6,8 +6,10 @@ on:
 jobs:
   release:
     name: Create Release
-    uses: 'trackleft/digital.arizona.edu/.github/workflows/release.yml@"${{ github.event.client_payload.branch }}"'
-    with:
-      sha: "${{ github.event.client_payload.sha }}"
-      ref: "${{ github.event.client_payload.ref }}"
-      version: "${{ github.event.client_payload.version }}"
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: 'trackleft/digital.arizona.edu/.github/workflows/release.yml@"${{ github.event.client_payload.branch }}"'
+        with:
+          sha: "${{ github.event.client_payload.sha }}"
+          ref: "${{ github.event.client_payload.ref }}"
+          version: "${{ github.event.client_payload.version }}"
