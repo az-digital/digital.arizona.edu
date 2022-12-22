@@ -5,7 +5,7 @@ on:
     types: az_bootstrap_release
 jobs:
   create-release:
-    uses: 'trackleft/digital.arizona.edu/.github/workflows/release.yml@"${{github.event.client_payload.branch}}"'
+    uses: 'trackleft/digital.arizona.edu/.github/workflows/release.yml@${{github.event.client_payload.branch}}'
     with:
       sha: "${{ github.event.client_payload.sha }}"
       ref: "${{ github.event.client_payload.ref }}"
