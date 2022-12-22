@@ -1,0 +1,13 @@
+name: Trigger release on specific branch
+run-name: Triggering release on ${{ github.event.client_payload.branch }} branch
+on:
+  repository_dispatch:
+    types: az_bootstrap_release
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-20.04
+    uses: trackleft/digital.arizona.edu/.github/workflows/release.yml@${{ github.event.client_payload.branch }}
+    with:
+      sha: ${{ github.event.client_payload.sha }}
+      ref: ${{ github.event.client_payload.ref }}
