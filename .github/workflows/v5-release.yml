@@ -1,4 +1,4 @@
-name: Create Release
+name: Create v5 Release
 on:
   workflow_call:
     inputs:
