@@ -4,20 +4,19 @@ on:
   repository_dispatch:
     types: az_bootstrap_release
 env:
-  BRANCH: ${{ github.event.client_payload.branch }}
   SHA: ${{ github.event.client_payload.sha }}
   REF: ${{ github.event.client_payload.ref }}
   VERSION: ${{ github.event.client_payload.version }}
 jobs:
   create-release-v2:
-    if: ${{ env.BRANCH }} == '2.x'
+    if: ${{ github.event.client_payload.branch }} == '2.x'
     uses: "trackleft/digital.arizona.edu/.github/workflows/release.yml@2.x"
     with:
       sha: ${{ env.SHA }}
       ref: ${{ env.REF }}
       version: ${{ env.VERSION }}
   create-release-v5:
-    if: ${{ env.BRANCH }} == 'main'
+    if: ${{ github.event.client_payload.branch }} == 'main'
     uses: "trackleft/digital.arizona.edu/.github/workflows/release.yml@main"
     with:
       sha: ${{ env.SHA }}
