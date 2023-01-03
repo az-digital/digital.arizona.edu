@@ -17,7 +17,7 @@ jobs:
       ref: ${{ env.REF }}
       version: ${{ env.VERSION }}
   create-release-v5:
-    if: ${{env.BRANCH }} == '2.x'
+    if: ${{env.BRANCH }} == 'main'
     uses: "trackleft/digital.arizona.edu/.github/workflows/release.yml@main"
     with:
       sha: ${{ env.SHA }}
