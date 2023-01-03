@@ -10,14 +10,14 @@ env:
   VERSION: ${{ github.event.client_payload.version }}
 jobs:
   create-release-v2:
-    if: ${{env.BRANCH }} == '2.x'
+    if: ${{ env.BRANCH }} == '2.x'
     uses: "trackleft/digital.arizona.edu/.github/workflows/release.yml@2.x"
     with:
       sha: ${{ env.SHA }}
       ref: ${{ env.REF }}
       version: ${{ env.VERSION }}
   create-release-v5:
-    if: ${{env.BRANCH }} == 'main'
+    if: ${{ env.BRANCH }} == 'main'
     uses: "trackleft/digital.arizona.edu/.github/workflows/release.yml@main"
     with:
       sha: ${{ env.SHA }}
