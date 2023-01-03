@@ -3,22 +3,18 @@ run-name: Triggering release on ${{ github.event.client_payload.branch }} branch
 on:
   repository_dispatch:
     types: az_bootstrap_release
-env:
-  SHA: ${{ github.event.client_payload.sha }}
-  REF: ${{ github.event.client_payload.ref }}
-  VERSION: ${{ github.event.client_payload.version }}
 jobs:
   create-release-v2:
     if: ${{ github.event.client_payload.branch }} == '2.x'
     uses: "trackleft/digital.arizona.edu/.github/workflows/release.yml@2.x"
     with:
-      sha: ${{ env.SHA }}
-      ref: ${{ env.REF }}
-      version: ${{ env.VERSION }}
+      sha: ${{ github.event.client_payload.sha }}
+      ref: ${{ github.event.client_payload.ref }}
+      version: ${{ github.event.client_payload.version }}
   create-release-v5:
     if: ${{ github.event.client_payload.branch }} == 'main'
     uses: "trackleft/digital.arizona.edu/.github/workflows/release.yml@main"
     with:
-      sha: ${{ env.SHA }}
-      ref: ${{ env.REF }}
-      version: ${{ env.VERSION }}
+      sha: ${{ github.event.client_payload.sha }}
+      ref: ${{ github.event.client_payload.ref }}
+      version: ${{ github.event.client_payload.version }}
