@@ -41,7 +41,7 @@ jobs:
         with:
           repository: trackleft/arizona-bootstrap
           path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}
-          ref: 2.x
+          ref: ${{ github.event.inputs.sha }}
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
 
       - name: Set variables for Docker images
