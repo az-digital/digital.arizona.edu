@@ -1,8 +1,17 @@
-name: Create Release
+name: Build and deploy documentation for 5.x
+run-name: Deploy ${{ github.event.inputs.version }} site artifact.
 on:
-  repository_dispatch:
-    types: az_bootstrap_release
-
+  workflow_call:
+    inputs:
+      sha:
+        required: true
+        type: string
+      ref:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
 jobs:
   release:
     name: Create Release
@@ -32,7 +41,7 @@ jobs:
         with:
           repository: az-digital/arizona-bootstrap
           path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}
-          ref: ${{ github.event.client_payload.sha }}
+          ref: ${{ github.event.inputs.sha }}
 
       - name: Set variables for Docker images
         run: |
@@ -81,5 +90,5 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
           git add docs
-          git commit -m "Arizona Bootstrap updates for ${{ github.event.client_payload.version }}"
+          git commit -m "Arizona Bootstrap updates for ${{ github.event.inputs.version }}"
           git push
