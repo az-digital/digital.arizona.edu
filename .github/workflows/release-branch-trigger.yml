@@ -1,5 +1,5 @@
-name: Trigger release on specific branch
-run-name: Triggering release on ${{ github.event.client_payload.branch }} branch
+name: Trigger docs deploy on specific branch release
+run-name: Triggering docs deploy on ${{ github.event.client_payload.branch }} branch release
 on:
   repository_dispatch:
     types: az_bootstrap_release
