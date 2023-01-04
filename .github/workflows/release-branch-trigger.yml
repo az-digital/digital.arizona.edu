@@ -14,7 +14,7 @@ jobs:
       version: ${{ github.event.client_payload.version }}
   create-v5-release:
     if: ${{ github.event.client_payload.branch == 'main' }}
-    uses: "az-digital/digital.arizona.edu/.github/workflows/v5-release.yml@main"
+    uses: "az-digital/digital.arizona.edu/.github/workflows/v5-release-docs.yml@main"
     secrets: inherit
     with:
       sha: ${{ github.event.client_payload.sha }}
