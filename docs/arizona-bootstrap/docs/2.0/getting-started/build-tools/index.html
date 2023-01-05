@@ -83,13 +83,12 @@
         v2.0
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item text-white" href="/">Arizona Bootstrap 5.0.x</a>
+        <a class="dropdown-item active" href="/">Latest (2.0.x)</a>
         <div class="dropdown-divider"></div>
-        <h6 class="dropdown-header">Previous releases</h6>
-        <a class="dropdown-item active text-white" href="/docs/2.0/getting-started/introduction/">Arizona Bootstrap 2.0.x <span class="material-icons-sharp">check</span></a>
-        <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap 1.x </a>
+        <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
       </div>
     </li>
+
     <li class="nav-item">
       <a class="nav-link p-2" href="https://github.com/az-digital/arizona-bootstrap" target="_blank" rel="noopener" aria-label="GitHub">
         <i class="fab fa-github fa-1x text-azurite"></i>
@@ -310,15 +309,15 @@
 <li><code>AZ_VERSION</code> Full current Arizona Bootstrap version number</li>
 </ul>
 <p>Arizona Bootstrap
-   uses <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> for its build system. Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha/package.json">package.json</a> includes convenient methods for working with the framework, including compiling code, running tests, and more.</p>
+   uses <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> for its build system. Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.42/package.json">package.json</a> includes convenient methods for working with the framework, including compiling code, running tests, and more.</p>
 <p>To use our build system and run our documentation locally, you&rsquo;ll need a copy of Arizona Bootstrap
   &rsquo;s source files and Node. Follow these steps and you should be ready to rock:</p>
 <ol>
 <li><a href="https://nodejs.org/en/download/">Download and install Node.js</a>, which we use to manage our dependencies.</li>
-<li>Navigate to the root <code>/arizona-bootstrap</code> directory and run <code>npm install</code> to install our local dependencies listed in <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha/package.json">package.json</a>.</li>
+<li>Navigate to the root <code>/arizona-bootstrap</code> directory and run <code>npm install</code> to install our local dependencies listed in <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.42/package.json">package.json</a>.</li>
 </ol>
 <h2 id="using-npm-scripts">Using npm Scripts</h2>
-<p>Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha/package.json">package.json</a> includes the following commands and tasks:</p>
+<p>Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v2.0.42/package.json">package.json</a> includes the following commands and tasks:</p>
 <table>
 <thead>
 <tr>
@@ -345,7 +344,7 @@
 <h2 id="autoprefixer">Autoprefixer</h2>
 <p>Arizona Bootstrap
    uses <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.</p>
-<p>We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See <a href="https://github.com/az-digital/arizona-bootstrap/raw/v5.0.0-alpha/.browserslistrc">.browserslistrc</a> for details.</p>
+<p>We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See <a href="https://github.com/az-digital/arizona-bootstrap/raw/v2.0.42/.browserslistrc">.browserslistrc</a> for details.</p>
 <h2 id="local-documentation">Local Documentation</h2>
 <p>Running our documentation locally requires the use of Hugo, a decently flexible static site generator that provides us: basic includes, Markdown-based files, templates, and more. Here&rsquo;s how to get it started:</p>
 <ol>
