@@ -40,7 +40,7 @@ jobs:
         with:
           repository: trackleft/arizona-bootstrap
           path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}
-          ref: ${{ github.event.inputs.sha }}
+          ref: ${{ inputs.sha }}
 
       - name: Set variables for Docker images
         run: |
@@ -90,5 +90,5 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git add docs
           git reset "${AZ_BOOTSTRAP_CLONE_DIR}/_site/docs/arizona-bootstrap/docs/2.0"
-          git commit -m "Arizona Bootstrap updates for ${{ github.event.inputs.version }}"
+          git commit -m "Arizona Bootstrap updates for ${{ inputs.version }}"
           git push
