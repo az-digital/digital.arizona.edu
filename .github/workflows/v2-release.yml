@@ -35,7 +35,7 @@ jobs:
           echo "AZ_BOOTSTRAP_PACKAGE_JSON_PATH=${clonedir}/package.json" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_PACKAGE_LOCK_PATH=${clonedir}/package-lock.json" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_SCRIPTS_PATH=${clonedir}/scripts/*" >> ${GITHUB_ENV}
-          echo "AZ_BOOTSTRAP_SHA=${{ github.event.inputs.ref }}" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_SHA=${{ inputs.sha }}" >> ${GITHUB_ENV}
 
       - name: Get new updates from arizona-bootstrap
         uses: actions/checkout@v3
