@@ -1,5 +1,5 @@
 name: Trigger release on specific branch
-run-name: Triggering release on ${{ github.event.client_payload.branch }} branch
+run-name: Triggering release action for `${{ github.event.client_payload.version }}`
 on:
   repository_dispatch:
     types: az_bootstrap_release
