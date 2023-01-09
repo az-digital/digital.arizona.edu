@@ -4,17 +4,17 @@ on:
   repository_dispatch:
     types: az_bootstrap_release
 jobs:
-  create-v2-release:
+  deploy-docs-for-v2-release:
     if: ${{ github.event.client_payload.branch  == '2.x' }}
-    uses: "az-digital/digital.arizona.edu/.github/workflows/v2-release-docs.yml@main"
+    uses: "az-digital/digital.arizona.edu/.github/workflows/deploy-docs-for-v2-release.yml@main"
     secrets: inherit
     with:
       sha: ${{ github.event.client_payload.sha }}
       ref: ${{ github.event.client_payload.ref }}
       version: ${{ github.event.client_payload.version }}
-  create-v5-release:
+  deploy-docs-for-v5-release:
     if: ${{ github.event.client_payload.branch == 'main' }}
-    uses: "az-digital/digital.arizona.edu/.github/workflows/v5-release-docs.yml@main"
+    uses: "az-digital/digital.arizona.edu/.github/workflows/deploy-docs-for-v5-release.yml@main"
     secrets: inherit
     with:
       sha: ${{ github.event.client_payload.sha }}
