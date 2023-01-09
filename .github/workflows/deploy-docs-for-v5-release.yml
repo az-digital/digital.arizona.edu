@@ -38,7 +38,7 @@ jobs:
         with:
           repository: az-digital/arizona-bootstrap
           path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}
-          ref: ${{ github.event.inputs.sha }}
+          ref: ${{ inputs.sha }}
       - name: Set variables for Docker images
         run: |
           oldhash=${{ hashFiles(env.AZ_BOOTSTRAP_DOCKERFILE_PATH, env.AZ_BOOTSTRAP_PACKAGE_JSON_PATH, env.AZ_BOOTSTRAP_PACKAGE_LOCK_PATH, env.AZ_BOOTSTRAP_SCRIPTS_PATH) }}
@@ -82,5 +82,5 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
           git add docs
-          git commit -m "Arizona Bootstrap updates for ${{ github.event.inputs.version }}"
+          git commit -m "Arizona Bootstrap updates for ${{ inputs.version }}"
           git push

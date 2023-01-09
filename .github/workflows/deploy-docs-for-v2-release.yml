@@ -16,6 +16,7 @@ jobs:
   release:
     name: Create Release
     runs-on: ubuntu-20.04
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -39,7 +40,7 @@ jobs:
         with:
           repository: az-digital/arizona-bootstrap
           path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}
-          ref: ${{ github.event.inputs.sha }}
+          ref: ${{ inputs.sha }}
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
       - name: Set variables for Docker images
         run: |
@@ -84,5 +85,5 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
           git add docs/arizona-bootstrap/docs/2.0
-          git commit -m "Arizona Bootstrap updates for ${{ github.event.inputs.version }}"
+          git commit -m "Arizona Bootstrap documentation updates for ${{ inputs.version }}"
           git push
