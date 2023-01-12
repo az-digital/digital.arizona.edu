@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Learn how to use Arizona Bootstrap&rsquo;s included npm scripts to build our documentation, compile source code, run tests, and more.">
+<meta name="author" content="Arizona Digital contributors">
+<meta name="generator" content="Hugo 0.101.0">
+
+<meta name="docsearch:language" content="en">
+<meta name="docsearch:version" content="5.1">
+
+<title>Build tools · Arizona Bootstrap</title>
+
+<link rel="canonical" href="https://trackleft.github.io/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/build-tools/">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
+<link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
+<!-- Arizona Bootstrap core CSS -->
+<link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
+<link href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/dist/css/arizona-bootstrap.min.css" rel="stylesheet">
+
+<!-- Documentation extras -->
+
+<link href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/css/docs.css" rel="stylesheet">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:title" content="Build tools">
+<meta name="twitter:description" content="Learn how to use Arizona Bootstrap&rsquo;s included npm scripts to build our documentation, compile source code, run tests, and more.">
+<meta name="twitter:image" content="https://trackleft.github.io/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/brand/bootstrap-social-logo.png">
+
+<!-- Facebook -->
+<meta property="og:url" content="https://trackleft.github.io/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/build-tools/">
+<meta property="og:title" content="Build tools">
+<meta property="og:description" content="Learn how to use Arizona Bootstrap&rsquo;s included npm scripts to build our documentation, compile source code, run tests, and more.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://trackleft.github.io/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/brand/bootstrap-social.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+
+  </head>
+  <body>
+    <a class="skippy sr-only sr-only-focusable" href="#content">
+  <span class="skippy-text">Skip to main content</span>
+</a>
+
+
+    <header class="navbar navbar-expand flex-column flex-md-row bd-navbar">
+  <div class="navbar-nav-scroll">
+    <ul class="navbar-nav bd-navbar-nav flex-row">
+      <li class="nav-item">
+        <a class="nav-link" href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Arizona Bootstrap');">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/about/overview" onclick="ga('send', 'event', 'Navbar', 'Community links', 'About');">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/introduction" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="navbar-nav ms-md-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-item nav-link dropdown-toggle me-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        v5.1
+      </a>
+      <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
+        <a class="dropdown-item text-white" href="/">Arizona Bootstrap 5.0.x</a>
+        <div class="dropdown-divider"></div>
+        <h6 class="dropdown-header">Previous releases</h6>
+        <a class="dropdown-item active text-white" href="/docs/2.0/getting-started/introduction/">Arizona Bootstrap 2.0.x <span class="material-icons-sharp">check</span></a>
+        <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap 1.x </a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link p-2" href="https://github.com/az-digital/arizona-bootstrap" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github fa-1x text-azurite"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link p-2" href="https://quickstart.arizona.edu/join-us-on-slack" rel="noopener" aria-label="Slack">
+        <i class="fab fa-1x fa-slack-hash text-azurite"></i>
+      </a>
+    </li>
+  </ul>
+
+  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ms-md-3" href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/download">Download</a>
+</header>
+
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-md-3 col-xl-2 bd-sidebar">
+          <div class="bd-search d-flex align-items-center">
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ms-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>
+  </button>
+</div>
+
+<div class="collapse d-md-block row" id="bd-docs-nav">
+  <nav class="bd-links" aria-label="Main navigation">
+
+      <div class="bd-toc-item active">
+        <a class="bd-toc-link"
+          href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/introduction/">
+          Getting Started
+        </a>
+        <ul class="nav bd-sidenav">
+            <li>
+              <a href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/introduction/">Introduction</a>
+            </li>
+            <li>
+              <a href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/accessibility/">Accessibility</a>
+            </li>
+            <li>
+              <a href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/color-contrast/">Color Contrast</a>
+            </li>
+            <li>
+              <a href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/download/">Download</a>
+            </li>
+            <li>
+              <a href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/contents/">Contents</a>
+            </li>
+            <li>
+              <a href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/browsers-devices/">Browsers &amp; Devices</a>
+            </li>
+            <li>
+              <a href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/javascript/">JavaScript</a>
+            </li>
+            <li class="active bd-sidenav-active">
+              <a href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/build-tools/">Build Tools</a>
+            </li>
+            <li>
+              <a href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/getting-started/webpack/">Webpack</a>
+            </li>
+        </ul>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/layout/overview/">
+          Layout
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/content/reboot/">
+          Content
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/icons">
+          Icons
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/components/arizona-header/">
+          Components
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/utilities/borders/">
+          Utilities
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/extend/approach/">
+          Extend
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/migration">
+          Migration
+        </a>
+      </div>
+
+      <div class="bd-toc-item">
+        <a class="bd-toc-link"
+          href="/digital.arizona.edu/arizona-bootstrap/docs/5.1/backwards-compatibility">
+          Backwards Compatibility
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+
+        
+          <nav class="d-none d-xl-block col-xl-2 bd-toc" aria-label="Secondary navigation">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ways-to-change-and-build-arizona-bootstrap">Ways to Change and Build Arizona Bootstrap</a></li>
+    <li><a href="#docker-for-local-development">Docker for local development</a>
+      <ul>
+        <li><a href="#building-the-docker-image">Building the Docker image</a></li>
+        <li><a href="#viewing-the-locally-built-documentation-review-site">Viewing the locally built documentation review site</a></li>
+        <li><a href="#other-docker-commands-to-help-local-development">Other Docker commands to help local development</a></li>
+      </ul>
+    </li>
+    <li><a href="#traditional-twitter-bootstrap-tooling-setup">Traditional Twitter Bootstrap Tooling Setup</a></li>
+    <li><a href="#using-npm-scripts">Using npm Scripts</a></li>
+    <li><a href="#autoprefixer">Autoprefixer</a></li>
+    <li><a href="#local-documentation">Local Documentation</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+  </ul>
+</nav>
+          </nav>
+        
+
+        <main class="col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+          <h1 class="bd-title" id="content">Build tools</h1>
+          <p class="bd-lead">Learn how to use Arizona Bootstrap&rsquo;s included npm scripts to build our documentation, compile source code, run tests, and more.</p>
+          <h2 id="ways-to-change-and-build-arizona-bootstrap">Ways to Change and Build Arizona Bootstrap</h2>
+<p>If you are one of the developers who can make changes to the main <a href="https://github.com/az-digital/arizona-bootstrap">Arizona Bootstrap repository</a>, the built-in continuous integration feature called GitHub Actions takes care of building a new version including your suggested changes and presenting it on a generally visible review web site. See the <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> document for more details about how to do this. If you&rsquo;re working from a fork of the main Arizona Bootstrap repository elsewhere on GitHub, the GitHub Actions automated builds should still work, but will require extensive initial setup on your part, and in particular you will have to establish your own arrangements for hosting the review sites, since the main repository is using AWS with some very specific access arrangements.</p>
+<p>Docker simplifies building Arizona Bootstrap locally, either in advance of changing the main repository, or if you want some independent customizations, and makes it easy to view the changes in a web browser through a local link.</p>
+<p>If you are unable to use Docker in your local development environment, or are already comfortable with the suggestions that Twitter Bootstrap Version 4 makes for a local tooling setup, you cam still follow these, but Arizona Bootstrap makes one or two minor changes that will require your attention first.</p>
+<h2 id="docker-for-local-development">Docker for local development</h2>
+<p>A custom local Docker image provides the complete development environment.</p>
+<h3 id="building-the-docker-image">Building the Docker image</h3>
+<p>You can build the image from a shell command line after changing to the directory that includes the <code>Dockerfile</code> by running</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">scripts/build-container.sh
+</span></span></code></pre></div><p>The script tries to discover if you have already built an image using the current versions of several important configuration files, and doesn&rsquo;t try to re-build this if it already exists.</p>
+<p>The initial build will be relatively slow, and may require reasonably fast Internet access. If you see errors that complain about failing to download various resources, and these errors aren&rsquo;t consistent from one build attempt to the next, you may be suffering a connection speed problem.</p>
+<p>The build environment uses a huge set of Node.js packages (under the control of the commonly used <code>npm</code> uutility). Setting these packages up causes most of the delay, but ideally the image will provide you with Docker containers that start up quickly pre-configured with the build environment you need.</p>
+<h3 id="viewing-the-locally-built-documentation-review-site">Viewing the locally built documentation review site</h3>
+<p>If everything works, the script should spin up a review site showing the Arizona Bootstrap
+   documentation at a local URL. It should display something like</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&gt; hugo server --bind &#39;0.0.0.0&#39; --port 9001 --disableFastRender
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Start building sites … 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                   | EN   
+</span></span><span class="line"><span class="cl">-------------------+------
+</span></span><span class="line"><span class="cl">  Pages            |  83  
+</span></span><span class="line"><span class="cl">  Paginator pages  |   0  
+</span></span><span class="line"><span class="cl">  Non-page files   | 106  
+</span></span><span class="line"><span class="cl">  Static files     |  26  
+</span></span><span class="line"><span class="cl">  Processed images |   0  
+</span></span><span class="line"><span class="cl">  Aliases          |   1  
+</span></span><span class="line"><span class="cl">  Sitemaps         |   1  
+</span></span><span class="line"><span class="cl">  Cleaned          |   0  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Built in 141 ms
+</span></span><span class="line"><span class="cl">Watching for changes in /arizona-bootstrap-source/{dist,package.json,site}
+</span></span><span class="line"><span class="cl">Watching for config changes in /arizona-bootstrap-source/config.yml
+</span></span><span class="line"><span class="cl">Environment: &#34;development&#34;
+</span></span><span class="line"><span class="cl">Serving pages from memory
+</span></span><span class="line"><span class="cl">Web Server is available at //localhost:9001/ (bind address 0.0.0.0)
+</span></span><span class="line"><span class="cl">Press Ctrl+C to stop
+</span></span></code></pre></div><p>To view this, just point a web browser at the URL it gives, here http://localhost:9001/</p>
+<h3 id="other-docker-commands-to-help-local-development">Other Docker commands to help local development</h3>
+<p>If the image build succeeds, you can re-use it to run additional development steps within a Docker container. The build should finish by showing the image ID code, which you should note (copy) as the most convenirnt means of referring to the image, since the usual tagged name will be very long (it includes the full hex checksum hash of the configuration files). In the examples that follow, this code is <code>f855e50fb65e</code>, but you should substitute the ID from your own image build.</p>
+<p>The following command duplicates what happens in the container-building script, but lets you see the additional details that you might want to modify. In a command-line shell, make sure you&rsquo;re in the top-level directory of your local working Arizona Bootstrap copy (the one containing the <code>Dockerfile</code>), then enter a command like</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -t -i --rm -p 9001:9001 -v <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&#34;</span>:/arizona-bootstrap-source f855e50fb65e serve-review-site
+</span></span></code></pre></div><ul>
+<li>The <code>-t</code> and <code>-i</code> flags are the usual additions for a container that will be at least semi-interactive.</li>
+<li><code>--rm</code> makes sure the container will not persist after it has stopped.</li>
+<li>A web server will be running on port 9001 inside the container, showing the newly built review site using the documentation; the <code>-p 9001:9001</code> specifies that this will be reachable on the same port outside the container as well (you can change the number if you run into port conflicts).</li>
+<li><code>-v &quot;$(pwd)&quot;:/arizona-bootstrap-source</code> sets up sharing of the current directory (<code>$(pwd)</code> is a shortcut notaton for this, but you can enter it some other way if necessary); inside the container this directory will appear as <code>/arizona-bootstrap-source</code>.</li>
+<li><code>f855e50fb65e</code> is the image ID is in the case of the example, but as already noted you should substitute the ID from your own Docker image build for this.</li>
+<li><code>serve-review-site</code> is the command that runs inside the container, building the static documentation web site based on your local version of Arizona Bootstrap and starting a little web server to make it visible.</li>
+</ul>
+<p>If everything works, you should see the message telling you the static web site is available at a particular URL, something like <code>http://localhost:9001...</code> if you used the <code>-p 9001:9001</code> option with the <code>docker run</code> command, or choose whatever port you specified there if you modified this option.</p>
+<p>You can specify a prefix to include in all the URLs of the static site by setting an environment variable within the container. For example to include the prefix <code>/bootstrap/localwip</code> the command would be</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -t -i --rm -e <span class="s2">&#34;AZ_SITE_BASE_URL=/bootstrap/localwip&#34;</span> -p 9001:9001 -v <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&#34;</span>:/arizona-bootstrap-source f855e50fb65e serve-review-site
+</span></span></code></pre></div><p>There are a few more convenience commands to use with <code>docker run</code> in addition to <code>serve-review-site</code></p>
+<ul>
+<li><code>expose-review-site</code> saves the built files of the documentation review site to the <code>_site</code> directory subtree.</li>
+<li><code>build-review-site</code> rebuilds the files without providing a live view of the changes.</li>
+<li><code>build-cdn-assets</code> rebuilds the files in the dist subdirectory with the options suitable for uploading them to a CDN.</li>
+<li><code>lint</code> runs code quality (linting) checks on the newly built documentation site.</li>
+</ul>
+<p>However for maximum flexibility,the easiest option is to run a full interactive shell within the container, specifying just <code>/bin/bash</code> (this will not only have access to all the convenience shell commands, but all of the npm scripts as well).</p>
+<p>The examples here assume you have access to a POSIX-compatible shell, like the ones built in to Linux and MacOS, or included as part of Git for Windows, but if this is inconvenient for you and you&rsquo;re happy running command-line Docker commands in some other way, the Docker-specific parts should still work if you simply copy them out of the examples or scripts and make the small changes necessary for them to work the way you expect.</p>
+<h2 id="traditional-twitter-bootstrap-tooling-setup">Traditional Twitter Bootstrap Tooling Setup</h2>
+<p>Twitter Bootstrap provides a configuration file for called <code>config.yml</code> for the static site builing software (Hugo), but Arizona Bootstrap omits this, providing instead a template that must have various placeholders filled in to produce the usable version of this file. The script <code>scripts/create-hugo-config</code> automates this process, and can pull some settings like the current version number directly from the <code>package.json</code> file, but depends on the <code>jq</code> JSON parsing utility to do this. The environment variables that can modify its behavior are</p>
+<ul>
+<li><code>AZ_SHORT_VERSION</code> Short (generally two-digit) documentation version</li>
+<li><code>AZ_SITE_BASE_URL</code> Pefix to add after the host to all URLs served locally</li>
+<li><code>AZ_SITE_HOST</code> Name or IP address at which to serve the documentation site</li>
+<li><code>AZ_VERSION</code> Full current Arizona Bootstrap version number</li>
+</ul>
+<p>Arizona Bootstrap
+   uses <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> for its build system. Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.4/package.json">package.json</a> includes convenient methods for working with the framework, including compiling code, running tests, and more.</p>
+<p>To use our build system and run our documentation locally, you&rsquo;ll need a copy of Arizona Bootstrap
+  &rsquo;s source files and Node. Follow these steps and you should be ready to rock:</p>
+<ol>
+<li><a href="https://nodejs.org/en/download/">Download and install Node.js</a>, which we use to manage our dependencies.</li>
+<li>Navigate to the root <code>/arizona-bootstrap</code> directory and run <code>npm install</code> to install our local dependencies listed in <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.4/package.json">package.json</a>.</li>
+</ol>
+<h2 id="using-npm-scripts">Using npm Scripts</h2>
+<p>Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.4/package.json">package.json</a> includes the following commands and tasks:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm run dist</code></td>
+<td><code>npm run dist</code> creates the <code>/dist/</code> directory with compiled files. <strong>Uses <a href="https://sass-lang.com/">Sass</a>, <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, and and <a href="https://github.com/terser-js/terser">terser</a>.</strong></td>
+</tr>
+<tr>
+<td><code>npm test</code></td>
+<td>Same as <code>npm run dist</code> plus it runs tests locally</td>
+</tr>
+<tr>
+<td><code>npm run docs</code></td>
+<td>Builds and lints CSS and JavaScript for docs. You can then run the documentation locally via <code>npm run docs-serve</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Run <code>npm run</code> to see all the npm scripts.</p>
+<h2 id="autoprefixer">Autoprefixer</h2>
+<p>Arizona Bootstrap
+   uses <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.</p>
+<p>We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See <a href="https://github.com/az-digital/arizona-bootstrap/raw/v5.1.4/.browserslistrc">.browserslistrc</a> for details.</p>
+<h2 id="local-documentation">Local Documentation</h2>
+<p>Running our documentation locally requires the use of Hugo, a decently flexible static site generator that provides us: basic includes, Markdown-based files, templates, and more. Here&rsquo;s how to get it started:</p>
+<ol>
+<li>Run through the <a href="#tooling-setup">tooling setup</a> above to install Hugo (the site builder).</li>
+<li>From the root <code>/arizona-bootstrap</code> directory, run <code>npm run docs-serve</code> in the command line.</li>
+<li>Open <code>http://localhost:9001</code> in your browser, and voilà.</li>
+</ol>
+<p>Learn more about using Hugo by reading its <a href="https://gohugo.io/">documentation</a>.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Should you encounter problems with installing dependencies, uninstall all previous dependency versions (global and local). Then, rerun <code>npm install</code>.</p>
+
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js" integrity="sha384-MYL22lstpGhSa4+udJSGro5I+VfM13fdJfCbAzP9krCEoK5r2EDFdgTg2+DGXdj+" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="\/digital.arizona.edu\/arizona-bootstrap\/docs\/5.1\/assets\/js\/vendor\/jquery.slim.min.js"><\/script>')</script>
+
+<script src="/digital.arizona.edu/arizona-bootstrap/docs/5.1/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+
+<script src="https://kit.fontawesome.com/8a092dcf6a.js"></script>
+
+<script src="/digital.arizona.edu/arizona-bootstrap/docs/5.1/assets/js/docs.min.js"></script>
+
+  </body>
+</html>

@@ -35,13 +35,14 @@ jobs:
           echo "AZ_BOOTSTRAP_PACKAGE_JSON_PATH=${clonedir}/package.json" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_PACKAGE_LOCK_PATH=${clonedir}/package-lock.json" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_SCRIPTS_PATH=${clonedir}/scripts/*" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_SHA=${{ inputs.sha }}" >> ${GITHUB_ENV}
 
       - name: Get new updates from arizona-bootstrap
         uses: actions/checkout@v3
         with:
           repository: trackleft/arizona-bootstrap
           path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}
-          ref: ${{ github.event.inputs.sha }}
+          ref: ${{ env.AZ_BOOTSTRAP_SHA }}
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
 
       - name: Set variables for Docker images
@@ -92,6 +93,6 @@ jobs:
           echo version-json >| docs${AZ_REVIEW_BASEURL}/version.json
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          git add docs/2.0
-          git commit -m "Arizona Bootstrap updates for ${{ github.event.inputs.version }}"
+          git add "docs${AZ_REVIEW_BASEURL}/docs/2.0"
+          git commit -m "Arizona Bootstrap updates for ${{ inputs.version }}" --allow-empty
           git push
