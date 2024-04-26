@@ -1,6 +1,6 @@
 /*!
-  * Arizona Bootstrap v2.0.25 (https://github.com/az-digital/arizona-bootstrap)
-  * Copyright 2023 The Arizona Board of Regents on behalf of The University of Arizona
+  * Arizona Bootstrap v2.0.26 (https://github.com/az-digital/arizona-bootstrap)
+  * Copyright 2024 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -4143,8 +4143,6 @@
   Popper.placements = placements;
   Popper.Defaults = Defaults;
 
-  var Popper$1 = Popper;
-
   /**
    * --------------------------------------------------------------------------
    * Bootstrap (v4.6.2): dropdown.js
@@ -4284,7 +4282,7 @@
       // Totally disable Popper for Dropdowns in Navbar
       if (!this._inNavbar && usePopper) {
         // Check for Popper dependency
-        if (typeof Popper$1 === 'undefined') {
+        if (typeof Popper === 'undefined') {
           throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org)')
         }
 
@@ -4308,7 +4306,7 @@
           $(parent).addClass(CLASS_NAME_POSITION_STATIC);
         }
 
-        this._popper = new Popper$1(referenceElement, this._menu, this._getPopperConfig());
+        this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
       }
 
       // If this is a touch-enabled device we add extra
@@ -5511,7 +5509,7 @@
 
   class Tooltip {
     constructor(element, config) {
-      if (typeof Popper$1 === 'undefined') {
+      if (typeof Popper === 'undefined') {
         throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org)')
       }
 
@@ -5679,7 +5677,7 @@
 
         $(this.element).trigger(this.constructor.Event.INSERTED);
 
-        this._popper = new Popper$1(this.element, tip, this._getPopperConfig(attachment));
+        this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
 
         $(tip).addClass(CLASS_NAME_SHOW$4);
         $(tip).addClass(this.config.customClass);
@@ -7107,6 +7105,20 @@
     return Toast._jQueryInterface
   };
 
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
+  }
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
       var descriptor = props[i];
@@ -7137,20 +7149,6 @@
       return target;
     };
     return _extends.apply(this, arguments);
-  }
-  function _toPrimitive(input, hint) {
-    if (typeof input !== "object" || input === null) return input;
-    var prim = input[Symbol.toPrimitive];
-    if (prim !== undefined) {
-      var res = prim.call(input, hint || "default");
-      if (typeof res !== "object") return res;
-      throw new TypeError("@@toPrimitive must return a primitive value.");
-    }
-    return (hint === "string" ? String : Number)(input);
-  }
-  function _toPropertyKey(arg) {
-    var key = _toPrimitive(arg, "string");
-    return typeof key === "symbol" ? key : String(key);
   }
 
   /**
@@ -7402,7 +7400,7 @@
         }
       });
     };
-    _createClass(Offcanvasmenu, null, [{
+    return _createClass(Offcanvasmenu, null, [{
       key: "AZ_VERSION",
       get: function get() {
         return AZ_VERSION;
@@ -7413,7 +7411,6 @@
         return Default;
       }
     }]);
-    return Offcanvasmenu;
   }();
   /**
    * ------------------------------------------------------------------------

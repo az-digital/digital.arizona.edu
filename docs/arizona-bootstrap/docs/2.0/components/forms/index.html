@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.117.0">
+<meta name="generator" content="Hugo 0.124.1">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="2.0">
@@ -1306,14 +1306,14 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span></span></span></code></pre></div>
 <div class="bd-callout bd-callout-warning">
 <h5 id="alternatives-to-hidden-labels">Alternatives to Hidden Labels</h5>
-<p>Assistive technologies such as screen readers will have trouble with your forms if you don&rsquo;t include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class. There are further alternative methods of providing a label for assistive technologies, such as the <code>aria-label</code>, <code>aria-labelledby</code> or <code>title</code> attribute. If none of these are present, assistive technologies may resort to using the <code>placeholder</code> attribute, if present, but note that use of <code>placeholder</code> as a replacement for other labelling methods is not advised.
+<p>Assistive technologies such as screen readers will have trouble with your forms if you don&rsquo;t include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class. There are further alternative methods of providing a label for assistive technologies, such as the <code>aria-label</code>, <code>aria-labelledby</code> or <code>title</code> attribute. If none of these are present, assistive technologies may resort to using the <code>placeholder</code> attribute, if present, but note that use of <code>placeholder</code> as a replacement for other labelling methods is not advised.</p>
 </div>
 
 <h2 id="help-text">Help Text</h2>
 <p>Block-level help text in forms can be created using <code>.form-text</code> (previously known as <code>.help-block</code> in v3). Inline help text can be flexibly implemented using any inline HTML element and utility classes like <code>.text-muted</code>.</p>
 <div class="bd-callout bd-callout-warning">
 <h5 id="associating-help-text-with-form-controls">Associating Help Text with Form Controls</h5>
-<p>Help text should be explicitly associated with the form control it relates to using the <code>aria-describedby</code> attribute. This will ensure that assistive technologies—such as screen readers—will announce this help text when the user focuses or enters the control.
+<p>Help text should be explicitly associated with the form control it relates to using the <code>aria-describedby</code> attribute. This will ensure that assistive technologies—such as screen readers—will announce this help text when the user focuses or enters the control.</p>
 </div>
 
 <p>Help text below inputs can be styled with <code>.form-text</code>. This class includes <code>display: block</code> and adds some top margin for easy spacing from the inputs above.</p>
@@ -1408,7 +1408,7 @@
 
 <div class="bd-callout bd-callout-danger">
 <h4 id="cross-browser-compatibility">Cross-browser Compatibility</h4>
-<p>While Bootstrap will apply these styles in all browsers, Internet Explorer 11 and below don&rsquo;t fully support the <code>disabled</code> attribute on a <code>&lt;fieldset&gt;</code>. Use custom JavaScript to disable the fieldset in these browsers.
+<p>While Bootstrap will apply these styles in all browsers, Internet Explorer 11 and below don&rsquo;t fully support the <code>disabled</code> attribute on a <code>&lt;fieldset&gt;</code>. Use custom JavaScript to disable the fieldset in these browsers.</p>
 </div>
 
 <h2 id="validation">Validation</h2>
@@ -2320,7 +2320,7 @@ The recommended plugin to animate custom file input: <a href="https://www.npmjs.
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="\/arizona-bootstrap\/docs\/2.0\/assets\/js\/vendor\/jquery.slim.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('\x3Cscript src="\/arizona-bootstrap\/docs\/2.0\/assets\/js\/vendor\/jquery.slim.min.js"><\/script>')</script>
 
 <script src="/arizona-bootstrap/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
