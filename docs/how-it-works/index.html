@@ -40,23 +40,23 @@
       <p class="h3">The Arizona Digital development process has been continuously refined to ensure that every asset that we share with the university is secure, accessible, performant and maintainable.</p>
       <p class="h3">The entire process has been thoroughly reviewed by the <a href="https://www.azauditor.gov/">Auditor General of the State of Arizona</a>.</p>
     </div>
-      
+
 
         <div class="row">
           <div class="col-12">
             <h2>How it works</h2>
-            <h3>1. New Issue Created</h3> 
+            <h3>1. New Issue Created</h3>
             <p>The process begins with an issue in GitHub to document the intended change. The issue is linked to the pull request, which is updated throughout the process until the change is completed. </p>
 
               <p>When we are notified of a Drupal.org Security Advisory, critical security updates are prioritized according to the Drupal.org security risk level. The process is designed for rapid deployment of highly critical updates to ensure they follow the same basic process as other code updates, though processed in an accelerated time frame. Timing for processing Drupal updates is outlined in the Campus Web Services Security Maintenance Timeframe Matrix on Confluence.</p>
 
-              <h3>2. Feature Branch Created</h3> 
+              <h3>2. Feature Branch Created</h3>
               <p>A local copy of the Quickstart codebase is downloaded by the Quickstart Developer, and a new issue branch is created. Development never happens directly on the Main branch.</p>
 
-              <h3>3. Local Development Completed</h3> 
+              <h3>3. Local Development Completed</h3>
               <p>The Developer works on the issue and tests their changes in their local development environment, on their own computer. This allows the developer to ensure that their code is fully functional in their environment before submitting it for review. Developers adhere to coding best-practices, and <a href="https://www.drupal.org/docs/develop/standards">Drupal.org Coding Standards</a>.</p>
 
-              <h3>4. Pull Request Created/Updated</h3> 
+              <h3>4. Pull Request Created/Updated</h3>
               <p>Once the Developer considers the issue to be ready for review they <a href="https://github.com/pulls?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+archived%3Afalse+org%3Aaz-digital+">submit a pull request</a> in GitHub which kicks off the review process. Only Developers in our GitHub organization are able to submit pull requests. Developers can only be added to the organization by Arizona Digital Admins.</p>
             </div>
           </div>
@@ -69,7 +69,7 @@
               <h3>5. Complete Testing</h3>
               <p> The pull request goes through several types of testing and review.</p>
 
-              <h4>5a. Automated Testing Completed</h4> 
+              <h4>5a. Automated Testing Completed</h4>
               <p>Automated testing is completed using GitHub Actions and ProboCI. Every pull request automatically initiates our Continuous Integration (CI) process. This runs our automated tests, completes the entire build process and makes a functional website with the proposed changes available for review. Tests are all documented in YAML files within the codebase and include:</p>
 
               <ul>
@@ -78,7 +78,7 @@
                 <li><strong>Behavioral testing</strong> Behat behavioral tests are run to check for regressions.</li>
               </ul>
 
-              <h4>5b. Code Review Completed</h4> 
+              <h4>5b. Code Review Completed</h4>
               <p>Developers review the code and provide recommendations. Bitbucket highlights all of the proposed changes to the source code directly on the pull request and provides an interface for comments and discussion. All activity on the pull request is also broadcast to a community Slack channel for visibility. The primary focus of this review is:</p>
 
               <ul>
@@ -87,7 +87,7 @@
                 <li><strong>Quickstart Admin training</strong> All Quickstart Admins are required to complete the annual Secure Web Application Development Training, and follow the Acceptable Use for System Administrators Policy. </li>
               </ul>
 
-              <h4>5c. QA Review Completed</h4> 
+              <h4>5c. QA Review Completed</h4>
               <p>Once the test website is built on ProboCI, a link is automatically made available, so that both developers and non-developers are able to review the proposed changes in an actual website. Manual website review & testing is then completed by Quickstart Admins and other Developers using the ProboCI Build. The primary focus of this review is to test the changes in a website that provides a visual representation of how the changes will appear once applied to an actual website. The website is reviewed and tested with the following focus.</p>
 
               <ul>
@@ -98,25 +98,25 @@
               </ul>
 
             </div>
-            
+
             <div class="row">
               <div class="col-12">
-                <h3>Changes Approved</h3> 
+                <h3>Changes Approved</h3>
                 <p>The pull request is approved by at least two developers, one of whom is an Arizona Digital Admin. (Each Arizona Digital Admin has completed the ISO security training and reviewed the Secure Application Development Standard.) </p>
                 <p>If any of the phases of review uncover issues that need to be fixed, the developer will go back to their local development environment to make the changes and update their pull request to go back through the review process before it can be merged.</p>
 
-                <h3>6. Changes Merged</h3> 
+                <h3>6. Changes Merged</h3>
                 <p>Once the changes are approved, they are then merged into the Main branch by an Arizona Digital Admin. (Only Admins are authorized to merge.) </p>
 
-                <h3>7. Dev Site Updated</h3> <p>The associated development website (<a href="https://demo.quickstart.arizona.edu/">demo.quickstart.arizona.edu</a>) is then updated to provide a fully built functioning website with the latest codebase. Dynamic web application scanning is run weekly  using Tenable Web Application Scanner (WAS).</p>  
+                <h3>7. Dev Site Updated</h3> <p>The associated development website (<a href="https://demo.quickstart.arizona.edu/">demo.quickstart.arizona.edu</a>) is then updated to provide a fully built functioning website with the latest codebase. Dynamic web application scanning is run weekly  using Tenable Web Application Scanner (WAS).</p>
 
-                <h3>8. New Version Released</h3> 
+                <h3>8. New Version Released</h3>
                 <p>A new artifact bundle is built and made available on GitHub for download by campus units. A new release of <a href="https://github.com/az-digital/az_quickstart/releases">Quickstart</a> (or <a href="https://github.com/az-digital/arizona-bootstrap/releases">Arizona Bootstrap</a>), including the changes, is tagged. Each tagged release remains available for download by version number. Developers using the Quickstart codebase are notified of the new release via the Quickstart Slack channels associated with Arizona Digital. If the update is associated with a critical security release, timely notifications are also sent through the university’s UAWeb, Drupal, and ITSM Listservs.</p>
 
-                <h3>9. Quickstart Upstream Updated</h3> 
+                <h3>9. Quickstart Upstream Updated</h3>
                 <p>An <a href="https://github.com/az-digital/az-quickstart-pantheon">artifact repo</a> is created with a fully built codebase, which is made available as the Quickstart Upstream on the Pantheon environment managed by Campus Web Services. Campus Web Services uses this Pantheon Upstream to create and update their managed Arizona Sites. Campus Web Services also makes this upstream available for campus partners who are in the Pantheon environment managed by Campus Web Services. Pantheon provides an added layer of security, as documented at <a href="https://pantheon.io/security">pantheon.io/security</a>.</p>
 
-                <h3>Change Ticket Closed</h3> 
+                <h3>Change Ticket Closed</h3>
                 <p>The associated issue is closed automatically when the pull request is merged.</p>
               </div>
         </div>
@@ -135,7 +135,7 @@
               <li>Join the Arizona Digital discussions on <a href="https://quickstart.arizona.edu/join-us-on-slack">Slack</a></li>
               <li>Submit pull requests on <a href="https://github.com/az-digital">GitHub</a></li>
             </ul>
-            <p>Questions, bugs or suggestions can also be emailed to <a href="mailto:brand@email.arizona.edu">brand@email.arizona.edu</a></p>
+            <p>Questions, bugs or suggestions can also be emailed to <a href="mailto:az-digital@web.arizona.edu">az-digital@web.arizona.edu</a></p>
           </div>
         </div>
       </div>
