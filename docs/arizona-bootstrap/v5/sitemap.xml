@@ -4,9 +4,6 @@
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/</loc>
   </url>
   <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/about/overview/</loc>
-  </url>
-  <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/getting-started/accessibility/</loc>
   </url>
   <url>
@@ -40,22 +37,13 @@
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/examples/badges/</loc>
   </url>
   <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/getting-started/best-practices/</loc>
-  </url>
-  <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/examples/blog/</loc>
-  </url>
-  <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/getting-started/parcel/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/utilities/borders/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/examples/navbar-bottom/</loc>
-  </url>
-  <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/about/brand/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/components/breadcrumb/</loc>
@@ -68,9 +56,6 @@
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/getting-started/browsers-devices/</loc>
-  </url>
-  <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/getting-started/build-tools/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/components/button-group/</loc>
@@ -253,9 +238,6 @@
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/helpers/icon-link/</loc>
   </url>
   <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/extend/icons/</loc>
-  </url>
-  <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/icons/</loc>
   </url>
   <url>
@@ -343,7 +325,7 @@
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/utilities/overflow/</loc>
   </url>
   <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/layout/overview/</loc>
+    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/about/overview/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/components/pagination/</loc>
@@ -383,9 +365,6 @@
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/getting-started/rfs/</loc>
-  </url>
-  <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/getting-started/rtl/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/customize/sass/</loc>
@@ -430,22 +409,13 @@
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/helpers/stretched-link/</loc>
   </url>
   <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/utilities/stretched-link/</loc>
-  </url>
-  <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/content/tables/</loc>
-  </url>
-  <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/about/team/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/utilities/text/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/helpers/text-truncation/</loc>
-  </url>
-  <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/getting-started/theming/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/components/toasts/</loc>
@@ -461,9 +431,6 @@
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/components/arizona-header/</loc>
-  </url>
-  <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/layout/utilities-for-layout/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/layout/utilities/</loc>

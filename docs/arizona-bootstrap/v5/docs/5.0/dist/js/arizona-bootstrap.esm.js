@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v5.0.0-alpha2 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v5.0.0-alpha3 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2025 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -805,7 +805,7 @@ class Config {
  * Constants
  */
 
-const VERSION = '5.3.6';
+const VERSION = '5.3.7';
 
 /**
  * Class definition
@@ -3575,7 +3575,6 @@ const uriAttributes = new Set([
  *
  * Shout-out to Angular https://github.com/angular/angular/blob/15.2.8/packages/core/src/sanitization/url_sanitizer.ts#L38
  */
-// eslint-disable-next-line unicorn/better-regex
 const SAFE_URL_PATTERN = /^(?!javascript:)(?:[a-z0-9+.-]+:|[^&:/?#]*(?:[/?#]|$))/i;
 
 const allowedAttribute = (attribute, allowedAttributeList) => {
@@ -4224,6 +4223,7 @@ class Tooltip extends BaseComponent {
       if (trigger === 'click') {
         EventHandler.on(this._element, this.constructor.eventName(EVENT_CLICK$1), this._config.selector, event => {
           const context = this._initializeOnDelegatedTarget(event);
+          context._activeTrigger[TRIGGER_CLICK] = !(context._isShown() && context._activeTrigger[TRIGGER_CLICK]);
           context.toggle();
         });
       } else if (trigger !== TRIGGER_MANUAL) {
@@ -5315,8 +5315,30 @@ defineJQueryPlugin(Toast);
 
 /**
  * --------------------------------------------------------------------------
+ * Arizona Bootstrap: modal.js
+ * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+/**
+ * Temporary fix for blocked aria-hidden attribute on modals.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/1602.
+ */
+function fixModalAriaHidden$1() {
+  var modals = document.querySelectorAll('.modal');
+  for (var modal of modals) {
+    modal.addEventListener('hide.bs.modal', () => {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+    });
+  }
+}
+
+/**
+ * --------------------------------------------------------------------------
  * Arizona Bootstrap: offcanvasmenu.js
- * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
@@ -5589,5 +5611,20 @@ EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (
 
 defineJQueryPlugin(Offcanvasmenu);
 
-export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy, Tab, Toast, Tooltip };
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap index.esm.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+
+/**
+ * Temporary fix for blocked aria-hidden attribute on modals.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/1602.
+ */
+/* global fixModalAriaHidden */
+fixModalAriaHidden();
+
+export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy, Tab, Toast, Tooltip, fixModalAriaHidden$1 as fixModalAriaHidden };
 //# sourceMappingURL=arizona-bootstrap.esm.js.map
