@@ -521,7 +521,7 @@
     <main class="bd-main order-1">
       <div class="bd-intro pt-2 ps-lg-2">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha3/site/content/docs/5.0/components/navbar.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/site/content/docs/5.0/components/navbar.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a></div>
           <h1 class="bd-title mb-0" id="content">Navbar</h1>
@@ -612,7 +612,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -656,7 +656,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarSupportedContent&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarSupportedContent&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
@@ -694,7 +694,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span></span></span></code></pre></div>
 </div>
 
-<p>This example uses <a href="/arizona-bootstrap/v5/docs/5.0/utilities/background/">background</a> (<code>bg-body-tertiary</code>) and <a href="/arizona-bootstrap/v5/docs/5.0/utilities/spacing/">spacing</a> (<code>me-auto</code>, <code>mb-2</code>, <code>mb-lg-0</code>, <code>me-2</code>) utility classes.</p>
+<p>This example uses <a href="/arizona-bootstrap/v5/docs/5.0/utilities/spacing/">spacing</a> (<code>me-auto</code>, <code>mb-2</code>, <code>mb-lg-0</code>, <code>me-2</code>) utility classes.</p>
 <h3 id="brand">Brand</h3>
 <p>The <code>.navbar-brand</code> can be applied to most elements, but an anchor works best, as some elements might require utility classes or custom styles.</p>
 <h4 id="text">Text</h4>
@@ -703,16 +703,16 @@ The animation effect of this component is dependent on the <code>prefers-reduced
   <div class="bd-example m-0 border-0">
     
 <!-- As a link -->
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
   </div>
 </nav>
 
 <!-- As a heading -->
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
+    <span class="navbar-brand my-0 h1">Navbar</span>
   </div>
 </nav>
 
@@ -724,16 +724,16 @@ The animation effect of this component is dependent on the <code>prefers-reduced
           </button>
         </div>
       </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- As a link --&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">&lt;!-- As a heading --&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand mb-0 h1&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand my-0 h1&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span></span></span></code></pre></div>
 </div>
@@ -743,7 +743,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="/arizona-bootstrap/v5/docs/5.0/assets/brand/arizona-bootstrap-logo-colored-background.svg" alt="Arizona Bootstrap" width="37" height="37">
@@ -758,7 +758,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/arizona-bootstrap/v5/docs/5.0/assets/brand/arizona-bootstrap-logo-colored-background.svg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Arizona Bootstrap&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;37&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;37&#34;</span><span class="p">&gt;</span>
@@ -772,10 +772,10 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="/arizona-bootstrap/v5/docs/5.0/assets/brand/arizona-bootstrap-logo-colored-background.svg" alt="Logo" width="37" height="37" class="d-inline-block align-text-center">
+      <img src="/arizona-bootstrap/v5/docs/5.0/assets/brand/arizona-bootstrap-logo-colored-background.svg" alt="Logo" width="37" height="37" class="d-inline-block align-text-center me-1">
       Arizona Bootstrap
     </a>
   </div>
@@ -788,10 +788,10 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/arizona-bootstrap/v5/docs/5.0/assets/brand/arizona-bootstrap-logo-colored-background.svg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Logo&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;37&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;37&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-inline-block align-text-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/arizona-bootstrap/v5/docs/5.0/assets/brand/arizona-bootstrap-logo-colored-background.svg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Logo&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;37&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;37&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-inline-block align-text-center me-1&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      Arizona Bootstrap
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -805,7 +805,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -837,7 +837,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarNav&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarNav&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
@@ -867,7 +867,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -891,7 +891,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarNavAltMarkup&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarNavAltMarkup&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
@@ -913,7 +913,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -952,7 +952,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarNavDropdown&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarNavDropdown&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
@@ -990,7 +990,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -1006,7 +1006,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-flex&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;search&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control me-2&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;search&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Search&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Search&#34;</span><span class="p">&gt;</span>
@@ -1020,7 +1020,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
     <a class="navbar-brand">Navbar</a>
     <form class="d-flex" role="search">
@@ -1037,7 +1037,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-flex&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;search&#34;</span><span class="p">&gt;</span>
@@ -1052,7 +1052,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <form class="container-fluid">
     <div class="input-group">
       <span class="input-group-text" id="basic-addon1">@</span>
@@ -1068,7 +1068,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input-group&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input-group-text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;basic-addon1&#34;</span><span class="p">&gt;</span>@<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
@@ -1082,7 +1082,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <form class="container-fluid justify-content-start">
     <button class="btn btn-outline-success me-2" type="button">Main button</button>
     <button class="btn btn-sm btn-outline-blue" type="button">Smaller button</button>
@@ -1096,7 +1096,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid justify-content-start&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-outline-success me-2&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>Main button<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-sm btn-outline-blue&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>Smaller button<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -1109,7 +1109,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
     <span class="navbar-text">
       Navbar text with an inline element
@@ -1124,7 +1124,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-text&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      Navbar text with an inline element
@@ -1137,7 +1137,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar w/ text</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -1169,7 +1169,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar w/ text<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarText&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarText&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
@@ -1205,7 +1205,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 
 <p>Navbar themes are easier than ever thanks to Bootstrap&rsquo;s combination of Sass and CSS variables. The default is our &ldquo;light navbar&rdquo; for use with light background colors, but you can also apply <code>data-bs-theme=&quot;dark&quot;</code> to the <code>.navbar</code> parent for dark background colors. Then, customize with <code>.bg-*</code> and additional utilities.</p>
 <div class="bd-example">
-  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -1290,7 +1290,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
     </div>
   </nav>
 </div>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-dark border-bottom border-body&#34;</span> <span class="na">data-bs-theme</span><span class="o">=</span><span class="s">&#34;dark&#34;</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-dark&#34;</span> <span class="na">data-bs-theme</span><span class="o">=</span><span class="s">&#34;dark&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- Navbar content --&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
@@ -1307,7 +1307,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
   <div class="bd-example m-0 border-0">
     
 <div class="container">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
     </div>
@@ -1322,7 +1322,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
           </button>
         </div>
       </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1334,7 +1334,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-md">
     <a class="navbar-brand" href="#">Navbar</a>
   </div>
@@ -1347,7 +1347,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-md&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1360,7 +1360,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Default</a>
   </div>
@@ -1373,7 +1373,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Default<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1383,7 +1383,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar fixed-top bg-body-tertiary">
+<nav class="navbar fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Fixed top</a>
   </div>
@@ -1396,7 +1396,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar fixed-top bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar fixed-top&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Fixed top<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1406,7 +1406,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar fixed-bottom bg-body-tertiary">
+<nav class="navbar fixed-bottom">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Fixed bottom</a>
   </div>
@@ -1419,7 +1419,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar fixed-bottom bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar fixed-bottom&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Fixed bottom<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1429,7 +1429,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar sticky-top bg-body-tertiary">
+<nav class="navbar sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Sticky top</a>
   </div>
@@ -1442,7 +1442,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar sticky-top bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar sticky-top&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Sticky top<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1452,7 +1452,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar sticky-bottom bg-body-tertiary">
+<nav class="navbar sticky-bottom">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Sticky bottom</a>
   </div>
@@ -1465,7 +1465,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar sticky-bottom bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar sticky-bottom&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Sticky bottom<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1479,7 +1479,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar scroll</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -1523,7 +1523,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar scroll<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarScroll&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarScroll&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
@@ -1570,7 +1570,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -1603,7 +1603,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarTogglerDemo01&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarTogglerDemo01&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler-icon&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
@@ -1634,7 +1634,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -1667,7 +1667,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarTogglerDemo02&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarTogglerDemo02&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
@@ -1698,7 +1698,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -1731,7 +1731,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarTogglerDemo03&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarTogglerDemo03&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler-icon&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
@@ -1806,7 +1806,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<nav class="navbar bg-body-tertiary fixed-top">
+<nav class="navbar fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Offcanvas navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -1855,7 +1855,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar bg-body-tertiary fixed-top&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar fixed-top&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Offcanvas navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;offcanvas&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#offcanvasNavbar&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;offcanvasNavbar&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
@@ -1899,7 +1899,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 </div>
 
 <p>To create an offcanvas navbar that expands into a normal navbar at a specific breakpoint like <code>lg</code>, use <code>.navbar-expand-lg</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg bg-body-tertiary fixed-top&#34;</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-lg fixed-top&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Offcanvas navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&#34;offcanvas&#34;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&#34;#navbarOffcanvasLg&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarOffcanvasLg&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Toggle navigation&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler-icon&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
@@ -2011,7 +2011,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <p>As part of Bootstrap&rsquo;s evolving CSS variables approach, navbars now use local CSS variables on <code>.navbar</code> for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha3/scss/_navbar.scss">scss/_navbar.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/scss/_navbar.scss">scss/_navbar.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -2040,7 +2040,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <p>Some additional CSS variables are also present on <code>.navbar-nav</code>:</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha3/scss/_navbar.scss">scss/_navbar.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/scss/_navbar.scss">scss/_navbar.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -2056,7 +2056,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <p>Customization through CSS variables can be seen on the <code>.navbar-dark</code> class where we override specific values without adding duplicate CSS selectors.</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha3/scss/_navbar.scss">scss/_navbar.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/scss/_navbar.scss">scss/_navbar.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -2074,7 +2074,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <p>Variables for all navbars:</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha3/scss/_variables.scss">scss/_variables.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/scss/_variables.scss">scss/_variables.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -2112,7 +2112,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <p>Variables for the <a href="#color-schemes">dark navbar</a>:</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha3/scss/_variables.scss">scss/_variables.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/scss/_variables.scss">scss/_variables.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -2132,7 +2132,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <p><a href="#responsive-behaviors">Responsive navbar expand/collapse classes</a> (e.g., <code>.navbar-expand-lg</code>) are combined with the <code>$breakpoints</code> map and generated through a loop in <code>scss/_navbar.scss</code>.</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha3/scss/_navbar.scss">scss/_navbar.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/scss/_navbar.scss">scss/_navbar.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -2249,7 +2249,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
           <li class="mb-2">Arizona Bootstrap is &copy; 2025 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</li>
           <li class="mb-2">Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</li>
           <li class="mb-2">Code licensed <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
-          <li class="mb-2">Currently v5.0.0-alpha3.</li>
+          <li class="mb-2">Currently v5.0.0-alpha4.</li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">

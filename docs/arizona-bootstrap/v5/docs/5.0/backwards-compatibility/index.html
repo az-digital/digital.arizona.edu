@@ -521,7 +521,7 @@
     <main class="bd-main order-1">
       <div class="bd-intro pt-2 ps-lg-2">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha3/site/content/docs/5.0/backwards-compatibility.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/site/content/docs/5.0/backwards-compatibility.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a></div>
           <h1 class="bd-title mb-0" id="content">Backwards Compatibility</h1>
@@ -550,8 +550,10 @@
     <li><a href="#deprecated-components">Deprecated Components</a>
       <ul>
         <li><a href="#accordion-implementation">Accordion Implementation</a></li>
+        <li><a href="#arizona-header-classes">Arizona Header Classes</a></li>
         <li><a href="#card-classes">Card Classes</a></li>
         <li><a href="#nav-tabs-large">Nav Tabs Large</a></li>
+        <li><a href="#ul-triangles">UL Triangles</a></li>
       </ul>
     </li>
     <li><a href="#removed-utilities">Removed Utilities</a>
@@ -567,6 +569,7 @@
       <ul>
         <li><a href="#background-wrapper-patterns">Background Wrapper Patterns</a></li>
         <li><a href="#callout-variants">Callout Variants</a></li>
+        <li><a href="#navbar-off-canvas">Navbar Off Canvas</a></li>
       </ul>
     </li>
     <li><a href="#removed-javascript">Removed JavaScript</a></li>
@@ -597,6 +600,14 @@
 <p>The following components are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.</p>
 <h3 id="accordion-implementation">Accordion Implementation</h3>
 <p>Arizona Bootstrap 2 used the card component to extend the default collapse behavior and create an accordion. To properly achieve the accordion style, a custom class <code>.accordion</code> was also needed as a wrapper. In Arizona Bootstrap 5, the <a href="../components/accordion/">accordion component</a> is natively provided by Bootstrap. Site owners who have used accordions in their Arizona Bootstrap 2 sites are encouraged to review relevant HTML and update to the latest implementation.</p>
+<h3 id="arizona-header-classes">Arizona Header Classes</h3>
+<p>These custom Arizona Bootstrap classes for the Arizona Header are now deprecated:</p>
+<ul>
+<li><code>.block-a-line-logo</code>: This class has no replacement. Instead, the <code>.arizona-line-logo</code> class should be used with the appropriate logo image.</li>
+<li><code>.redbar-buttons</code>: This class has no replacement (the element now uses standard Arizona Bootstrap classes instead).</li>
+<li><code>.btn-redbar</code>: This class has been replaced with <code>.btn-arizona-header</code>.</li>
+</ul>
+<p>For both of these deprecated classes, the original CSS has been preserved. However, if these classes are used with the Arizona Header on a Quickstart 3 site, it will not be displayed correctly due to updates to the markup.</p>
 <h3 id="card-classes">Card Classes</h3>
 <p>These custom Arizona Bootstrap classes are now deprecated:</p>
 <ul>
@@ -606,6 +617,8 @@
 </ul>
 <h3 id="nav-tabs-large">Nav Tabs Large</h3>
 <p>The <code>.nav-tabs-lg</code> custom Arizona Bootstrap class is now deprecated.</p>
+<h3 id="ul-triangles">UL Triangles</h3>
+<p>The <code>.ul-triangles</code> custom Arizona Bootstrap class has been deprecated and replaced by <code>.az-list-triangles</code>.</p>
 <h2 id="removed-utilities">Removed Utilities</h2>
 <p>The following utilities have been removed in Arizona Bootstrap 5.</p>
 <h3 id="blockquote-reverse">Blockquote Reverse</h3>
@@ -632,6 +645,8 @@
 <li><code>.callout-light</code></li>
 <li><code>.callout-dark</code></li>
 </ul>
+<h3 id="navbar-off-canvas">Navbar Off Canvas</h3>
+<p>The Navbar Off Canvas component custom to Arizona Bootstrap has been removed. This component is no longer used in Arizona Quickstart. Instead of displaying a single nav in different ways for mobile and desktop devices, Quickstart now uses separate navs (with different functionality) for mobile and desktop devices. For an example from upstream Bootstrap of building a similar component, see <a href="/arizona-bootstrap/v5/docs/5.0/examples/offcanvas-navbar/">Offcanvas navbar</a>.</p>
 <h2 id="removed-javascript">Removed JavaScript</h2>
 <p>Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in Arizona Bootstrap 5. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that Arizona Bootstrap
    uses. Refer to each individual component&rsquo;s documentation for an explanation of proper methods, options, and events.</p>
@@ -682,7 +697,7 @@ Bootstrap 5.</p>
           <li class="mb-2">Arizona Bootstrap is &copy; 2025 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</li>
           <li class="mb-2">Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</li>
           <li class="mb-2">Code licensed <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
-          <li class="mb-2">Currently v5.0.0-alpha3.</li>
+          <li class="mb-2">Currently v5.0.0-alpha4.</li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">

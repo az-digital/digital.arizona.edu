@@ -151,9 +151,6 @@
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/examples/dashboard/</loc>
   </url>
   <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/deprecated/</loc>
-  </url>
-  <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/utilities/display/</loc>
   </url>
   <url>
@@ -287,12 +284,6 @@
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/components/navbar/</loc>
-  </url>
-  <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/components/navbar-off-canvas/</loc>
-  </url>
-  <url>
-    <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/examples/navbar/</loc>
   </url>
   <url>
     <loc>https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/examples/navbars-offcanvas/</loc>
