@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +13,6 @@
 <link rel="canonical" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.0/getting-started/contribute/">
 
 <title>Contribute · Arizona Bootstrap v5.0</title>
-
-<script src="/arizona-bootstrap/v5/docs/5.0/assets/js/color-modes.js"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
 <link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
@@ -240,50 +238,7 @@
     <li><a class="dropdown-item" href="/docs/versions/">All versions</a></li>
   </ul>
 </li>
-
-
-          <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
-            <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
-            <hr class="d-lg-none my-2 text-white-50">
-          </li>
-
-          <li class="nav-item dropdown">
-            <button class="btn btn-link nav-link px-0 px-lg-2 py-2 dropdown-toggle d-flex align-items-center"
-        id="bd-theme"
-        type="button"
-        aria-expanded="false"
-        data-bs-toggle="dropdown"
-        data-bs-display="static"
-        aria-label="Toggle theme (auto)">
-  <svg class="bi my-1 theme-icon-active" aria-hidden="true"><use href="#circle-half"></use></svg>
-  <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
-</button>
-<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
-  <li>
-    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-      <svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#sun-fill"></use></svg>
-      Light
-      <svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg>
-    </button>
-  </li>
-  <li>
-    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-      <svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#moon-stars-fill"></use></svg>
-      Dark
-      <svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg>
-    </button>
-  </li>
-  <li>
-    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-      <svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#circle-half"></use></svg>
-      Auto
-      <svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg>
-    </button>
-  </li>
 </ul>
-
-          </li>
-        </ul>
       </div>
     </div>
   </nav>
@@ -521,7 +476,7 @@
     <main class="bd-main order-1">
       <div class="bd-intro pt-2 ps-lg-2">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/site/content/docs/5.0/getting-started/contribute.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha5/site/content/docs/5.0/getting-started/contribute.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a></div>
           <h1 class="bd-title mb-0" id="content">Contribute</h1>
@@ -631,15 +586,15 @@
 <li><code>AZ_VERSION</code> Full current Arizona Bootstrap version number</li>
 </ul>
 <p>Arizona Bootstrap
-   uses <a href="https://docs.npmjs.com/misc/scripts/">npm scripts</a> to build the documentation and compile source files. Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/package.json">package.json</a> houses these scripts for compiling code, running tests, and more. These aren&rsquo;t intended for use outside our repository and documentation.</p>
+   uses <a href="https://docs.npmjs.com/misc/scripts/">npm scripts</a> to build the documentation and compile source files. Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha5/package.json">package.json</a> houses these scripts for compiling code, running tests, and more. These aren&rsquo;t intended for use outside our repository and documentation.</p>
 <p>To use our build system and run our documentation locally, you&rsquo;ll need a copy of Arizona Bootstrap
   &rsquo;s source files and Node. Follow these steps and you should be ready to rock:</p>
 <ol>
 <li><a href="https://nodejs.org/en/download/">Download and install Node.js</a>, which we use to manage our dependencies.</li>
-<li>Navigate to the root <code>/arizona-bootstrap</code> directory and run <code>npm install</code> to install our local dependencies listed in <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/package.json">package.json</a>.</li>
+<li>Navigate to the root <code>/arizona-bootstrap</code> directory and run <code>npm install</code> to install our local dependencies listed in <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha5/package.json">package.json</a>.</li>
 </ol>
 <h2 id="using-npm-scripts">Using npm scripts</h2>
-<p>Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/package.json">package.json</a> includes numerous tasks for developing the project. Run <code>npm run</code> to see all the npm scripts in your terminal. <strong>Primary tasks include:</strong></p>
+<p>Our <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha5/package.json">package.json</a> includes numerous tasks for developing the project. Run <code>npm run</code> to see all the npm scripts in your terminal. <strong>Primary tasks include:</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
       <tr>
@@ -669,7 +624,7 @@
 
 <h2 id="autoprefixer">Autoprefixer</h2>
 <p>Bootstrap uses <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.</p>
-<p>We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha4/.browserslistrc">.browserslistrc</a> for details.</p>
+<p>We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See <a href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha5/.browserslistrc">.browserslistrc</a> for details.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>Should you encounter problems with installing dependencies, uninstall all previous dependency versions (global and local). Then, rerun <code>npm install</code>.</p>
 
@@ -713,7 +668,7 @@
           <li class="mb-2">Arizona Bootstrap is &copy; 2025 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</li>
           <li class="mb-2">Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</li>
           <li class="mb-2">Code licensed <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
-          <li class="mb-2">Currently v5.0.0-alpha4.</li>
+          <li class="mb-2">Currently v5.0.0-alpha5.</li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">
