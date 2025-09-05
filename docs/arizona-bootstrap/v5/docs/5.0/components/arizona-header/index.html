@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Add the university wordmark header to a site.Custom Arizona Bootstrap Component">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.148.2">
+<meta name="generator" content="Hugo 0.149.1">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="5.0">
@@ -476,7 +476,7 @@
     <main class="bd-main order-1">
       <div class="bd-intro pt-2 ps-lg-2">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-alpha5/site/content/docs/5.0/components/arizona-header.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-beta1/site/content/docs/5.0/components/arizona-header.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a></div>
           <h1 class="bd-title mb-0" id="content">University of Arizona header</h1>
@@ -497,6 +497,7 @@
   <ul>
     <li><a href="#university-header-with-wordmark-logo">University header with wordmark logo</a></li>
     <li><a href="#extending-the-header">Extending the header</a></li>
+    <li><a href="#disable-fixed-position-on-mobile-devices">Disable fixed position on mobile devices</a></li>
   </ul>
 </nav>
           </div>
@@ -512,11 +513,7 @@
   <p class="h4 alert-heading mt-0">Heads Up!</p>
   <p class="mb-0">The wordmark logo without a Block "A" header should only be used when near a Block "A" logo. Typically, the Block "A" logo is included as part of the site branding just below the Arizona Header.</p>
 </div>
-<p>Normally, the Arizona Header element is fixed to the top of the browser window on mobile devices. However, for this documentation site, this behavior has been overridden to prevent the example elements from disappearing behind the existing Arizona Bootstrap navbar above.</p>
-<div class="bd-example-snippet bd-code-snippet">
-  <div class="bd-example m-0 border-0">
-    
-<div class="arizona-header text-bg-red" id="header_arizona">
+<div class="arizona-header bg-red">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -525,15 +522,8 @@
     </div>
   </div>
 </div>
-
-  </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
-        <small class="font-monospace text-body-secondary text-uppercase">html</small>
-        <div class="d-flex ms-auto">
-          <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
-            <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
-          </button>
-        </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arizona-header text-bg-red&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;header_arizona&#34;</span><span class="p">&gt;</span>
+<p></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arizona-header az-fixed-header-on-mobile bg-red&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;header_arizona&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arizona-logo col-auto&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://www.arizona.edu&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;The University of Arizona homepage&#34;</span><span class="p">&gt;</span>
@@ -541,15 +531,13 @@
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
-</div>
-
-<h2 id="extending-the-header">Extending the header</h2>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h2 id="extending-the-header">Extending the header</h2>
 <p>The Arizona Header can be extended with off-canvas search and navigation for mobile devices, as shown in the example below.</p>
 <div class="bd-example-snippet bd-code-snippet">
   <div class="bd-example m-0 border-0">
     
-<div class="arizona-header text-bg-red" id="header_arizona_example">
+<div class="arizona-header az-fixed-header-on-mobile bg-red" id="header_arizona_example_1">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -589,7 +577,7 @@
             <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
           </button>
         </div>
-      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arizona-header text-bg-red&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;header_arizona_example&#34;</span><span class="p">&gt;</span>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arizona-header az-fixed-header-on-mobile bg-red&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;header_arizona_example_1&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arizona-logo col-auto&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://www.arizona.edu&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;The University of Arizona homepage&#34;</span><span class="p">&gt;</span>
@@ -618,6 +606,40 @@
 </span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+</div>
+
+<h2 id="disable-fixed-position-on-mobile-devices">Disable fixed position on mobile devices</h2>
+<p>In most cases, the Arizona Header element is intended to be fixed to the top of the browser window on mobile devices. This behavior is added by the <code>.az-fixed-header-on-mobile</code> class. This class can be omitted if a site does not include off-canvas navigation or other elements in the mobile display of the Arizona Header.</p>
+<p><strong>Note:</strong> For this documentation site, this fixed-position behavior has been overridden to prevent the example Arizona Headers from disappearing behind the existing Arizona Bootstrap navbar above.</p>
+<div class="bd-example-snippet bd-code-snippet">
+  <div class="bd-example m-0 border-0">
+    
+<div class="arizona-header bg-red" id="header_arizona_example_2">
+  <div class="container">
+    <div class="row">
+      <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+      </a>
+    </div>
+  </div>
+</div>
+
+  </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+        <small class="font-monospace text-body-secondary text-uppercase">html</small>
+        <div class="d-flex ms-auto">
+          <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
+            <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
+          </button>
+        </div>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arizona-header bg-red&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;header_arizona_example_2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arizona-logo col-auto&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://www.arizona.edu&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;The University of Arizona homepage&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;arizona-line-logo&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;The University of Arizona Wordmark Line Logo White&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg&#34;</span> <span class="na">fetchpriority</span><span class="o">=</span><span class="s">&#34;high&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
@@ -664,7 +686,7 @@
           <li class="mb-2">Arizona Bootstrap is &copy; 2025 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</li>
           <li class="mb-2">Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</li>
           <li class="mb-2">Code licensed <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
-          <li class="mb-2">Currently v5.0.0-alpha5.</li>
+          <li class="mb-2">Currently v5.0.0-beta1.</li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">
@@ -700,7 +722,7 @@
   </div>
 </footer>
 
-    <script defer src="/arizona-bootstrap/v5/docs/5.0/dist/js/arizona-bootstrap.bundle.min.js" integrity="our_js_bundle_hash_here"></script>
+    <script defer src="/arizona-bootstrap/v5/docs/5.0/dist/js/arizona-bootstrap.bundle.min.js" integrity="sha384-vbXVj+FUAs66UPu/h/9vhX7myN5luvBXXXUdhZOIk6aBue1AdiKtAoMgdeiw5ZR4"></script>
 
 <script defer src="/arizona-bootstrap/v5/docs/5.0/assets/js/application.js"></script>
 
