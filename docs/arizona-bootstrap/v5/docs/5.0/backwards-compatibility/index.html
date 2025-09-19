@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Some styles and classes available in Arizona Bootstrap 2 (Bootstrap 4) have been deprecated, replaced, or removed in Arizona Bootstrap 5 (Bootstrap 5).">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.149.1">
+<meta name="generator" content="Hugo 0.150.0">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="5.0">
@@ -476,7 +476,7 @@
     <main class="bd-main order-1">
       <div class="bd-intro pt-2 ps-lg-2">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-beta1/site/content/docs/5.0/backwards-compatibility.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0-beta2/site/content/docs/5.0/backwards-compatibility.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a></div>
           <h1 class="bd-title mb-0" id="content">Backwards Compatibility</h1>
@@ -501,7 +501,6 @@
         <li><a href="#badges">Badges</a></li>
       </ul>
     </li>
-    <li><a href="#backwards-compatible-utilities">Backwards Compatible Utilities</a></li>
     <li><a href="#deprecated-components">Deprecated Components</a>
       <ul>
         <li><a href="#accordion-implementation">Accordion Implementation</a></li>
@@ -509,6 +508,18 @@
         <li><a href="#card-classes">Card Classes</a></li>
         <li><a href="#nav-tabs-large">Nav Tabs Large</a></li>
         <li><a href="#ul-triangles">UL Triangles</a></li>
+      </ul>
+    </li>
+    <li><a href="#deprecated-utilities">Deprecated Utilities</a>
+      <ul>
+        <li><a href="#border-thick">Border Thick</a></li>
+      </ul>
+    </li>
+    <li><a href="#removed-components">Removed Components</a>
+      <ul>
+        <li><a href="#background-wrapper-patterns">Background Wrapper Patterns</a></li>
+        <li><a href="#callout-variants">Callout Variants</a></li>
+        <li><a href="#navbar-off-canvas">Navbar Off Canvas</a></li>
       </ul>
     </li>
     <li><a href="#removed-utilities">Removed Utilities</a>
@@ -520,14 +531,11 @@
         <li><a href="#sans">Sans</a></li>
       </ul>
     </li>
-    <li><a href="#removed-components">Removed Components</a>
+    <li><a href="#removed-javascript">Removed JavaScript</a>
       <ul>
-        <li><a href="#background-wrapper-patterns">Background Wrapper Patterns</a></li>
-        <li><a href="#callout-variants">Callout Variants</a></li>
-        <li><a href="#navbar-off-canvas">Navbar Off Canvas</a></li>
+        <li><a href="#offcanvasmenu">Offcanvasmenu</a></li>
       </ul>
     </li>
-    <li><a href="#removed-javascript">Removed JavaScript</a></li>
     <li><a href="#tables">Tables</a></li>
     <li><a href="#icons">Icons</a></li>
   </ul>
@@ -548,9 +556,6 @@
   , but can be replicated by utilizing a combination of available classes. They have been included with backwards compatibility in Arizona Bootstrap 5 to avoid breaking changes.</p>
 <h3 id="badges">Badges</h3>
 <p>Arizona Bootstrap 5 largely follows <a href="/arizona-bootstrap/v5/docs/5.0/migration/#badges">upstream Bootstrap&rsquo;s changes to badges</a>. The <code>badge-variant()</code> mixin override from Arizona Bootstrap 2 has been removed since badges will now use <a href="/arizona-bootstrap/v5/docs/5.0/helpers/color-background/">color and background helpers</a> to ensure accessible color combinations. The <code>.badge-link</code> class dropped by upstream Bootstrap has been converted to a <a href="/arizona-bootstrap/v5/docs/5.0/components/badge/#badge-links">custom Arizona Bootstrap class</a> that works with badges using the Chili, Midnight, and Light color and background helpers.</p>
-<h2 id="backwards-compatible-utilities">Backwards Compatible Utilities</h2>
-<p>Arizona Bootstrap 2 contained utility classes that are no longer supported/maintained in Arizona Bootstrap
-  , but can be replicated by utilizing a combination of classes. They have been included with backwards compatibility in Arizona Bootstrap 5 to avoid breaking changes.</p>
 <h2 id="deprecated-components">Deprecated Components</h2>
 <p>The following components are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.</p>
 <h3 id="accordion-implementation">Accordion Implementation</h3>
@@ -574,18 +579,10 @@
 <p>The <code>.nav-tabs-lg</code> custom Arizona Bootstrap class is now deprecated.</p>
 <h3 id="ul-triangles">UL Triangles</h3>
 <p>The <code>.ul-triangles</code> custom Arizona Bootstrap class has been deprecated and replaced by <code>.az-list-triangles</code>.</p>
-<h2 id="removed-utilities">Removed Utilities</h2>
-<p>The following utilities have been removed in Arizona Bootstrap 5.</p>
-<h3 id="blockquote-reverse">Blockquote Reverse</h3>
-<p>The <code>.blockquote-reverse</code> class was removed in upstream Bootstrap 4 and has been removed from Arizona Bootstrap 5.</p>
-<h3 id="bold-custom-class">Bold custom class</h3>
-<p>The <code>.bold</code> Arizona Bootstrap class was <a href="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/backwards-compatibility/#fonts--font-styles">deprecated in Arizona Bootstrap 2</a> and has been removed from Arizona Bootstrap 5. Use <code>.fw-bold</code> from the <a href="/arizona-bootstrap/v5/docs/5.0/utilities/text/#font-weight-and-italics">font-weight classes</a> instead.</p>
-<h3 id="heading-style">Heading-Style</h3>
-<p>The <code>.heading-style</code> class has been removed from Arizona Bootstrap 5. The Bootstrap <code>.h1</code> - <code>.h6</code> styles should be used instead.</p>
-<h3 id="mailto">Mailto</h3>
-<p>The <code>.mailto</code> class, which is placed directly on the <code>&lt;a&gt;</code> link tag, has been removed in favor of Bootstrap&rsquo;s <code>.text-truncate</code> class, which is placed on the surrounding <code>&lt;div&gt;</code> instead. See <a href="/arizona-bootstrap/v5/docs/5.0/helpers/text-truncation/">Text Truncation</a> for more details.</p>
-<h3 id="sans">Sans</h3>
-<p>The legacy <code>.sans</code> class has been removed from Arizona Bootstrap 5, which already uses a sans-serif font for both body and heading text.</p>
+<h2 id="deprecated-utilities">Deprecated Utilities</h2>
+<p>The following utilities are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.</p>
+<h3 id="border-thick">Border Thick</h3>
+<p>The <code>.border-thick</code> custom Arizona Bootstrap class has been deprecated. The <code>.border-4</code> class from the new <a href="/arizona-bootstrap/v5/docs/5.0/utilities/borders/#width">border width</a> utilities can be used as a direct replacement.</p>
 <h2 id="removed-components">Removed Components</h2>
 <p>The following components have been removed in Arizona Bootstrap 5.</p>
 <h3 id="background-wrapper-patterns">Background Wrapper Patterns</h3>
@@ -602,9 +599,23 @@
 </ul>
 <h3 id="navbar-off-canvas">Navbar Off Canvas</h3>
 <p>The Navbar Off Canvas component custom to Arizona Bootstrap has been removed. This component is no longer used in Arizona Quickstart. Instead of displaying a single nav in different ways for mobile and desktop devices, Quickstart now uses separate navs (with different functionality) for mobile and desktop devices. For an example from upstream Bootstrap of building a similar component, see <a href="/arizona-bootstrap/v5/docs/5.0/examples/offcanvas-navbar/">Offcanvas navbar</a>.</p>
+<h2 id="removed-utilities">Removed Utilities</h2>
+<p>The following utilities have been removed in Arizona Bootstrap 5.</p>
+<h3 id="blockquote-reverse">Blockquote Reverse</h3>
+<p>The <code>.blockquote-reverse</code> class was removed in upstream Bootstrap 4 and has been removed from Arizona Bootstrap 5.</p>
+<h3 id="bold-custom-class">Bold custom class</h3>
+<p>The <code>.bold</code> Arizona Bootstrap class was <a href="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/backwards-compatibility/#fonts--font-styles">deprecated in Arizona Bootstrap 2</a> and has been removed from Arizona Bootstrap 5. Use <code>.fw-bold</code> from the <a href="/arizona-bootstrap/v5/docs/5.0/utilities/text/#font-weight-and-italics">font-weight classes</a> instead.</p>
+<h3 id="heading-style">Heading-Style</h3>
+<p>The <code>.heading-style</code> class has been removed from Arizona Bootstrap 5. The Bootstrap <code>.h1</code> - <code>.h6</code> styles should be used instead.</p>
+<h3 id="mailto">Mailto</h3>
+<p>The <code>.mailto</code> class, which is placed directly on the <code>&lt;a&gt;</code> link tag, has been removed in favor of Bootstrap&rsquo;s <code>.text-truncate</code> class, which is placed on the surrounding <code>&lt;div&gt;</code> instead. See <a href="/arizona-bootstrap/v5/docs/5.0/helpers/text-truncation/">Text Truncation</a> for more details.</p>
+<h3 id="sans">Sans</h3>
+<p>The legacy <code>.sans</code> class has been removed from Arizona Bootstrap 5, which already uses a sans-serif font for both body and heading text.</p>
 <h2 id="removed-javascript">Removed JavaScript</h2>
 <p>Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in Arizona Bootstrap 5. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that Arizona Bootstrap
    uses. Refer to each individual component&rsquo;s documentation for an explanation of proper methods, options, and events.</p>
+<h3 id="offcanvasmenu">Offcanvasmenu</h3>
+<p>The Offcanvasmenu JavaScript module included in Arizona Bootstrap 2 has been removed from Arizona Bootstrap 5. This module supported the custom Navbar Off Canvas component, which has also been removed.</p>
 <h2 id="tables">Tables</h2>
 <p>Arizona Bootstrap 5 includes a custom set of <a href="/arizona-bootstrap/v5/docs/5.0/content/tables/#variants">table variants</a>. From the theme colors, only Light and Dark table variants are included. Table variants for select university brand colors are also included. Note that in Bootstrap 5, <a href="/arizona-bootstrap/v5/docs/5.0/migration/#content-reboot-etc"><code>.thead-light</code> and <code>.thead-dark</code> have been replaced with the <code>.table-*</code> color variant classes</a>.</p>
 <h2 id="icons">Icons</h2>
@@ -652,7 +663,7 @@ Bootstrap 5.</p>
           <li class="mb-2">Arizona Bootstrap is &copy; 2025 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</li>
           <li class="mb-2">Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</li>
           <li class="mb-2">Code licensed <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
-          <li class="mb-2">Currently v5.0.0-beta1.</li>
+          <li class="mb-2">Currently v5.0.0-beta2.</li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">
@@ -688,7 +699,7 @@ Bootstrap 5.</p>
   </div>
 </footer>
 
-    <script defer src="/arizona-bootstrap/v5/docs/5.0/dist/js/arizona-bootstrap.bundle.min.js" integrity="sha384-vbXVj+FUAs66UPu/h/9vhX7myN5luvBXXXUdhZOIk6aBue1AdiKtAoMgdeiw5ZR4"></script>
+    <script defer src="/arizona-bootstrap/v5/docs/5.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
 
 <script defer src="/arizona-bootstrap/v5/docs/5.0/assets/js/application.js"></script>
 
