@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Some styles and classes available in Arizona Bootstrap 2 (Bootstrap 4) have been deprecated, replaced, or removed in Arizona Bootstrap 5 (Bootstrap 5).">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.150.1">
+<meta name="generator" content="Hugo 0.151.0">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="5.0">
@@ -476,7 +476,7 @@
     <main class="bd-main order-1">
       <div class="bd-intro pt-2 ps-lg-2">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.0/site/content/docs/5.0/backwards-compatibility.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.0.1/site/content/docs/5.0/backwards-compatibility.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a></div>
           <h1 class="bd-title mb-0" id="content">Backwards Compatibility</h1>
@@ -499,6 +499,7 @@
     <li><a href="#backwards-compatible-components">Backwards Compatible Components</a>
       <ul>
         <li><a href="#badges">Badges</a></li>
+        <li><a href="#primary-color-change">Primary Color Change</a></li>
       </ul>
     </li>
     <li><a href="#deprecated-components">Deprecated Components</a>
@@ -507,28 +508,46 @@
         <li><a href="#arizona-header-classes">Arizona Header Classes</a></li>
         <li><a href="#card-classes">Card Classes</a></li>
         <li><a href="#nav-tabs-large">Nav Tabs Large</a></li>
-        <li><a href="#ul-triangles">UL Triangles</a></li>
       </ul>
     </li>
     <li><a href="#deprecated-utilities">Deprecated Utilities</a>
       <ul>
         <li><a href="#border-thick">Border Thick</a></li>
+        <li><a href="#ul-triangles">UL Triangles</a></li>
       </ul>
     </li>
     <li><a href="#removed-components">Removed Components</a>
       <ul>
         <li><a href="#background-wrapper-patterns">Background Wrapper Patterns</a></li>
+        <li><a href="#button-classes">Button Classes</a></li>
         <li><a href="#callout-variants">Callout Variants</a></li>
+        <li><a href="#card-color-classes">Card Color Classes</a></li>
+        <li><a href="#dropdown-dividers">Dropdown Dividers</a></li>
+        <li><a href="#labels">Labels</a></li>
+        <li><a href="#modal-dark">Modal Dark</a></li>
+        <li><a href="#navbar-default">Navbar Default</a></li>
         <li><a href="#navbar-off-canvas">Navbar Off Canvas</a></li>
+        <li><a href="#panels">Panels</a></li>
+        <li><a href="#thumbnails">Thumbnails</a></li>
+        <li><a href="#wells">Wells</a></li>
       </ul>
     </li>
     <li><a href="#removed-utilities">Removed Utilities</a>
       <ul>
+        <li><a href="#background-color-silver-tint">Background Color: Silver Tint</a></li>
         <li><a href="#blockquote-reverse">Blockquote Reverse</a></li>
-        <li><a href="#bold-custom-class">Bold custom class</a></li>
-        <li><a href="#heading-style">Heading-Style</a></li>
+        <li><a href="#bold-custom-class">Bold Custom Class</a></li>
+        <li><a href="#column-offset-classes">Column Offset Classes</a></li>
+        <li><a href="#heading-style">Heading Style</a></li>
         <li><a href="#mailto">Mailto</a></li>
+        <li><a href="#page-header">Page Header</a></li>
+        <li><a href="#pull-classes">Pull Classes</a></li>
+        <li><a href="#text-alignment--not-classes">Text Alignment *-not Classes</a></li>
+        <li><a href="#text-size-heading-classes">Text Size Heading Classes</a></li>
+        <li><a href="#text-vertical-alignment">Text Vertical Alignment</a></li>
+        <li><a href="#triangle-list-class">Triangle List Class</a></li>
         <li><a href="#sans">Sans</a></li>
+        <li><a href="#zero-margin-classes">Zero Margin Classes</a></li>
       </ul>
     </li>
     <li><a href="#removed-javascript">Removed JavaScript</a>
@@ -549,13 +568,21 @@
 
         <h2 id="overview">Overview</h2>
 <p>Although backwards compatibility is included for some components and utilities available in Arizona Bootstrap 2, it is highly recommended that you utilize the new classes available in Arizona Bootstrap 5. They are simply included here to lessen the burden on site builders for migrating from Drupal sites using Arizona Bootstrap 2 to sites using Arizona Bootstrap 5.</p>
-<p>All items that are included with backwards compatibility are built by extending the classes and styles available in Arizona Bootstrap 5. Any items that were marked as &ldquo;deprecated&rdquo; in Arizona Bootstrap 2 do not include backwards compatibility; these items are listed in the <a href="#removed-utility-classes">Removed Utility Classes</a> and <a href="#removed-components">Removed Components</a> sections.</p>
-<p>For information on changes made in upstream Bootstrap 5, see the <a href="../migration%22">Migration page</a>.</p>
+<p>All items that are included with backwards compatibility are built by extending the classes and styles available in Arizona Bootstrap 5. Any items that were marked as &ldquo;deprecated&rdquo; in Arizona Bootstrap 2 do not include backwards compatibility; these items are listed in the <a href="#removed-components">Removed Components</a> and <a href="#removed-utilities">Removed Utilities</a> sections.</p>
+<p>For information on changes made in upstream Bootstrap 5, see the <a href="../migration">Migration page</a>.</p>
+<p>For reference, Arizona Quickstart 3 includes a <a href="https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Utility/AZBootstrapMarkupConverter.php#L183-L760">mapping of classes from Arizona Bootstrap 2 to Arizona Bootstrap 5</a> as part of a markup converter class. This mapping is used by drush commands such as <a href="https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Drush/Commands/README.md#arizona-bootstrap-5-block-class-updates">this one</a>, which can be used to update Arizona Bootstrap 2 classes after a site has been migrated to Quickstart 3.</p>
 <h2 id="backwards-compatible-components">Backwards Compatible Components</h2>
 <p>Arizona Bootstrap 2 utilized components that are no longer supported/maintained in Arizona Bootstrap
   , but can be replicated by utilizing a combination of available classes. They have been included with backwards compatibility in Arizona Bootstrap 5 to avoid breaking changes.</p>
 <h3 id="badges">Badges</h3>
 <p>Arizona Bootstrap 5 largely follows <a href="/arizona-bootstrap/v5/docs/5.0/migration/#badges">upstream Bootstrap&rsquo;s changes to badges</a>. The <code>badge-variant()</code> mixin override from Arizona Bootstrap 2 has been removed since badges will now use <a href="/arizona-bootstrap/v5/docs/5.0/helpers/color-background/">color and background helpers</a> to ensure accessible color combinations. The <code>.badge-link</code> class dropped by upstream Bootstrap has been converted to a <a href="/arizona-bootstrap/v5/docs/5.0/components/badge/#badge-links">custom Arizona Bootstrap class</a> that works with badges using the Chili, Midnight, and Light color and background helpers.</p>
+<h3 id="primary-color-change">Primary Color Change</h3>
+<p>In Arizona Bootstrap 2, classes using the &ldquo;primary&rdquo; color were styled with Arizona Blue. In Arizona Bootstrap 5, &ldquo;primary&rdquo; now corresponds with Arizona Red and &ldquo;secondary&rdquo; (unused in Arizona Bootstrap 2) corresponds with Arizona Blue. Below are examples of replacements which can be made to update existing content while maintaining the same Arizona Blue color:</p>
+<ul>
+<li><code>.bg-primary</code>: Replace with <code>.text-bg-blue</code>.</li>
+<li><code>.btn-primary</code>: Replace with <code>.btn-blue</code>.</li>
+<li><code>.text-primary</code>: Replace with <code>.text-blue</code>.</li>
+</ul>
 <h2 id="deprecated-components">Deprecated Components</h2>
 <p>The following components are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.</p>
 <h3 id="accordion-implementation">Accordion Implementation</h3>
@@ -577,16 +604,24 @@
 </ul>
 <h3 id="nav-tabs-large">Nav Tabs Large</h3>
 <p>The <code>.nav-tabs-lg</code> custom Arizona Bootstrap class is now deprecated.</p>
-<h3 id="ul-triangles">UL Triangles</h3>
-<p>The <code>.ul-triangles</code> custom Arizona Bootstrap class has been deprecated and replaced by <code>.az-list-triangles</code>.</p>
 <h2 id="deprecated-utilities">Deprecated Utilities</h2>
 <p>The following utilities are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.</p>
 <h3 id="border-thick">Border Thick</h3>
 <p>The <code>.border-thick</code> custom Arizona Bootstrap class has been deprecated. The <code>.border-4</code> class from the new <a href="/arizona-bootstrap/v5/docs/5.0/utilities/borders/#width">border width</a> utilities can be used as a direct replacement.</p>
+<h3 id="ul-triangles">UL Triangles</h3>
+<p>The <code>.ul-triangles</code> custom Arizona Bootstrap class has been deprecated and replaced by <code>.az-list-triangles</code>.</p>
 <h2 id="removed-components">Removed Components</h2>
 <p>The following components have been removed in Arizona Bootstrap 5.</p>
 <h3 id="background-wrapper-patterns">Background Wrapper Patterns</h3>
 <p>The Triangles Fade, Triangle Mosaic, and Catalinas Abstract background wrapper patterns were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5.</p>
+<h3 id="button-classes">Button Classes</h3>
+<p>The following <code>.btn-*</code> classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5:</p>
+<ul>
+<li><code>.btn-default</code>: Replace with <code>.btn-red</code>.</li>
+<li><code>.btn-hollow-default</code>: Replace with <code>.btn-outline-red</code>.</li>
+<li><code>.btn-hollow-primary</code>: Replace with <code>.btn-outline-blue</code>.</li>
+<li><code>.btn-hollow-reverse</code>: Replace with <code>.btn-outline-white</code>.</li>
+</ul>
 <h3 id="callout-variants">Callout Variants</h3>
 <p>For our custom <a href="/arizona-bootstrap/v5/docs/5.0/components/callouts/">Callouts component</a>, the following callout variants have been removed:</p>
 <ul>
@@ -597,31 +632,85 @@
 <li><code>.callout-light</code></li>
 <li><code>.callout-dark</code></li>
 </ul>
+<h3 id="card-color-classes">Card Color Classes</h3>
+<p>Card color classes such as <code>.card-primary</code> and <code>.card-primary-outline</code> were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. See <a href="/arizona-bootstrap/v5/docs/5.0/components/card/#card-styles">Card styles</a> for information on how to customize card colors and borders.</p>
+<h3 id="dropdown-dividers">Dropdown Dividers</h3>
+<p>The <code>.divider</code> and <code>.nav-divider</code> classes deprecated in Arizona Bootstrap 2 have been replaced by the <code>.dropdown-divider</code> class.</p>
+<h3 id="labels">Labels</h3>
+<p>The <code>.label-*</code> classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. Existing labels can be replaced with <a href="/arizona-bootstrap/v5/docs/5.0/components/badge/">badges</a>.</p>
+<h3 id="modal-dark">Modal Dark</h3>
+<p>The <code>.modal-bg-dark</code> class was deprecated in Arizona Bootstrap 2 and has been removed in Arizona Bootstrap 5. See the <a href="/arizona-bootstrap/v5/docs/5.0/components/modal/">Modal documentation</a> for details about customizing modals.</p>
+<h3 id="navbar-default">Navbar Default</h3>
+<p>The <code>.navbar-default</code> class deprecated in Arizona Bootstrap 2 has been removed in Arizona Bootstrap 5. See the <a href="/arizona-bootstrap/v5/docs/5.0/components/navbar/">Navbar documentation</a> for information on theming navbars.</p>
 <h3 id="navbar-off-canvas">Navbar Off Canvas</h3>
 <p>The Navbar Off Canvas component custom to Arizona Bootstrap has been removed. This component is no longer used in Arizona Quickstart. Instead of displaying a single nav in different ways for mobile and desktop devices, Quickstart now uses separate navs (with different functionality) for mobile and desktop devices. For an example from upstream Bootstrap of building a similar component, see <a href="/arizona-bootstrap/v5/docs/5.0/examples/offcanvas-navbar/">Offcanvas navbar</a>.</p>
+<h3 id="panels">Panels</h3>
+<p>Panels were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. The following classes may be used as a starting point for updating the HTML for the component: <strong>these classes are not direct replacements</strong>.</p>
+<ul>
+<li><code>panel</code> → <code>card</code></li>
+<li><code>panel-body</code> → <code>card-body</code></li>
+<li><code>panel-heading</code> → <code>card-header</code></li>
+<li><code>panel-title</code> → <code>card-title</code></li>
+<li><code>panel-footer</code> → <code>card-footer</code></li>
+</ul>
+<h3 id="thumbnails">Thumbnails</h3>
+<p>Thumbnails were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. Thumbnails can be replaced with <a href="/arizona-bootstrap/v5/docs/5.0/components/card/">cards</a> as appropriate.</p>
+<h3 id="wells">Wells</h3>
+<p>Wells were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. The following classes may be used as a starting point for updating the HTML for the component: <strong>these classes are not direct replacements</strong>.</p>
+<ul>
+<li><code>well</code> → <code>card p-card text-bg-cool-gray</code></li>
+<li><code>well-hollow</code> → <code>text-bg-white</code></li>
+</ul>
 <h2 id="removed-utilities">Removed Utilities</h2>
 <p>The following utilities have been removed in Arizona Bootstrap 5.</p>
+<h3 id="background-color-silver-tint">Background Color: Silver Tint</h3>
+<p>The <code>.bg-silver-tint</code> class was deprecated in Arizona Bootstrap 2 and has been removed in Arizona Bootstrap 5. Use <code>.text-bg-gray-100</code> instead.</p>
 <h3 id="blockquote-reverse">Blockquote Reverse</h3>
 <p>The <code>.blockquote-reverse</code> class was removed in upstream Bootstrap 4 and has been removed from Arizona Bootstrap 5.</p>
-<h3 id="bold-custom-class">Bold custom class</h3>
+<h3 id="bold-custom-class">Bold Custom Class</h3>
 <p>The <code>.bold</code> Arizona Bootstrap class was <a href="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/backwards-compatibility/#fonts--font-styles">deprecated in Arizona Bootstrap 2</a> and has been removed from Arizona Bootstrap 5. Use <code>.fw-bold</code> from the <a href="/arizona-bootstrap/v5/docs/5.0/utilities/text/#font-weight-and-italics">font-weight classes</a> instead.</p>
-<h3 id="heading-style">Heading-Style</h3>
+<h3 id="column-offset-classes">Column Offset Classes</h3>
+<p>Column offset classes with the format <code>.col-&lt;breakpoint&gt;-offset-&lt;size&gt;</code> (e.g., <code>.col-md-offset-2</code>) were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. The format <code>.offset-&lt;breakpoint&gt;-&lt;size&gt;</code> should be used instead: see <a href="/arizona-bootstrap/v5/docs/5.0/layout/columns/#offsetting-columns">Offsetting columns</a>.</p>
+<h3 id="heading-style">Heading Style</h3>
 <p>The <code>.heading-style</code> class has been removed from Arizona Bootstrap 5. The Bootstrap <code>.h1</code> - <code>.h6</code> styles should be used instead.</p>
 <h3 id="mailto">Mailto</h3>
 <p>The <code>.mailto</code> class, which is placed directly on the <code>&lt;a&gt;</code> link tag, has been removed in favor of Bootstrap&rsquo;s <code>.text-truncate</code> class, which is placed on the surrounding <code>&lt;div&gt;</code> instead. See <a href="/arizona-bootstrap/v5/docs/5.0/helpers/text-truncation/">Text Truncation</a> for more details.</p>
+<h3 id="page-header">Page Header</h3>
+<p>The <code>.page-header</code> class was deprecated in Arizona Bootstrap 2 and has been removed in Arizona Bootstrap 5. This class can be replaced with this set of classes: <code>mt-5 mb-4 pb-3</code>.</p>
+<h3 id="pull-classes">Pull Classes</h3>
+<p>The <code>.pull-left</code> and <code>.pull-right</code> classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. They can be replaced with <code>.float-start</code> and <code>.float-end</code>, respectively.</p>
+<h3 id="text-alignment--not-classes">Text Alignment *-not Classes</h3>
+<p>The custom Arizona Bootstrap <code>*-not</code> classes from UA Bootstrap (e.g., <code>.text-left-not-xs</code>, <code>.text-justify-not-lg</code>) were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. See <a href="/arizona-bootstrap/v5/docs/5.0/utilities/text/#text-alignment">Text alignment</a> for examples of the available responsive text alignment classes.</p>
+<h3 id="text-size-heading-classes">Text Size Heading Classes</h3>
+<p>The custom Arizona Bootstrap <code>.text-size-*</code> classes (e.g., <code>.text-size-h1</code>) were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. These classes can be replaced with the appropriate <a href="/arizona-bootstrap/v5/docs/5.0/content/typography/#headings">heading style class</a> in combination with <code>mb-0</code> to match the original styling (e.g., <code>.h1 mb-0</code>).</p>
+<h3 id="text-vertical-alignment">Text Vertical Alignment</h3>
+<p>The custom Arizona Bootstrap <code>.margin-align-*</code> classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. These classes can be replaced with standard <a href="/arizona-bootstrap/v5/docs/5.0/utilities/vertical-align/">Vertical align</a> classes as follows:</p>
+<ul>
+<li><code>margin-align-top</code> → <code>align-text-bottom</code></li>
+<li><code>margin-align-middle</code> → <code>align-middle</code></li>
+<li><code>margin-align-bottom</code> → <code>align-text-top</code></li>
+</ul>
+<h3 id="triangle-list-class">Triangle List Class</h3>
+<p>The <code>.triangle</code> class for styling list bullets was deprecated in Arizona Bootstrap 2 and has been replaced with <code>.az-list-triangles</code> in Arizona Bootstrap 5.</p>
 <h3 id="sans">Sans</h3>
 <p>The legacy <code>.sans</code> class has been removed from Arizona Bootstrap 5, which already uses a sans-serif font for both body and heading text.</p>
+<h3 id="zero-margin-classes">Zero Margin Classes</h3>
+<p>The <code>.margin-zero-top</code> and <code>.margin-zero-bottom</code> classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. They can be replaced with <code>.mt-0</code> and <code>.mb-0</code>, respectively.</p>
 <h2 id="removed-javascript">Removed JavaScript</h2>
 <p>Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in Arizona Bootstrap 5. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that Arizona Bootstrap
    uses. Refer to each individual component&rsquo;s documentation for an explanation of proper methods, options, and events.</p>
 <h3 id="offcanvasmenu">Offcanvasmenu</h3>
 <p>The Offcanvasmenu JavaScript module included in Arizona Bootstrap 2 has been removed from Arizona Bootstrap 5. This module supported the custom Navbar Off Canvas component, which has also been removed.</p>
 <h2 id="tables">Tables</h2>
-<p>Arizona Bootstrap 5 includes a custom set of <a href="/arizona-bootstrap/v5/docs/5.0/content/tables/#variants">table variants</a>. From the theme colors, only Light and Dark table variants are included. Table variants for select university brand colors are also included. Note that in Bootstrap 5, <a href="/arizona-bootstrap/v5/docs/5.0/migration/#content-reboot-etc"><code>.thead-light</code> and <code>.thead-dark</code> have been replaced with the <code>.table-*</code> color variant classes</a>.</p>
+<p>Arizona Bootstrap 5 includes a custom set of <a href="/arizona-bootstrap/v5/docs/5.0/content/tables/#variants">table variants</a>. From the theme colors, only Light and Dark table variants are included. Table variants for select university brand colors are also included.</p>
+<p><strong>Note:</strong> In Bootstrap 5, <a href="/arizona-bootstrap/v5/docs/5.0/migration/#content-reboot-etc"><code>.thead-light</code> and <code>.thead-dark</code> have been replaced with the <code>.table-*</code> color variant classes</a>. Also, the default <code>.table</code> class now sets a white background color for its nested elements: it did not do so in Arizona Bootstrap 2. For tables placed on a background that isn&rsquo;t white, site owners can add the appropriate <code>.table-*</code> color variant class to the <code>.table</code> element.</p>
 <h2 id="icons">Icons</h2>
 <p><a href="https://fonts.google.com/icons?icon.style=Sharp&amp;icon.set=Material+Icons">Google Material Icons (Sharp)</a> are deprecated in Arizona Bootstrap 5. Site owners are encouraged to review
 the <a href="../icons/">updated documentation</a> around importing and using the approved <a href="https://fonts.google.com/icons?icon.style=Rounded&amp;icon.set=Material+Symbols&amp;icon.size=24&amp;icon.color=%23e3e3e3">Material Symbols (Rounded)</a> in Arizona
 Bootstrap 5.</p>
+<ul>
+<li><code>.material-icons-sharp</code>: Replace with <code>.material-symbols-rounded</code>.</li>
+</ul>
 
       </div>
     </main>
@@ -663,7 +752,7 @@ Bootstrap 5.</p>
           <li class="mb-2">Arizona Bootstrap is &copy; 2025 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</li>
           <li class="mb-2">Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</li>
           <li class="mb-2">Code licensed <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
-          <li class="mb-2">Currently v5.0.0.</li>
+          <li class="mb-2">Currently v5.0.1.</li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">
