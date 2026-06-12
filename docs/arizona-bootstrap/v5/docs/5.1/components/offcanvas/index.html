@@ -477,7 +477,7 @@
     <main class="bd-main order-1">
       <div class="bd-intro pt-2 ps-lg-2">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.3/site/content/docs/5.1/components/offcanvas.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.4/site/content/docs/5.1/components/offcanvas.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a></div>
           <h1 class="bd-title mb-0" id="content">Offcanvas</h1>
@@ -955,7 +955,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <p>As part of Bootstrap&rsquo;s evolving CSS variables approach, offcanvas now uses local CSS variables on <code>.offcanvas</code> for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.3/scss/_offcanvas.scss">scss/_offcanvas.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.4/scss/_offcanvas.scss">scss/_offcanvas.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -976,7 +976,7 @@ The animation effect of this component is dependent on the <code>prefers-reduced
 <h3 id="sass-variables">Sass variables</h3>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.3/scss/_variables.scss">scss/_variables.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.4/scss/_variables.scss">scss/_variables.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -1022,7 +1022,7 @@ While both ways to dismiss an offcanvas are supported, keep in mind that dismiss
 <h3 id="via-javascript">Via JavaScript</h3>
 <p>Enable manually with:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">offcanvasElementList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.offcanvas&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">offcanvasList</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">offcanvasElementList</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">offcanvasEl</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Offcanvas</span><span class="p">(</span><span class="nx">offcanvasEl</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">offcanvasList</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">offcanvasElementList</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">offcanvasEl</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">arizonaBootstrap</span><span class="p">.</span><span class="nx">Offcanvas</span><span class="p">(</span><span class="nx">offcanvasEl</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="options">Options</h3>
 <p>As options can be passed via data attributes or JavaScript, you can append an option name to <code>data-bs-</code>, as in <code>data-bs-animation=&amp;#34;{value}&amp;#34;</code>. Make sure to change the case type of the option name from &quot;<em>camelCase</em>&quot; to &quot;<em>kebab-case</em>&quot; when passing the options via data attributes. For example, use <code>data-bs-custom-class=&amp;#34;beautifier&amp;#34;</code> instead of <code>data-bs-customClass=&amp;#34;beautifier&amp;#34;</code>.</p>
 <p>As of Bootstrap 5.2.0, all components support an <strong>experimental</strong> reserved data attribute <code>data-bs-config</code> that can house simple component configuration as a JSON string. When an element has <code>data-bs-config=&amp;#39;{&amp;#34;delay&amp;#34;:0, &amp;#34;title&amp;#34;:123}&amp;#39;</code> and <code>data-bs-title=&amp;#34;456&amp;#34;</code> attributes, the final <code>title</code> value will be <code>456</code> and the separate data attributes will override values given on <code>data-bs-config</code>. In addition, existing data attributes are able to house JSON values like <code>data-bs-delay=&amp;#39;{&amp;#34;show&amp;#34;:0,&amp;#34;hide&amp;#34;:150}&amp;#39;</code>.</p>
@@ -1066,7 +1066,7 @@ While both ways to dismiss an offcanvas are supported, keep in mind that dismiss
 
 <p>Activates your content as an offcanvas element. Accepts an optional options <code>object</code>.</p>
 <p>You can create an offcanvas instance with the constructor, for example:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">bsOffcanvas</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Offcanvas</span><span class="p">(</span><span class="s1">&#39;#myOffcanvas&#39;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">bsOffcanvas</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">arizonaBootstrap</span><span class="p">.</span><span class="nx">Offcanvas</span><span class="p">(</span><span class="s1">&#39;#myOffcanvas&#39;</span><span class="p">)</span>
 </span></span></code></pre></div><div class="table-responsive"><table class="table">
   <thead>
       <tr>
@@ -1180,7 +1180,7 @@ While both ways to dismiss an offcanvas are supported, keep in mind that dismiss
           <li class="mb-2">Arizona Bootstrap is &copy; 2025 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</li>
           <li class="mb-2">Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</li>
           <li class="mb-2">Code licensed <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
-          <li class="mb-2">Currently v5.1.3.</li>
+          <li class="mb-2">Currently v5.1.4.</li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">
