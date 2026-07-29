@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Bootstrap now supports color modes, or themes, as of v5.3.0. Explore our default light color mode and the new dark mode, or create your own using our styles as your template.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.152.2">
+<meta name="generator" content="Hugo 0.164.0">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="5.1">
@@ -478,7 +478,7 @@
     <main class="bd-main order-1">
       <div class="bd-intro pt-2 ps-lg-2">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap"><small class="d-inline-flex px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-2">Added in v5.3</small><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.6/site/content/docs/5.1/customize/color-modes.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap"><small class="d-inline-flex px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-2">Added in v5.3</small><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.7/site/content/docs/5.1/customize/color-modes.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a></div>
           <h1 class="bd-title mb-0" id="content">Color modes</h1>
@@ -609,9 +609,9 @@
 <li>
 <p>For each color mode you wish to support, you&rsquo;ll need to add new overrides for the shared global CSS variables. We do this already in our <code>_root.scss</code> stylesheet for dark mode, with light mode being the default values. In writing color mode specific styles, use the mixin:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="c1">// Color mode variables in _root.scss
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">@include</span><span class="nd"> color-mode</span><span class="p">(</span><span class="ni">dark</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">@include</span><span class="nd"> color-mode</span><span class="p">(</span><span class="ni">dark</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// CSS variable overrides here...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></li>
 <li>
 <p>We use a custom <code>_variables-dark.scss</code> to power those shared global CSS variable overrides for dark mode. This file isn&rsquo;t required for your own custom color modes, but it&rsquo;s required for our dark mode for two reasons. First, it&rsquo;s better to have a single place to reset global colors. Second, some Sass variables had to be overridden for background images embedded in our CSS for accordions, form components, and more.</p>
@@ -626,11 +626,11 @@
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Bootstrap demo<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.digital.arizona.edu/lib/arizona-bootstrap/5.1.6/css/arizona-bootstrap.min.css&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-9y3cOytieMTINwHaZIEtsbPJWca9rYG4fT/fJb4yBDMAKrU8UWXsQ6zQPbJ4vkd2&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.digital.arizona.edu/lib/arizona-bootstrap/5.1.7/css/arizona-bootstrap.min.css&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-SgSGA+Xq4XEBEPlON8QEcukyUhSpWeXxR+iaYuShOaJyIimwkxUNJQK/Oz0ty0Db&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, world!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.digital.arizona.edu/lib/arizona-bootstrap/5.1.6/js/arizona-bootstrap.bundle.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-b9RyYY0LIuAFnujYgwQUaNlUDwe6fZEMn1AUCRPeH0qjHScTom6p3IAR45+luYsa&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.digital.arizona.edu/lib/arizona-bootstrap/5.1.7/js/arizona-bootstrap.bundle.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-s07QPRzoGJG/EW/uIOcU9UtDqjDnV99oaUdSzZXvk9tUSztC8VvvvGyUahkGfQJm&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Bootstrap does not yet ship with a built-in color mode picker, but you can use the one from our own documentation if you like. <a href="#javascript">Learn more in the JavaScript section.</a></p>
@@ -672,7 +672,7 @@
 <p>For example, you can create a &ldquo;blue theme&rdquo; with the selector <code>data-bs-theme=&quot;blue&quot;</code>. In your custom Sass or CSS file, add the new selector and override any global or component CSS variables as needed. If you&rsquo;re using Sass, you can also use Sass&rsquo;s functions within your CSS variable overrides.</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.6/scss/_content.scss">scss/_content.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.7/scss/_content.scss">scss/_content.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -812,12 +812,12 @@
 <p>Adding a new color in <code>$theme-colors</code> is not enough for some of our components like <a href="/arizona-bootstrap/v5/docs/5.1/components/alerts/">alerts</a> and <a href="/arizona-bootstrap/v5/docs/5.1/components/list-group/">list groups</a>. New colors must also be defined in <code>$theme-colors-text</code>, <code>$theme-colors-bg-subtle</code>, and <code>$theme-colors-border-subtle</code> for light theme; but also in <code>$theme-colors-text-dark</code>, <code>$theme-colors-bg-subtle-dark</code>, and <code>$theme-colors-border-subtle-dark</code> for dark theme.</p>
 <p>This is a manual process because Sass cannot generate its own Sass variables from an existing variable or map. In future versions of Bootstrap, we&rsquo;ll revisit this setup to reduce the duplication.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="c1">// Required
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;functions&#34;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;functions&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;variables&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;variables-dark&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Add a custom color to $theme-colors
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$custom-colors</span><span class="o">:</span> <span class="p">(</span>
+</span></span></span><span class="line"><span class="cl"><span class="nv">$custom-colors</span><span class="o">:</span> <span class="p">(</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;custom-color&#34;</span><span class="o">:</span> <span class="mh">#712cf9</span>
 </span></span><span class="line"><span class="cl"><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$theme-colors</span><span class="o">:</span> <span class="nf">map-merge</span><span class="p">(</span><span class="nv">$theme-colors</span><span class="o">,</span> <span class="nv">$custom-colors</span><span class="p">);</span>
@@ -827,9 +827,9 @@
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;utilities&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Add a custom color to new theme maps
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Light mode
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$custom-colors-text</span><span class="o">:</span> <span class="p">(</span><span class="s2">&#34;custom-color&#34;</span><span class="o">:</span> <span class="mh">#712cf9</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="nv">$custom-colors-text</span><span class="o">:</span> <span class="p">(</span><span class="s2">&#34;custom-color&#34;</span><span class="o">:</span> <span class="mh">#712cf9</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$custom-colors-bg-subtle</span><span class="o">:</span> <span class="p">(</span><span class="s2">&#34;custom-color&#34;</span><span class="o">:</span> <span class="mh">#e1d2fe</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$custom-colors-border-subtle</span><span class="o">:</span> <span class="p">(</span><span class="s2">&#34;custom-color&#34;</span><span class="o">:</span> <span class="mh">#bfa1fc</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -838,7 +838,7 @@
 </span></span><span class="line"><span class="cl"><span class="nv">$theme-colors-border-subtle</span><span class="o">:</span> <span class="nf">map-merge</span><span class="p">(</span><span class="nv">$theme-colors-border-subtle</span><span class="o">,</span> <span class="nv">$custom-colors-border-subtle</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Dark mode
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$custom-colors-text-dark</span><span class="o">:</span> <span class="p">(</span><span class="s2">&#34;custom-color&#34;</span><span class="o">:</span> <span class="mh">#e1d2f2</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="nv">$custom-colors-text-dark</span><span class="o">:</span> <span class="p">(</span><span class="s2">&#34;custom-color&#34;</span><span class="o">:</span> <span class="mh">#e1d2f2</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$custom-colors-bg-subtle-dark</span><span class="o">:</span> <span class="p">(</span><span class="s2">&#34;custom-color&#34;</span><span class="o">:</span> <span class="mh">#8951fa</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$custom-colors-border-subtle-dark</span><span class="o">:</span> <span class="p">(</span><span class="s2">&#34;custom-color&#34;</span><span class="o">:</span> <span class="mh">#e1d2f2</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -847,7 +847,7 @@
 </span></span><span class="line"><span class="cl"><span class="nv">$theme-colors-border-subtle-dark</span><span class="o">:</span> <span class="nf">map-merge</span><span class="p">(</span><span class="nv">$theme-colors-border-subtle-dark</span><span class="o">,</span> <span class="nv">$custom-colors-border-subtle-dark</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Remainder of Bootstrap imports
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;reboot&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// etc
 </span></span></span></code></pre></div><h2 id="css">CSS</h2>
@@ -855,7 +855,7 @@
 <p>Dozens of root level CSS variables are repeated as overrides for dark mode. These are scoped to the color mode selector, which defaults to <code>data-bs-theme</code> but <a href="#building-with-sass">can be configured</a> to use a <code>prefers-color-scheme</code> media query. Use these variables as a guideline for generating your own new color modes.</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.6/scss/_root.scss">scss/_root.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.7/scss/_root.scss">scss/_root.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -913,7 +913,7 @@
 <p>CSS variables for our dark color mode are partially generated from dark mode specific Sass variables in <code>_variables-dark.scss</code>. This also includes some custom overrides for changing the colors of embedded SVGs used throughout our components.</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.6/scss/_variables-dark.scss">scss/_variables-dark.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.7/scss/_variables-dark.scss">scss/_variables-dark.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -966,7 +966,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1">//
 </span></span></span><span class="line"><span class="cl"><span class="c1">// Forms
 </span></span></span><span class="line"><span class="cl"><span class="c1">//
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">$form-select-indicator-color-dark</span><span class="o">:</span>  <span class="nv">$body-color-dark</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$form-select-indicator-dark</span><span class="o">:</span>        <span class="sx">url(&#34;data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 16 16&#39;&gt;&lt;path fill=&#39;none&#39; stroke=&#39;</span><span class="si">#{</span><span class="nv">$form-select-indicator-color-dark</span><span class="si">}</span><span class="sx">&#39; stroke-linecap=&#39;round&#39; stroke-linejoin=&#39;round&#39; stroke-width=&#39;2&#39; d=&#39;m2 5 6 6 6-6&#39;/&gt;&lt;/svg&gt;&#34;)</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -982,7 +982,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1">//
 </span></span></span><span class="line"><span class="cl"><span class="c1">// Accordion
 </span></span></span><span class="line"><span class="cl"><span class="c1">//
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">$accordion-icon-color-dark</span><span class="o">:</span>         <span class="nv">$primary-text-emphasis-dark</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$accordion-icon-active-color-dark</span><span class="o">:</span>  <span class="nv">$primary-text-emphasis-dark</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -993,7 +993,7 @@
 <p>Styles for dark mode, and any custom color modes you create, can be scoped appropriately to the <code>data-bs-theme</code> attribute selector or media query with the customizable <code>color-mode()</code> mixin. See the <a href="#building-with-sass">Sass usage section</a> for more details.</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.6/scss/mixins/_color-mode.scss">scss/mixins/_color-mode.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.7/scss/mixins/_color-mode.scss">scss/mixins/_color-mode.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
@@ -1060,7 +1060,7 @@
           <li class="mb-2">Arizona Bootstrap is &copy; 2025 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</li>
           <li class="mb-2">Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</li>
           <li class="mb-2">Code licensed <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
-          <li class="mb-2">Currently v5.1.6.</li>
+          <li class="mb-2">Currently v5.1.7.</li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">

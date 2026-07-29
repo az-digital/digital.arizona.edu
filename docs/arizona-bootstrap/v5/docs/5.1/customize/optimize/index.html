@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Keep your projects lean, responsive, and maintainable so you can deliver the best experience and focus on more important jobs.">
 <meta name="author" content="Arizona Digital contributors">
-<meta name="generator" content="Hugo 0.152.2">
+<meta name="generator" content="Hugo 0.164.0">
 
 <meta name="docsearch:language" content="en">
 <meta name="docsearch:version" content="5.1">
@@ -478,7 +478,7 @@
     <main class="bd-main order-1">
       <div class="bd-intro pt-2 ps-lg-2">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.6/site/content/docs/5.1/customize/optimize.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+          <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.7/site/content/docs/5.1/customize/optimize.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
                 View on GitHub
               </a></div>
           <h1 class="bd-title mb-0" id="content">Optimize</h1>
@@ -517,14 +517,14 @@
 <p>When using Sass in your asset pipeline, make sure you optimize Bootstrap by only <code>@import</code>ing the components you need. Your largest optimizations will likely come from the <code>Layout &amp; Components</code> section of our <code>bootstrap.scss</code>.</p>
 <div class="bd-example-snippet bd-code-snippet bd-file-ref">
     <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
-      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.6/scss/bootstrap.scss">scss/bootstrap.scss</a>
+      <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/az-digital/arizona-bootstrap/blob/v5.1.7/scss/bootstrap.scss">scss/bootstrap.scss</a>
       <div class="d-flex ms-auto">
         <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
           <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"/></svg>
         </button>
       </div>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="c1">// Configuration
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;functions&#34;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;functions&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;variables&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;variables-dark&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;maps&#34;</span><span class="p">;</span>
@@ -532,7 +532,7 @@
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;utilities&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Layout &amp; components
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;reboot&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;type&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;images&#34;</span><span class="p">;</span>
@@ -565,10 +565,10 @@
 </span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;placeholders&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Helpers
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;helpers&#34;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;helpers&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Utilities
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">@import</span> <span class="s2">&#34;utilities/api&#34;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">@import</span> <span class="s2">&#34;utilities/api&#34;</span><span class="p">;</span>
 </span></span></code></pre></div></div>
 <p>If you&rsquo;re not using a component, comment it out or delete it entirely. For example, if you&rsquo;re not using the carousel, remove that import to save some file size in your compiled CSS. Keep in mind there are some dependencies across Sass imports that may make it more difficult to omit a file.</p>
 <h2 id="lean-javascript">Lean JavaScript</h2>
@@ -576,13 +576,13 @@
 <p>For instance, assuming you&rsquo;re using your own JavaScript bundler like Webpack, Parcel, or Vite, you&rsquo;d only import the JavaScript you plan on using. In the example below, we show how to just include our modal JavaScript:</p>
 <!-- eslint-skip -->
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// Import just what we need
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// import &#39;bootstrap/js/dist/alert&#39;;
 </span></span></span><span class="line"><span class="cl"><span class="c1">// import &#39;bootstrap/js/dist/button&#39;;
 </span></span></span><span class="line"><span class="cl"><span class="c1">// import &#39;bootstrap/js/dist/carousel&#39;;
 </span></span></span><span class="line"><span class="cl"><span class="c1">// import &#39;bootstrap/js/dist/collapse&#39;;
 </span></span></span><span class="line"><span class="cl"><span class="c1">// import &#39;bootstrap/js/dist/dropdown&#39;;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="s1">&#39;bootstrap/js/dist/modal&#39;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;bootstrap/js/dist/modal&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// import &#39;bootstrap/js/dist/offcanvas&#39;;
 </span></span></span><span class="line"><span class="cl"><span class="c1">// import &#39;bootstrap/js/dist/popover&#39;;
 </span></span></span><span class="line"><span class="cl"><span class="c1">// import &#39;bootstrap/js/dist/scrollspy&#39;;
@@ -664,7 +664,7 @@
           <li class="mb-2">Arizona Bootstrap is &copy; 2025 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</li>
           <li class="mb-2">Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</li>
           <li class="mb-2">Code licensed <a href="https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
-          <li class="mb-2">Currently v5.1.6.</li>
+          <li class="mb-2">Currently v5.1.7.</li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">
