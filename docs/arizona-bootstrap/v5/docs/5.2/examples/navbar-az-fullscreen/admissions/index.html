@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Arizona Digital contributors">
+    <meta name="generator" content="Hugo 0.164.0">
+    <title>AZ Navbar Fullscreen - Admissions · Arizona Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/admissions/">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+<link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
+
+<link href="https://use.typekit.net/sgx0zzg.css" rel="stylesheet" crossorigin="anonymous">
+<link href="/arizona-bootstrap/v5/docs/5.2/dist/css/arizona-bootstrap.min.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" href="/arizona-bootstrap/v5/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/arizona-bootstrap/v5/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/arizona-bootstrap/v5/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/arizona-bootstrap/v5/docs/5.2/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/arizona-bootstrap/v5/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/arizona-bootstrap/v5/docs/5.2/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#8b0015">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+
+<main class="navbar-az-fullscreen-fixed-top-offset">
+  <header>
+    <nav class="navbar navbar-az-fullscreen fixed-top" aria-label="Main navigation">
+      <div class="container-lg">
+        <a class="navbar-brand" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">
+          <img src="/arizona-bootstrap/v5/docs/5.2/assets/brand/arizona-bootstrap-logo-webheader-white.svg" alt="University of Arizona">
+        </a>
+
+        <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
+          <li class="nav-item">
+            <a class="nav-link" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/apply/">
+              <span class="nav-link-text">Apply</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span class="nav-link-text">Visit</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span class="nav-link-text">Give</span>
+            </a>
+          </li>
+        </ul>
+
+        <form class="az-search ms-auto ms-lg-0" role="search">
+          <label class="visually-hidden" for="az-search">Search site</label>
+          <div class="input-group d-none d-lg-flex">
+            <input id="az-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+            <button class="btn" type="submit" aria-label="Submit search">
+              <span class="az-search-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+          <button class="btn d-lg-none az-search-toggle" type="button" aria-label="Search site">
+            <span class="az-search-icon" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-menu" aria-controls="navbar-az-fullscreen-menu" aria-label="Open site menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-menu" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-label" aria-hidden="true">
+    <h2 id="navbar-az-fullscreen-menu-label" class="visually-hidden">Site menu</h2>
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="navbar navbar-az-fullscreen">
+            <div class="container-lg">
+              <a class="navbar-brand" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">
+                <img src="/arizona-bootstrap/v5/docs/5.2/assets/brand/arizona-bootstrap-logo-webheader-white.svg" alt="University of Arizona">
+              </a>
+              <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/apply/">
+                    <span class="nav-link-text">Apply</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Visit</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Give</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="az-search ms-auto d-lg-none">
+                <div class="btn az-search-toggle invisible">
+                  <span class="az-search-icon" aria-hidden="true"></span>
+                </div>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="container-lg">
+            <form class="az-search" role="search">
+              <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search site</label>
+              <div class="input-group">
+                <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+                <button class="btn" type="submit" aria-label="Submit search">
+                  <span class="az-search-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <div class="navbar-az-fullscreen-modal-menu container-lg ">
+            <div class="row g-0">
+              <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion">
+                <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-primary col-lg-4">
+                  <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
+                    <div class="nav-item">
+                      <a class="nav-link active" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/admissions/">
+                        <span class="nav-link-text">Admissions</span>
+                      </a>
+                      <button class="btn nav-toggle nav-toggle-separated" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-admissions-content" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-primary-admissions-content" aria-label="Toggle Admissions submenu">
+                        <span class="nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                      <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse show" id="az-navbar-az-fullscreen-primary-admissions-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                          <div class="col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                            <ul class="nav navbar-az-fullscreen-nav-secondary" aria-label="Admissions">
+                              <li class="nav-item">
+                                <a class="nav-link" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/undergraduate/">
+                                  <span class="nav-link-text">Undergraduate Students</span>
+                                </a>
+                                <button class="btn nav-toggle nav-toggle-separated collapsed" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" aria-label="Toggle Undergraduate Students submenu">
+                                  <span class="nav-toggle-icon" aria-hidden="true"></span>
+                                </button>
+                                <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content">
+                                  <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                                    <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-tertiary">
+                                      <ul class="nav navbar-az-fullscreen-nav-tertiary" aria-label="Undergraduate Students submenu">
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Applying &amp; Requirements</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/tuition/">
+                                            <span class="nav-link-text">Tuition &amp; Aid</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Students</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Students</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Students</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Students</span>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Graduate Students</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Online Students</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Academics</span>
+                      </a>
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-academics-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-academics-content" aria-label="Toggle Academics submenu">
+                        <span class="nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                      <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="az-navbar-az-fullscreen-primary-academics-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                          <div class="col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                            <ul class="nav navbar-az-fullscreen-nav-secondary" id="az-navbar-az-fullscreen-academics-secondary-nav" aria-label="Academics">
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Degrees &amp; Programs</span>
+                                </a>
+                                <button class="btn nav-toggle nav-toggle-separated collapsed" id="az-navbar-az-fullscreen-academics-secondary-degrees-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-academics-secondary-degrees-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-academics-secondary-degrees-content" aria-label="Toggle Degrees &amp; Programs submenu">
+                                  <span class="nav-toggle-icon" aria-hidden="true"></span>
+                                </button>
+                                <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="az-navbar-az-fullscreen-academics-secondary-degrees-content">
+                                  <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                                    <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-tertiary">
+                                      <ul class="nav navbar-az-fullscreen-nav-tertiary" aria-label="Degrees &amp; Programs submenu">
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Transfer Credit Tool</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Academic Minors</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Online Degrees &amp; Programs</span>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Colleges &amp; Schools</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Study Abroad</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Faculty Excellence</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Research</span>
+                      </a>
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-research-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-research-content" aria-label="Toggle Research submenu">
+                        <span class="nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                      <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="az-navbar-az-fullscreen-primary-research-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                          <div class="col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                            <ul class="nav navbar-az-fullscreen-nav-secondary" aria-label="Research">
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Research &amp; Partnerships</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Campus Life</span>
+                      </a>
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-campus-life-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-campus-life-content" aria-label="Toggle Campus Life submenu">
+                        <span class="nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                      <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="az-navbar-az-fullscreen-primary-campus-life-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                          <div class="col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                            <ul class="nav navbar-az-fullscreen-nav-secondary" id="az-navbar-az-fullscreen-campus-life-secondary-nav" aria-label="Campus Life">
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Campus Life Overview</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Visit Campus</span>
+                                </a>
+                                <button class="btn nav-toggle nav-toggle-separated collapsed" id="az-navbar-az-fullscreen-campus-life-secondary-visit-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-visit-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-visit-content" aria-label="Toggle Visit Campus submenu">
+                                  <span class="nav-toggle-icon" aria-hidden="true"></span>
+                                </button>
+                                <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="az-navbar-az-fullscreen-campus-life-secondary-visit-content" data-bs-parent="#az-navbar-az-fullscreen-campus-life-secondary-nav">
+                                  <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                                    <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-tertiary">
+                                      <ul class="nav navbar-az-fullscreen-nav-tertiary" aria-label="Visit Campus submenu">
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/calendar/">
+                                            <span class="nav-link-text">Calendar &amp; Events</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Libraries</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Libraries</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Libraries</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Libraries</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Libraries</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Libraries</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Libraries</span>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Living &amp; Dining on Campus</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Getting Involved</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Spirit &amp; Traditions</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Arts &amp; Culture</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">All About Tucson</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Health &amp; Wellness</span>
+                                </a>
+                                <button class="btn nav-toggle nav-toggle-separated collapsed" id="az-navbar-az-fullscreen-campus-life-secondary-wellness-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-wellness-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-wellness-content" aria-label="Toggle Health &amp; Wellness submenu">
+                                  <span class="nav-toggle-icon" aria-hidden="true"></span>
+                                </button>
+                                <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="az-navbar-az-fullscreen-campus-life-secondary-wellness-content" data-bs-parent="#az-navbar-az-fullscreen-campus-life-secondary-nav">
+                                  <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                                    <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-tertiary">
+                                      <ul class="nav navbar-az-fullscreen-nav-tertiary" aria-label="Health &amp; Wellness submenu">
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/campus-rec/">
+                                            <span class="nav-link-text">Campus Recreation</span>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Arizona Athletics</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">About</span>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+              <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
+                <!-- call-to-action items -->
+                <ul class="navbar-nav navbar-az-fullscreen-actions">
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/apply/">
+                      <span class="nav-link-text">Apply</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Visit</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Give</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- initial mobile nav items -->
+                <div class="navbar-az-fullscreen-nav-mobile-menu-container">
+                  <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-primary col-lg-4">
+                    <div class="navbar-az-fullscreen-nav-mobile-menu-list-top"></div>
+                    <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
+                      <div class="nav-item">
+                        <a class="nav-link active" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/admissions/">
+                          <span class="nav-link-text">Admissions</span>
+                        </a>
+                        <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-admissions-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Admissions submenu">
+                          <span class="nav-toggle-icon" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <div class="nav-item">
+                        <a class="nav-link" href="#">
+                          <span class="nav-link-text">Academics</span>
+                        </a>
+                        <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-academics-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Academics submenu">
+                          <span class="nav-toggle-icon" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <div class="nav-item">
+                        <a class="nav-link" href="#">
+                          <span class="nav-link-text">Research</span>
+                        </a>
+                        <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-research-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Research submenu">
+                          <span class="nav-toggle-icon" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <div class="nav-item">
+                        <a class="nav-link" href="#">
+                          <span class="nav-link-text">Campus Life</span>
+                        </a>
+                        <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-campus-life-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Campus Life submenu">
+                          <span class="nav-toggle-icon" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <div class="nav-item">
+                        <a class="nav-link" href="#">
+                          <span class="nav-link-text">About</span>
+                        </a>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
+          <nav class="navbar d-none d-lg-flex" aria-labelledby="navbar-az-fullscreen-modal-footer-top-label">
+            <div class="container-lg">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <h2 class="navbar-brand" id="navbar-az-fullscreen-modal-footer-top-label">Resources For:</h2>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Current Students</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Faculty &amp; Staff</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Alumni</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Parents &amp; Families</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/partner/">
+                      <span class="nav-link-text">Business or Partner</span>
+                    </a>
+                  </li>
+                </ul>
+            </div>
+          </nav>
+          <button type="button" class="btn navbar navbar-az-fullscreen-mobile-footer-btn d-lg-none" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Resources by Audience submenu" data-az-menu-element="#navbar-az-fullscreen-modal-footer-top">
+            <span class="navbar-az-fullscreen-mobile-footer-btn-text">
+              <span class="h2 navbar-brand">Resources by Audience</span>
+            </span>
+            <span class="nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn-icon">
+              <span class="nav-toggle-icon" aria-hidden="true"></span>
+            </span>
+          </button>
+        </div>
+        <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-bottom">
+          <nav class="navbar d-none d-lg-flex" aria-labelledby="navbar-az-fullscreen-modal-footer-bottom-label">
+            <div class="container-lg">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <h2 class="navbar-brand" id="navbar-az-fullscreen-modal-footer-bottom-label">Helpful Links:</h2>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Campus Map</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">A-Z Directory</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">UAccess</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/phonebook/">
+                      <span class="nav-link-text">Phonebook</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Future Wildcat</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Weather</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Calendar</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/admissions/">
+                      <span class="nav-link-text">Duplicate Admissions link for testing</span>
+                    </a>
+                  </li>
+                </ul>
+            </div>
+          </nav>
+          <button type="button" class="btn navbar navbar-az-fullscreen-mobile-footer-btn d-lg-none" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Helpful Links submenu" data-az-menu-element="#navbar-az-fullscreen-modal-footer-bottom">
+            <span class="navbar-az-fullscreen-mobile-footer-btn-text">
+              <span class="h2 navbar-brand">Helpful Links</span>
+            </span>
+            <span class="nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn-icon">
+              <span class="nav-toggle-icon" aria-hidden="true"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container my-5">
+      <div class="bg-cool-gray p-5 rounded">
+        <h1>AZ Navbar Fullscreen - Admissions</h1>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">Home</a>
+            </li>
+          </ol>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/apply/">Apply</a>
+            </li>
+          </ol>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Admissions</li>
+          </ol>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Admissions</li>
+            <li class="breadcrumb-item">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/undergraduate/">Undergraduate Students</a>
+            </li>
+          </ol>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Admissions</li>
+            <li class="breadcrumb-item">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/undergraduate/">Undergraduate Students</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/tuition/">Tuition & Aid</a>
+            </li>
+          </ol>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">Home</a>
+            </li>
+            <li class="breadcrumb-item">Campus Life</li>
+            <li class="breadcrumb-item">Visit Campus</li>
+            <li class="breadcrumb-item">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/calendar/">Calendar & Events</a>
+            </li>
+          </ol>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">Home</a>
+            </li>
+            <li class="breadcrumb-item">Campus Life</li>
+            <li class="breadcrumb-item">Health & Wellness</li>
+            <li class="breadcrumb-item">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/campus-rec/">Campus Recreation</a>
+            </li>
+          </ol>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/partner/">Business or Partner</a>
+            </li>
+          </ol>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="https://digital.arizona.edu/arizona-bootstrap/v5/docs/5.2/examples/navbar-az-fullscreen/phonebook/">Phonebook</a>
+            </li>
+          </ol>
+        </nav>
+
+      </div>
+    </div>
+  </section>
+</main><script defer src="/arizona-bootstrap/v5/docs/5.2/dist/js/arizona-bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
