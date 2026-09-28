@@ -12,6 +12,8 @@ jobs:
   deploy:
     name: Build and deploy Storybook to /design/<version> and /design/latest
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       AZ_DESIGN_SHA: ${{ github.event.client_payload.sha }}
       AZ_DESIGN_CLONE_DIR: design
