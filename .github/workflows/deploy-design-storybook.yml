@@ -69,6 +69,8 @@ jobs:
       - name: Build tokens and Storybook
         working-directory: ${{ env.AZ_DESIGN_CLONE_DIR }}
         run: |
+          # Point "View on GitHub" links at this release's tag instead of main.
+          export STORYBOOK_GIT_REF="v${AZ_DESIGN_VERSION}"
           npm ci
           npm run build:all
 
