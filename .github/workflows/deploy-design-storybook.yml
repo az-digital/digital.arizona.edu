@@ -1,0 +1,128 @@
+name: Build and deploy design system Storybook
+run-name: Deploy design system Storybook ${{ github.event.client_payload.tag }}
+on:
+  repository_dispatch:
+    types: az_design_release
+
+concurrency:
+  group: deploy-design-storybook
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build and deploy Storybook to /design/<version> and /design/latest
+    runs-on: ubuntu-latest
+    env:
+      AZ_DESIGN_SHA: ${{ github.event.client_payload.sha }}
+      AZ_DESIGN_CLONE_DIR: design
+      AZ_DESIGN_DEPLOY_DIR: docs/design
+    steps:
+      - name: Validate payload
+        run: |
+          if ! [[ "$AZ_DESIGN_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::client_payload.sha must be a full commit SHA, got '${AZ_DESIGN_SHA}'"
+            exit 1
+          fi
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+
+      - name: Get design system source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: az-digital/design
+          path: ${{ env.AZ_DESIGN_CLONE_DIR }}
+          ref: ${{ env.AZ_DESIGN_SHA }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: ${{ env.AZ_DESIGN_CLONE_DIR }}/package-lock.json
+
+      - name: Read design system version
+        working-directory: ${{ env.AZ_DESIGN_CLONE_DIR }}
+        run: |
+          version=$(node -p "require('./package.json').version")
+          if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::package.json version must be semver, got '${version}'"
+            exit 1
+          fi
+          echo "AZ_DESIGN_VERSION=${version}" >> "${GITHUB_ENV}"
+
+      - name: Require a release tag for this commit
+        run: |
+          # Only tagged releases are published here; main lives on the review site.
+          tag="v${AZ_DESIGN_VERSION}"
+          refs=$(git ls-remote --tags https://github.com/az-digital/design.git "refs/tags/${tag}" "refs/tags/${tag}^{}")
+          tag_sha=$(echo "$refs" | awk '/\^\{\}$/ { print $1 }')
+          tag_sha="${tag_sha:-$(echo "$refs" | awk '{ print $1 }')}"
+          if [ "$tag_sha" != "$AZ_DESIGN_SHA" ]; then
+            echo "::error::${AZ_DESIGN_SHA} is not the commit tagged ${tag} (got '${tag_sha}')"
+            exit 1
+          fi
+
+      - name: Build tokens and Storybook
+        working-directory: ${{ env.AZ_DESIGN_CLONE_DIR }}
+        run: |
+          npm ci
+          npm run build:all
+
+      - name: Copy Storybook build into the site
+        run: |
+          target="${AZ_DESIGN_DEPLOY_DIR}/${AZ_DESIGN_VERSION}"
+          mkdir -p "$target"
+          rsync --recursive --delete "${AZ_DESIGN_CLONE_DIR}/packages/storybook/storybook-static/" "${target}/"
+          # GitHub Pages builds this site with Jekyll, which silently drops
+          # files and directories whose names start with "_" or ".".
+          skipped=$(find "$target" -mindepth 1 \( -name '_*' -o -name '.*' \))
+          if [ -n "$skipped" ]; then
+            echo "::error::Jekyll would not publish these Storybook files:"
+            echo "$skipped"
+            exit 1
+          fi
+
+      - name: Publish the latest version at /design/latest
+        run: |
+          # Only stable releases (no "-rc.1" style suffix) can become latest.
+          latest=$(ls -1 "$AZ_DESIGN_DEPLOY_DIR" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1)
+          if [ -z "$latest" ]; then
+            echo "No stable release deployed yet; leaving /design/latest alone."
+            exit 0
+          fi
+          # Serve a full copy (not a redirect) so /design/latest/ links stay
+          # shareable across releases. Git stores identical files once.
+          rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR}/${latest}/" "${AZ_DESIGN_DEPLOY_DIR}/latest/"
+          url="https://digital.arizona.edu/design/latest/"
+          cat > "${AZ_DESIGN_DEPLOY_DIR}/index.html" <<EOF
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <title>${url}</title>
+              <link rel="canonical" href="${url}">
+              <meta name="robots" content="noindex">
+              <meta http-equiv="refresh" content="0; url=${url}">
+              <script>location.replace('${url}' + location.search + location.hash);</script>
+            </head>
+          </html>
+          EOF
+          echo "Latest version: ${latest}"
+
+      - name: Commit and push
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add "$AZ_DESIGN_DEPLOY_DIR"
+          if git diff --cached --quiet; then
+            echo "No Storybook changes to deploy."
+            exit 0
+          fi
+          git commit -m "Design system Storybook ${AZ_DESIGN_VERSION} updates for az-digital/design@${AZ_DESIGN_SHA:0:7}"
+          git pull --rebase
+          git push
