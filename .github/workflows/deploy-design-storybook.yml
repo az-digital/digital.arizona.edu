@@ -76,7 +76,7 @@ jobs:
 
       - name: Copy Storybook build into the site
         run: |
-          target="${AZ_DESIGN_DEPLOY_DIR}/${AZ_DESIGN_VERSION}"
+          target="${AZ_DESIGN_DEPLOY_DIR:?}/${AZ_DESIGN_VERSION:?}"
           mkdir -p "$target"
           rsync --recursive --delete "${AZ_DESIGN_CLONE_DIR}/packages/storybook/storybook-static/" "${target}/"
           # GitHub Pages builds this site with Jekyll, which silently drops
@@ -98,7 +98,7 @@ jobs:
           fi
           # Serve a full copy (not a redirect) so /design/latest/ links stay
           # shareable across releases. Git stores identical files once.
-          rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR}/${latest}/" "${AZ_DESIGN_DEPLOY_DIR}/latest/"
+          rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR:?}/${latest}/" "${AZ_DESIGN_DEPLOY_DIR:?}/latest/"
           echo "Latest version: ${latest}"
 
       - name: Commit and push
@@ -109,6 +109,13 @@ jobs:
           if git diff --cached --quiet; then
             echo "No Storybook changes to deploy."
             exit 0
+          fi
+          # Never touch the rest of digital.arizona.edu.
+          outside=$(git diff --cached --name-only | grep -v "^${AZ_DESIGN_DEPLOY_DIR}/" || true)
+          if [ -n "$outside" ]; then
+            echo "::error::Refusing to commit changes outside ${AZ_DESIGN_DEPLOY_DIR}/:"
+            echo "$outside"
+            exit 1
           fi
           git commit -m "Design system Storybook ${AZ_DESIGN_VERSION} updates for az-digital/design@${AZ_DESIGN_SHA:0:7}"
           git pull --rebase
