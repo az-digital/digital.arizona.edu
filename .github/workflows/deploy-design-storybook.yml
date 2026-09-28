@@ -97,21 +97,6 @@ jobs:
           # Serve a full copy (not a redirect) so /design/latest/ links stay
           # shareable across releases. Git stores identical files once.
           rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR}/${latest}/" "${AZ_DESIGN_DEPLOY_DIR}/latest/"
-          url="https://digital.arizona.edu/design/latest/"
-          cat > "${AZ_DESIGN_DEPLOY_DIR}/index.html" <<EOF
-          <!DOCTYPE html>
-          <html lang="en">
-            <head>
-              <meta charset="utf-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <title>${url}</title>
-              <link rel="canonical" href="${url}">
-              <meta name="robots" content="noindex">
-              <meta http-equiv="refresh" content="0; url=${url}">
-              <script>location.replace('${url}' + location.search + location.hash);</script>
-            </head>
-          </html>
-          EOF
           echo "Latest version: ${latest}"
 
       - name: Commit and push
