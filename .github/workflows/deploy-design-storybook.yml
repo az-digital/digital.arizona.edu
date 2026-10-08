@@ -122,7 +122,15 @@ jobs:
       - name: Copy Storybook build into the site
         run: |
           target="${AZ_DESIGN_DEPLOY_DIR:?}/${AZ_DESIGN_VERSION:?}"
+          if [ -L "$target" ]; then
+            echo "::error::Refusing to copy into symlinked deploy target: ${target}"
+            exit 1
+          fi
           mkdir -p "$target"
+          if [ -L "$target" ] || [ ! -d "$target" ]; then
+            echo "::error::Deploy target is not a real directory: ${target}"
+            exit 1
+          fi
           rsync --recursive --delete "${RUNNER_TEMP:?}/storybook-static/" "${target}/"
 
       - name: Publish the latest version at /design/latest
@@ -137,7 +145,17 @@ jobs:
           fi
           # Serve a full copy (not a redirect) so /design/latest/ links stay
           # shareable across releases. Git stores identical files once.
-          rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR:?}/${latest}/" "${AZ_DESIGN_DEPLOY_DIR:?}/latest/"
+          target="${AZ_DESIGN_DEPLOY_DIR:?}/latest"
+          if [ -L "$target" ]; then
+            echo "::error::Refusing to copy into symlinked deploy target: ${target}"
+            exit 1
+          fi
+          mkdir -p "$target"
+          if [ -L "$target" ] || [ ! -d "$target" ]; then
+            echo "::error::Deploy target is not a real directory: ${target}"
+            exit 1
+          fi
+          rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR:?}/${latest}/" "${target}/"
           echo "Latest version: ${latest}"
 
       - name: Commit and push
