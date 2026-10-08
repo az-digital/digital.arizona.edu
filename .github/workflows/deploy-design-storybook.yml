@@ -193,5 +193,17 @@ jobs:
             exit 1
           fi
           git commit -m "Design system Storybook ${AZ_DESIGN_VERSION} updates for az-digital/design@${AZ_DESIGN_SHA:0:7}"
-          git pull --rebase
-          git push
+          # Other deploys (e.g. Arizona Bootstrap docs) push to this branch
+          # without sharing our concurrency group, so retry if one lands
+          # between our pull and push. They touch different paths, so the
+          # rebase can't conflict.
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "Push attempt ${attempt} failed; retrying in $((attempt * 5))s..."
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push after 5 attempts"
+          exit 1
