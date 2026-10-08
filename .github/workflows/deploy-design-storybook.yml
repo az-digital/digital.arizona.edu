@@ -121,6 +121,13 @@ jobs:
 
       - name: Copy Storybook build into the site
         run: |
+          # Refuse if docs/design itself resolves anywhere else (e.g. a symlink),
+          # since then mkdir/rsync below would write outside this repository.
+          deploy_root="$(realpath "$GITHUB_WORKSPACE")/${AZ_DESIGN_DEPLOY_DIR:?}"
+          if [ -L "$AZ_DESIGN_DEPLOY_DIR" ] || [ "$(realpath "$AZ_DESIGN_DEPLOY_DIR")" != "$deploy_root" ]; then
+            echo "::error::${AZ_DESIGN_DEPLOY_DIR} must be a real directory inside this repository"
+            exit 1
+          fi
           target="${AZ_DESIGN_DEPLOY_DIR:?}/${AZ_DESIGN_VERSION:?}"
           if [ -L "$target" ]; then
             echo "::error::Refusing to copy into symlinked deploy target: ${target}"
@@ -135,6 +142,13 @@ jobs:
 
       - name: Publish the latest version at /design/latest
         run: |
+          # Refuse if docs/design itself resolves anywhere else (e.g. a symlink),
+          # since then mkdir/rsync below would write outside this repository.
+          deploy_root="$(realpath "$GITHUB_WORKSPACE")/${AZ_DESIGN_DEPLOY_DIR:?}"
+          if [ -L "$AZ_DESIGN_DEPLOY_DIR" ] || [ "$(realpath "$AZ_DESIGN_DEPLOY_DIR")" != "$deploy_root" ]; then
+            echo "::error::${AZ_DESIGN_DEPLOY_DIR} must be a real directory inside this repository"
+            exit 1
+          fi
           # Only stable releases (no "-rc.1" style suffix) can become latest.
           # `|| true`: grep exits 1 when only prereleases exist, which would
           # otherwise fail the step under the runner's pipefail.
@@ -143,8 +157,10 @@ jobs:
             echo "No stable release deployed yet; leaving /design/latest alone."
             exit 0
           fi
-          # Serve a full copy (not a redirect) so /design/latest/ links stay
-          # shareable across releases. Git stores identical files once.
+          if [ -L "${AZ_DESIGN_DEPLOY_DIR}/${latest}" ]; then
+            echo "::error::Refusing to copy from symlinked version directory: ${AZ_DESIGN_DEPLOY_DIR}/${latest}"
+            exit 1
+          fi
           target="${AZ_DESIGN_DEPLOY_DIR:?}/latest"
           if [ -L "$target" ]; then
             echo "::error::Refusing to copy into symlinked deploy target: ${target}"
@@ -155,6 +171,8 @@ jobs:
             echo "::error::Deploy target is not a real directory: ${target}"
             exit 1
           fi
+          # Serve a full copy (not a redirect) so /design/latest/ links stay
+          # shareable across releases. Git stores identical files once.
           rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR:?}/${latest}/" "${target}/"
           echo "Latest version: ${latest}"
 
