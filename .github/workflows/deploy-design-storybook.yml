@@ -157,8 +157,8 @@ jobs:
             echo "No stable release deployed yet; leaving /design/latest alone."
             exit 0
           fi
-          if [ -L "${AZ_DESIGN_DEPLOY_DIR}/${latest}" ]; then
-            echo "::error::Refusing to copy from symlinked version directory: ${AZ_DESIGN_DEPLOY_DIR}/${latest}"
+          if [ -L "${AZ_DESIGN_DEPLOY_DIR}/${latest}" ] || [ ! -d "${AZ_DESIGN_DEPLOY_DIR}/${latest}" ]; then
+            echo "::error::Latest source must be a real directory, not a symlink: ${AZ_DESIGN_DEPLOY_DIR}/${latest}"
             exit 1
           fi
           target="${AZ_DESIGN_DEPLOY_DIR:?}/latest"
