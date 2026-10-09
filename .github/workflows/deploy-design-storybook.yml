@@ -1,0 +1,209 @@
+name: Build and deploy design system Storybook
+run-name: Deploy design system Storybook ${{ github.event.client_payload.tag }}
+on:
+  repository_dispatch:
+    types: az_design_release
+
+concurrency:
+  group: deploy-design-storybook
+  cancel-in-progress: false
+
+jobs:
+  # Runs az-digital/design code (npm ci, build scripts), so it gets no
+  # secrets and no checkout of this repository.
+  build:
+    name: Build Storybook from the az-digital/design release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      AZ_DESIGN_SHA: ${{ github.event.client_payload.sha }}
+      AZ_DESIGN_CLONE_DIR: design
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Validate payload
+        run: |
+          if ! [[ "$AZ_DESIGN_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::client_payload.sha must be a full commit SHA, got '${AZ_DESIGN_SHA}'"
+            exit 1
+          fi
+
+      - name: Get design system source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: az-digital/design
+          path: ${{ env.AZ_DESIGN_CLONE_DIR }}
+          ref: ${{ env.AZ_DESIGN_SHA }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: ${{ env.AZ_DESIGN_CLONE_DIR }}/package-lock.json
+
+      - name: Read design system version
+        id: version
+        working-directory: ${{ env.AZ_DESIGN_CLONE_DIR }}
+        run: |
+          version=$(node -p "require('./package.json').version")
+          if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::package.json version must be semver, got '${version}'"
+            exit 1
+          fi
+          echo "AZ_DESIGN_VERSION=${version}" >> "${GITHUB_ENV}"
+          echo "version=${version}" >> "${GITHUB_OUTPUT}"
+
+      - name: Require a release tag for this commit
+        run: |
+          # Only tagged releases are published here; main lives on the review site.
+          tag="v${AZ_DESIGN_VERSION}"
+          refs=$(git ls-remote --tags https://github.com/az-digital/design.git "refs/tags/${tag}" "refs/tags/${tag}^{}")
+          tag_sha=$(echo "$refs" | awk '/\^\{\}$/ { print $1 }')
+          tag_sha="${tag_sha:-$(echo "$refs" | awk '{ print $1 }')}"
+          if [ "$tag_sha" != "$AZ_DESIGN_SHA" ]; then
+            echo "::error::${AZ_DESIGN_SHA} is not the commit tagged ${tag} (got '${tag_sha}')"
+            exit 1
+          fi
+
+      - name: Build tokens and Storybook
+        working-directory: ${{ env.AZ_DESIGN_CLONE_DIR }}
+        run: |
+          # Point "View on GitHub" links at this release's tag instead of main.
+          export STORYBOOK_GIT_REF="v${AZ_DESIGN_VERSION}"
+          npm ci
+          npm run build:all
+
+      - name: Check Jekyll will publish every file
+        run: |
+          # GitHub Pages builds this site with Jekyll, which silently drops
+          # files and directories whose names start with "_" or ".".
+          skipped=$(find "${AZ_DESIGN_CLONE_DIR}/packages/storybook/storybook-static" -mindepth 1 \( -name '_*' -o -name '.*' \))
+          if [ -n "$skipped" ]; then
+            echo "::error::Jekyll would not publish these Storybook files:"
+            echo "$skipped"
+            exit 1
+          fi
+
+      - name: Upload Storybook build
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: storybook-static
+          path: ${{ env.AZ_DESIGN_CLONE_DIR }}/packages/storybook/storybook-static/
+          if-no-files-found: error
+          retention-days: 1
+
+  # Holds the write token, so it never runs az-digital/design code: it only
+  # copies the static build from the artifact and commits it.
+  deploy:
+    name: Deploy Storybook to /design/<version> and /design/latest
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      AZ_DESIGN_SHA: ${{ github.event.client_payload.sha }}
+      AZ_DESIGN_VERSION: ${{ needs.build.outputs.version }}
+      AZ_DESIGN_DEPLOY_DIR: docs/design
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+
+      - name: Download Storybook build
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: storybook-static
+          path: ${{ runner.temp }}/storybook-static
+
+      - name: Copy Storybook build into the site
+        run: |
+          # Refuse if docs/design itself resolves anywhere else (e.g. a symlink),
+          # since then mkdir/rsync below would write outside this repository.
+          deploy_root="$(realpath "$GITHUB_WORKSPACE")/${AZ_DESIGN_DEPLOY_DIR:?}"
+          if [ -L "$AZ_DESIGN_DEPLOY_DIR" ] || [ "$(realpath "$AZ_DESIGN_DEPLOY_DIR")" != "$deploy_root" ]; then
+            echo "::error::${AZ_DESIGN_DEPLOY_DIR} must be a real directory inside this repository"
+            exit 1
+          fi
+          target="${AZ_DESIGN_DEPLOY_DIR:?}/${AZ_DESIGN_VERSION:?}"
+          if [ -L "$target" ]; then
+            echo "::error::Refusing to copy into symlinked deploy target: ${target}"
+            exit 1
+          fi
+          mkdir -p "$target"
+          if [ -L "$target" ] || [ ! -d "$target" ]; then
+            echo "::error::Deploy target is not a real directory: ${target}"
+            exit 1
+          fi
+          rsync --recursive --delete "${RUNNER_TEMP:?}/storybook-static/" "${target}/"
+
+      - name: Publish the latest version at /design/latest
+        run: |
+          # Refuse if docs/design itself resolves anywhere else (e.g. a symlink),
+          # since then mkdir/rsync below would write outside this repository.
+          deploy_root="$(realpath "$GITHUB_WORKSPACE")/${AZ_DESIGN_DEPLOY_DIR:?}"
+          if [ -L "$AZ_DESIGN_DEPLOY_DIR" ] || [ "$(realpath "$AZ_DESIGN_DEPLOY_DIR")" != "$deploy_root" ]; then
+            echo "::error::${AZ_DESIGN_DEPLOY_DIR} must be a real directory inside this repository"
+            exit 1
+          fi
+          # Only stable releases (no "-rc.1" style suffix) can become latest.
+          # `|| true`: grep exits 1 when only prereleases exist, which would
+          # otherwise fail the step under the runner's pipefail.
+          latest=$(ls -1 "$AZ_DESIGN_DEPLOY_DIR" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1 || true)
+          if [ -z "$latest" ]; then
+            echo "No stable release deployed yet; leaving /design/latest alone."
+            exit 0
+          fi
+          if [ -L "${AZ_DESIGN_DEPLOY_DIR}/${latest}" ] || [ ! -d "${AZ_DESIGN_DEPLOY_DIR}/${latest}" ]; then
+            echo "::error::Latest source must be a real directory, not a symlink: ${AZ_DESIGN_DEPLOY_DIR}/${latest}"
+            exit 1
+          fi
+          target="${AZ_DESIGN_DEPLOY_DIR:?}/latest"
+          if [ -L "$target" ]; then
+            echo "::error::Refusing to copy into symlinked deploy target: ${target}"
+            exit 1
+          fi
+          mkdir -p "$target"
+          if [ -L "$target" ] || [ ! -d "$target" ]; then
+            echo "::error::Deploy target is not a real directory: ${target}"
+            exit 1
+          fi
+          # Serve a full copy (not a redirect) so /design/latest/ links stay
+          # shareable across releases. Git stores identical files once.
+          rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR:?}/${latest}/" "${target}/"
+          echo "Latest version: ${latest}"
+
+      - name: Commit and push
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add "$AZ_DESIGN_DEPLOY_DIR"
+          if git diff --cached --quiet; then
+            echo "No Storybook changes to deploy."
+            exit 0
+          fi
+          # Never touch the rest of digital.arizona.edu.
+          outside=$(git diff --cached --name-only | grep -v "^${AZ_DESIGN_DEPLOY_DIR}/" || true)
+          if [ -n "$outside" ]; then
+            echo "::error::Refusing to commit changes outside ${AZ_DESIGN_DEPLOY_DIR}/:"
+            echo "$outside"
+            exit 1
+          fi
+          git commit -m "Design system Storybook ${AZ_DESIGN_VERSION} updates for az-digital/design@${AZ_DESIGN_SHA:0:7}"
+          # Other deploys (e.g. Arizona Bootstrap docs) push to this branch
+          # without sharing our concurrency group, so retry if one lands
+          # between our pull and push. They touch different paths, so the
+          # rebase can't conflict.
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "Push attempt ${attempt} failed; retrying in $((attempt * 5))s..."
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push after 5 attempts"
+          exit 1
