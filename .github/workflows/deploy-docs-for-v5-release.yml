@@ -73,10 +73,8 @@ jobs:
           # the build only contains the current one. Stale files inside the
           # current version folder are still removed.
           rsync --recursive --delete --filter="P /docs/*.*/" "${AZ_BOOTSTRAP_CLONE_DIR}/_site/" "docs${AZ_REVIEW_BASEURL}"
-          # List every published version in the docs version switcher.
-          .github/scripts/update-docs-version-switcher.sh
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          git add "docs${AZ_REVIEW_BASEURL}" docs/arizona-bootstrap/versions.json
+          git add "docs${AZ_REVIEW_BASEURL}"
           git commit -m "Arizona Bootstrap documentation updates for ${{ inputs.version }}"
           git push
