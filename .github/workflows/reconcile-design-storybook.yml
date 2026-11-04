@@ -1,0 +1,70 @@
+name: Reconcile published design Storybook releases
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: reconcile-design-storybook
+  cancel-in-progress: false
+
+jobs:
+  releases:
+    runs-on: ubuntu-latest
+    outputs:
+      releases: ${{ steps.releases.outputs.releases }}
+    steps:
+      - name: Checkout deployed release inventory
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Find published releases missing from the site
+        id: releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # GitHub releases are the durable queue, even when dispatch runs are replaced.
+          published=$(gh api --paginate --slurp repos/az-digital/design/releases)
+          releases='[]'
+          while IFS= read -r release; do
+            tag=$(jq -r '.tag_name' <<< "$release")
+            if ! [[ "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+              echo "::warning::Skipping unsupported design release tag"
+              continue
+            fi
+            metadata="docs/design/${tag#v}/release.json"
+            # Also reconcile prereleases promoted to stable after their first deploy.
+            if [ -f "$metadata" ] && jq -e --argjson release "$release" \
+              '.prerelease == $release.prerelease' "$metadata" > /dev/null; then
+              continue
+            fi
+            # The commits API resolves lightweight and annotated tags to a commit SHA.
+            sha=$(gh api "repos/az-digital/design/commits/${tag}" --jq '.sha')
+            releases=$(jq -c --arg sha "$sha" --argjson release "$release" \
+              '. + [{sha: $sha, tag: $release.tag_name, prerelease: $release.prerelease}]' <<< "$releases")
+            # A matrix supports at most 256 jobs; later schedules drain the remainder.
+            if [ "$(jq 'length' <<< "$releases")" -eq 256 ]; then
+              break
+            fi
+          done < <(jq -c 'add | map(select(.draft == false)) | sort_by(.published_at) | .[]' <<< "$published")
+          echo "releases=${releases}" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: releases
+    if: needs.releases.outputs.releases != '[]'
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        release: ${{ fromJSON(needs.releases.outputs.releases) }}
+    uses: ./.github/workflows/deploy-design-storybook.yml
+    with:
+      sha: ${{ matrix.release.sha }}
+      tag: ${{ matrix.release.tag }}
+      prerelease: ${{ matrix.release.prerelease }}
+    secrets:
+      REPO_DISPATCH_TOKEN: ${{ secrets.REPO_DISPATCH_TOKEN }}

@@ -1,8 +1,22 @@
 name: Build and deploy design system Storybook
-run-name: Deploy design system Storybook ${{ github.event.client_payload.tag }}
+run-name: Deploy design system Storybook ${{ inputs.tag || github.event.client_payload.tag }}
 on:
   repository_dispatch:
     types: az_design_release
+  workflow_call:
+    inputs:
+      sha:
+        required: true
+        type: string
+      tag:
+        required: true
+        type: string
+      prerelease:
+        required: true
+        type: boolean
+    secrets:
+      REPO_DISPATCH_TOKEN:
+        required: true
 
 concurrency:
   group: deploy-design-storybook
@@ -17,7 +31,8 @@ jobs:
     permissions:
       contents: read
     env:
-      AZ_DESIGN_SHA: ${{ github.event.client_payload.sha }}
+      AZ_DESIGN_SHA: ${{ inputs.sha || github.event.client_payload.sha }}
+      AZ_DESIGN_TAG: ${{ inputs.tag || github.event.client_payload.tag }}
       AZ_DESIGN_CLONE_DIR: design
     outputs:
       version: ${{ steps.version.outputs.version }}
@@ -60,6 +75,10 @@ jobs:
         run: |
           # Only tagged releases are published here; main lives on the review site.
           tag="v${AZ_DESIGN_VERSION}"
+          if [ -n "$AZ_DESIGN_TAG" ] && [ "$AZ_DESIGN_TAG" != "$tag" ]; then
+            echo "::error::Release tag must match package.json version"
+            exit 1
+          fi
           refs=$(git ls-remote --tags https://github.com/az-digital/design.git "refs/tags/${tag}" "refs/tags/${tag}^{}")
           tag_sha=$(echo "$refs" | awk '/\^\{\}$/ { print $1 }')
           tag_sha="${tag_sha:-$(echo "$refs" | awk '{ print $1 }')}"
@@ -104,7 +123,8 @@ jobs:
     permissions:
       contents: read
     env:
-      AZ_DESIGN_SHA: ${{ github.event.client_payload.sha }}
+      AZ_DESIGN_SHA: ${{ inputs.sha || github.event.client_payload.sha }}
+      AZ_DESIGN_PRERELEASE: ${{ inputs.prerelease || github.event.client_payload.prerelease || false }}
       AZ_DESIGN_VERSION: ${{ needs.build.outputs.version }}
       AZ_DESIGN_DEPLOY_DIR: docs/design
     steps:
@@ -139,6 +159,9 @@ jobs:
             exit 1
           fi
           rsync --recursive --delete "${RUNNER_TEMP:?}/storybook-static/" "${target}/"
+          # Committed with the build, so reconciliation only skips completed deploys.
+          jq -n --arg sha "$AZ_DESIGN_SHA" --argjson prerelease "$AZ_DESIGN_PRERELEASE" \
+            '{sha: $sha, prerelease: $prerelease}' > "${target}/release.json"
 
       - name: Publish the latest version at /design/latest
         run: |
@@ -149,10 +172,17 @@ jobs:
             echo "::error::${AZ_DESIGN_DEPLOY_DIR} must be a real directory inside this repository"
             exit 1
           fi
-          # Only stable releases (no "-rc.1" style suffix) can become latest.
+          # Only stable releases (including GitHub's prerelease flag) can become latest.
           # `|| true`: grep exits 1 when only prereleases exist, which would
           # otherwise fail the step under the runner's pipefail.
-          latest=$(ls -1 "$AZ_DESIGN_DEPLOY_DIR" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1 || true)
+          latest=$(
+            for version in $(ls -1 "$AZ_DESIGN_DEPLOY_DIR" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V || true); do
+              metadata="${AZ_DESIGN_DEPLOY_DIR}/${version}/release.json"
+              if [ ! -f "$metadata" ] || jq -e '.prerelease == false' "$metadata" > /dev/null; then
+                echo "$version"
+              fi
+            done | tail -n 1
+          )
           if [ -z "$latest" ]; then
             echo "No stable release deployed yet; leaving /design/latest alone."
             exit 0
