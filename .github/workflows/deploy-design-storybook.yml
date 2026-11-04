@@ -1,26 +1,14 @@
 name: Build and deploy design system Storybook
-run-name: Deploy design system Storybook ${{ inputs.tag || github.event.client_payload.tag }}
+run-name: Deploy design system Storybook ${{ github.event.client_payload.tag }}
 on:
   repository_dispatch:
     types: az_design_release
-  workflow_call:
-    inputs:
-      sha:
-        required: true
-        type: string
-      tag:
-        required: true
-        type: string
-      prerelease:
-        required: true
-        type: boolean
-    secrets:
-      REPO_DISPATCH_TOKEN:
-        required: true
 
 concurrency:
   group: deploy-design-storybook
   cancel-in-progress: false
+  # Queue up to 100 pending releases instead of replacing the previous one.
+  queue: max
 
 jobs:
   # Runs az-digital/design code (npm ci, build scripts), so it gets no
@@ -31,8 +19,8 @@ jobs:
     permissions:
       contents: read
     env:
-      AZ_DESIGN_SHA: ${{ inputs.sha || github.event.client_payload.sha }}
-      AZ_DESIGN_TAG: ${{ inputs.tag || github.event.client_payload.tag }}
+      AZ_DESIGN_SHA: ${{ github.event.client_payload.sha }}
+      AZ_DESIGN_TAG: ${{ github.event.client_payload.tag }}
       AZ_DESIGN_CLONE_DIR: design
     outputs:
       version: ${{ steps.version.outputs.version }}
@@ -123,8 +111,8 @@ jobs:
     permissions:
       contents: read
     env:
-      AZ_DESIGN_SHA: ${{ inputs.sha || github.event.client_payload.sha }}
-      AZ_DESIGN_PRERELEASE: ${{ inputs.prerelease || github.event.client_payload.prerelease || false }}
+      AZ_DESIGN_SHA: ${{ github.event.client_payload.sha }}
+      AZ_DESIGN_PRERELEASE: ${{ github.event.client_payload.prerelease || false }}
       AZ_DESIGN_VERSION: ${{ needs.build.outputs.version }}
       AZ_DESIGN_DEPLOY_DIR: docs/design
     steps:
@@ -159,7 +147,7 @@ jobs:
             exit 1
           fi
           rsync --recursive --delete "${RUNNER_TEMP:?}/storybook-static/" "${target}/"
-          # Committed with the build, so reconciliation only skips completed deploys.
+          # Preserve GitHub's prerelease flag for latest-version selection.
           jq -n --arg sha "$AZ_DESIGN_SHA" --argjson prerelease "$AZ_DESIGN_PRERELEASE" \
             '{sha: $sha, prerelease: $prerelease}' > "${target}/release.json"
 
