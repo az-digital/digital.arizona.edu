@@ -46,13 +46,17 @@ jobs:
 
       - name: Read design system version
         id: version
-        working-directory: ${{ env.AZ_DESIGN_CLONE_DIR }}
+        env:
+          AZ_DESIGN_TAG: ${{ github.event.client_payload.tag }}
         run: |
-          version=$(node -p "require('./package.json').version")
-          if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
-            echo "::error::package.json version must be semver, got '${version}'"
+          # az-digital/design's package.json files have no "version": a
+          # release's version exists only in its tag, so read it from there.
+          # The next step checks that the tag points at AZ_DESIGN_SHA.
+          if ! [[ "$AZ_DESIGN_TAG" =~ ^v([0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?)$ ]]; then
+            echo "::error::client_payload.tag must be v followed by a semver version, got '${AZ_DESIGN_TAG}'"
             exit 1
           fi
+          version="${BASH_REMATCH[1]}"
           echo "AZ_DESIGN_VERSION=${version}" >> "${GITHUB_ENV}"
           echo "version=${version}" >> "${GITHUB_OUTPUT}"
 
