@@ -98,7 +98,7 @@ jobs:
   # Holds the write token, so it never runs az-digital/design code: it only
   # copies the static build from the artifact and commits it.
   deploy:
-    name: Deploy Storybook to /design/<version> and /design/latest
+    name: Deploy Storybook to /design/<version>, /design/latest and /design/next
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -175,6 +175,66 @@ jobs:
           # shareable across releases. Git stores identical files once.
           rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR:?}/${latest}/" "${target}/"
           echo "Latest version: ${latest}"
+
+      - name: Publish the newest version at /design/next
+        run: |
+          # Refuse if docs/design itself resolves anywhere else (e.g. a symlink),
+          # since then mkdir/rsync below would write outside this repository.
+          deploy_root="$(realpath "$GITHUB_WORKSPACE")/${AZ_DESIGN_DEPLOY_DIR:?}"
+          if [ -L "$AZ_DESIGN_DEPLOY_DIR" ] || [ "$(realpath "$AZ_DESIGN_DEPLOY_DIR")" != "$deploy_root" ]; then
+            echo "::error::${AZ_DESIGN_DEPLOY_DIR} must be a real directory inside this repository"
+            exit 1
+          fi
+          # next is the highest release of any kind, prereleases included, so
+          # it shows a prerelease until a stable release passes it and never
+          # falls behind latest. This needs semver order, where 1.0.0-rc.2 <
+          # 1.0.0-rc.10 < 1.0.0; `sort -V` would put 1.0.0-rc.1 after 1.0.0.
+          next=$(ls -1 "$AZ_DESIGN_DEPLOY_DIR" | node -e '
+            const semver = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-([0-9A-Za-z.-]+))?$/;
+            const parse = (name) => {
+              const m = semver.exec(name);
+              return m && { name, core: m.slice(1, 4).map(Number), pre: m[4] ? m[4].split(".") : [] };
+            };
+            const compareIds = (a, b) => {
+              const an = /^\d+$/.test(a), bn = /^\d+$/.test(b);
+              if (an && bn) return Number(a) - Number(b);
+              if (an !== bn) return an ? -1 : 1;
+              return a < b ? -1 : a > b ? 1 : 0;
+            };
+            const compare = (a, b) => {
+              for (let i = 0; i < 3; i++) if (a.core[i] !== b.core[i]) return a.core[i] - b.core[i];
+              if (!a.pre.length || !b.pre.length) return b.pre.length - a.pre.length;
+              for (let i = 0; i < Math.min(a.pre.length, b.pre.length); i++) {
+                const c = compareIds(a.pre[i], b.pre[i]);
+                if (c) return c;
+              }
+              return a.pre.length - b.pre.length;
+            };
+            const versions = require("fs").readFileSync(0, "utf8").split("\n").map(parse).filter(Boolean);
+            versions.sort(compare);
+            if (versions.length) console.log(versions.at(-1).name);
+          ')
+          if [ -z "$next" ]; then
+            echo "No release deployed yet; leaving /design/next alone."
+            exit 0
+          fi
+          if [ -L "${AZ_DESIGN_DEPLOY_DIR}/${next}" ] || [ ! -d "${AZ_DESIGN_DEPLOY_DIR}/${next}" ]; then
+            echo "::error::Next source must be a real directory, not a symlink: ${AZ_DESIGN_DEPLOY_DIR}/${next}"
+            exit 1
+          fi
+          target="${AZ_DESIGN_DEPLOY_DIR:?}/next"
+          if [ -L "$target" ]; then
+            echo "::error::Refusing to copy into symlinked deploy target: ${target}"
+            exit 1
+          fi
+          mkdir -p "$target"
+          if [ -L "$target" ] || [ ! -d "$target" ]; then
+            echo "::error::Deploy target is not a real directory: ${target}"
+            exit 1
+          fi
+          # A full copy, like /design/latest, so links to it stay shareable.
+          rsync --recursive --delete "${AZ_DESIGN_DEPLOY_DIR:?}/${next}/" "${target}/"
+          echo "Next version: ${next}"
 
       - name: Commit and push
         run: |
