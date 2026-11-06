@@ -52,7 +52,7 @@ jobs:
           # az-digital/design's package.json files have no "version": a
           # release's version exists only in its tag, so read it from there.
           # The next step checks that the tag points at AZ_DESIGN_SHA.
-          if ! [[ "$AZ_DESIGN_TAG" =~ ^v([0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?)$ ]]; then
+          if ! [[ "$AZ_DESIGN_TAG" =~ ^v((0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?)$ ]]; then
             echo "::error::client_payload.tag must be v followed by a semver version, got '${AZ_DESIGN_TAG}'"
             exit 1
           fi
