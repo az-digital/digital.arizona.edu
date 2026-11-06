@@ -1,0 +1,3 @@
+import{n as e,r as t}from"./rolldown-runtime-sJBDdmOt.js";import{n,t as r}from"./src-p6oNiiH8.js";var i=t({Default:()=>s,__namedExportsOrder:()=>c,default:()=>o}),a,o,s,c;function l(){return(l=e((()=>{r(),a={Blue:`blue`,Red:`red`},o={title:`Primary/Components/Navigation/Arizona Header`,tags:[`!dev`,`lib:html`],...n(`brand-header`,{props:e=>({variant:a[e.Color]??a.Blue,headerButtons:e[`Header buttons`]})}),args:{Color:`Blue`,"Header buttons":!0},argTypes:{Color:{control:`inline-radio`,options:Object.keys(a)},"Header buttons":{control:`boolean`}}},s={tags:[`!dev`]},c=[`Default`],s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  tags: ['!dev']
+}`,...s.parameters?.docs?.source}}}})))()}export{s as n,l as r,i as t};

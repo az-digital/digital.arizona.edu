@@ -1,0 +1,10 @@
+import{n as e}from"./rolldown-runtime-sJBDdmOt.js";import{i as t,r as n}from"./react-DITjJg24.js";import{t as r}from"./jsx-runtime-MKhVqBIO.js";import{l as i,u as a}from"./blocks-BPMKbNKk.js";import{n as o,t as s}from"./src-Dw2eT6cU.js";import{n as c,t as l}from"./Grid.stories-DfsHPLqk.js";function u(e){let n={code:`code`,h1:`h1`,h2:`h2`,p:`p`,...t(),...e.components};return(0,f.jsxs)(f.Fragment,{children:[(0,f.jsx)(i,{of:l,name:`Docs`}),`
+`,(0,f.jsx)(n.h1,{id:`grid`,children:`Grid`}),`
+`,(0,f.jsxs)(n.p,{children:[`Pages use a 12-column grid inside a centered container. The gutter is 24px between columns (12px on each side of a column), the same as `,(0,f.jsx)(n.code,{children:`az.spacing.300`}),`. Containers have 12px of padding on each side, half the gutter; that padding is derived from the gutter, so it has no separate token.`]}),`
+`,(0,f.jsxs)(n.p,{children:[`The maximum container width changes at each breakpoint. Below `,(0,f.jsx)(n.code,{children:`sm`}),`, it stays fluid; from `,(0,f.jsx)(n.code,{children:`sm`}),` up, each breakpoint sets a maximum width.`]}),`
+`,(0,f.jsx)(n.p,{children:`The column count, gutter and container widths follow the current implementation (5.2.2).`}),`
+`,(0,f.jsx)(n.h2,{id:`see-the-grid-at-each-breakpoint`,children:`See the grid at each breakpoint`}),`
+`,(0,f.jsxs)(n.p,{children:[`Open the `,(0,f.jsx)(`a`,{href:`./?path=/story/primary-foundations-layout-grid--grid-and-container`,target:`_top`,children:`Grid And Container story`}),` to see the container with its columns and gutters, and use Storybook's viewport switcher to see its max width change at each breakpoint.`]}),`
+`,(0,f.jsx)(n.h2,{id:`grid-tokens`,children:`Grid tokens`}),`
+`,(0,f.jsx)(o,{prefix:`az.grid.`,layout:`table`}),`
+`,(0,f.jsx)(o,{prefix:`az.container.`,layout:`table`})]})}function d(e={}){let{wrapper:n}={...t(),...e.components};return n?(0,f.jsx)(n,{...e,children:(0,f.jsx)(u,{...e})}):u(e)}var f;function p(){return(p=e((()=>{f=r(),n(),a(),s(),c()})))()}p();export{d as default};
