@@ -3,11 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Explore the open tools, shared patterns, and design system that help our campus create consistent, accessible web experiences.">
     <link rel="shortlink" href="https://digital.arizona.edu/">
     <link rel="canonical" href="https://digital.arizona.edu/">
     <meta property="og:site_name" content="Arizona Digital">
     <meta property="og:url" content="https://digital.arizona.edu/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arizona Digital">
+    <meta property="og:description" content="Explore the open tools, shared patterns, and design system that help our campus create consistent, accessible web experiences.">
     <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Arizona Digital">
+    <meta name="twitter:description" content="Explore the open tools, shared patterns, and design system that help our campus create consistent, accessible web experiences.">
     <meta name="Generator" content="Arizona Digital (https://digital.arizona.edu/)">
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
@@ -15,9 +21,34 @@
           "@context": "https://schema.org",
           "@graph": [
               {
-                  "@type": "CollegeOrUniversity",
+                  "@type": "WebPage",
+                  "@id": "https://digital.arizona.edu/#webpage",
+                  "url": "https://digital.arizona.edu/",
+                  "name": "Arizona Digital",
+                  "description": "Explore the open tools, shared patterns, and design system that help our campus create consistent, accessible web experiences.",
+                  "inLanguage": "en",
+                  "isPartOf": {
+                      "@id": "https://digital.arizona.edu/#website"
+                  },
+                  "publisher": {
+                      "@id": "https://digital.arizona.edu/#organization"
+                  }
+              },
+              {
+                  "@type": "WebSite",
+                  "@id": "https://digital.arizona.edu/#website",
+                  "url": "https://digital.arizona.edu/",
+                  "name": "Arizona Digital",
+                  "inLanguage": "en",
+                  "publisher": {
+                      "@id": "https://digital.arizona.edu/#organization"
+                  }
+              },
+              {
+                  "@type": "Organization",
+                  "@id": "https://digital.arizona.edu/#organization",
                   "parentOrganization": {
-                      "@type": "EducationalOrganization",
+                      "@type": "CollegeOrUniversity",
                       "@id": "https://www.arizona.edu/",
                       "name": "University of Arizona",
                       "url": "https://www.arizona.edu/",
@@ -39,7 +70,7 @@
                       }
                   },
                   "name": "University of Arizona Digital Team",
-                  "url": "https://digital.arizona.edu"
+                  "url": "https://digital.arizona.edu/"
               }
           ]
       }
@@ -49,102 +80,80 @@
     <link href="https://cdn.uadigital.arizona.edu/lib/ua-brand-icons/latest/ua-brand-icons.css" rel="stylesheet">
     <!-- Proxima Nova -->
     <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
-    <!-- Arizona Bootstrap 5 -->
-    <link href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/5.x/css/arizona-bootstrap.min.css" rel="stylesheet">
+    <!-- Published Design System 0.1.0 styles. -->
+    <link href="/design/0.1.0/assets/iframe-CKxL-Q9C.css" rel="stylesheet">
   </head>
   <body class="css-page">
-    <div class="background-wrapper bg-red py-3">
+    <a class="visually-hidden-focusable" href="#main-content">Skip to content</a>
+    <header class="arizona-header bg-blue">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <a href="https://arizona.edu" target="_blank">
-              <img src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg"
-                alt="The University of Arizona" width="300px" />
-            </a>
-          </div>
+          <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
+            <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White"
+              src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg">
+          </a>
         </div>
       </div>
-    </div>
-    <div class="background-wrapper bg-triangles-top-right py-6">
+    </header>
+    <main id="main-content">
+    <section class="bg-caliche py-5" aria-labelledby="hero-title">
       <div class="container">
         <div class="row align-items-center g-4">
-          <div class="col-lg-8">
-            <p class="text-blue fw-bold text-uppercase mb-2">Arizona Digital</p>
-            <h1 class="mt-0 text-blue">Build better digital experiences for the University of Arizona</h1>
+          <div class="col-lg-7">
+            <p class="fw-bold text-blue">Arizona Digital</p>
+            <h1 id="hero-title" class="text-blue mt-0">Build better digital experiences for the University of Arizona</h1>
             <p class="lead">Explore the open tools, shared patterns, and design system that help our campus create consistent, accessible web experiences.</p>
             <p>Arizona Digital is built through collaboration and shared ownership. Explore our work, contribute improvements, and help shape the digital tools used across the university.</p>
             <div class="d-flex flex-wrap gap-3 mt-4">
-              <a href="#latest-versions" class="btn btn-blue btn-lg">Explore our tools</a>
-              <a href="/design/" class="btn btn-outline-blue btn-lg">Explore the Design System</a>
+              <a href="/design/" class="btn btn-red">Explore the Design System</a>
+              <a href="#latest-versions" class="btn btn-outline-red">Explore our tools</a>
+              <a href="/how-it-works/" class="btn btn-outline-red">How it works</a>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="card card-body h-100">
-              <span class="badge bg-azurite align-self-start mb-3">Built for campus</span>
-              <h2 class="card-title h4 text-blue">A shared foundation for the web</h2>
-              <p class="mb-0">From design foundations and reusable components to website frameworks, Arizona Digital makes it easier to build with the university brand.</p>
+          <div class="col-lg-5">
+            <div class="card bg-cloud border-0">
+              <div class="card-body">
+                <h2 class="card-title h5 fw-bold mb-2 text-azurite">Design System</h2>
+                <p class="card-text text-tinta">Explore Arizona Digital’s design foundations, reusable components, and guidance for creating consistent experiences across the university.</p>
+                <ul class="list-unstyled mb-0">
+                  <li><a class="card-link text-azurite fw-semibold tk-proxima-nova-condensed" href="/design/latest/?path=/docs/primary-brand-overview--docs">Brand overview</a></li>
+                  <li><a class="card-link text-azurite fw-semibold tk-proxima-nova-condensed" href="/design/latest/?path=/docs/primary-foundations-overview--docs">Foundations</a></li>
+                  <li><a class="card-link text-azurite fw-semibold tk-proxima-nova-condensed" href="/design/latest/?path=/docs/primary-components-overview--docs">Components</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container mb-4">
-      <h2 id="latest-versions" class="mt-5">Latest Versions</h2>
+    </section>
+    <section class="container py-5" aria-labelledby="latest-versions">
+      <h2 id="latest-versions" class="text-blue mt-0">Latest Versions</h2>
       <p class="lead mb-4">Explore the Arizona Digital toolkit for building and maintaining UArizona digital experiences.</p>
       <div class="row g-4">
-        <div class="col-md-6 col-xl-3">
-          <div class="card h-100">
-            <div class="card-body p-3">
-              <h3 class="card-title text-blue d-inline-block mb-2">Quickstart 3</h3>
-              <div class="mb-2">
-                <span class="badge bg-azurite align-text-bottom">Drupal 11</span>
-                <span class="badge bg-success align-text-bottom">Stable</span>
-              </div>
-              <p class="mb-2">Quickstart 3 (AZ Quickstart) is the University’s current Drupal 11 distribution. It combines
-                Arizona Bootstrap 5 with best practices for building accessible, scalable sites.</p>
-              <p class="mb-0">Includes features like Paragraphs, Layout Builder, and configuration defaults for UA-branded
-                content.</p>
-            </div>
-            <div class="card-footer bg-white border-0 p-3">
-              <a href="getting-started" class="btn btn-blue btn-lg w-100">Get Started with Quickstart 3</a>
+        <div class="col-md-6">
+          <div class="card bg-cloud border-0 h-100">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold mb-2 text-azurite">Quickstart 3</h3>
+              <p class="card-text text-tinta">Quickstart 3 (AZ Quickstart) is the University’s current Drupal 11 distribution. It combines Arizona Bootstrap 5 with best practices for building accessible, scalable sites. Includes features like Paragraphs, Layout Builder, and configuration defaults for UA-branded content.</p>
+              <a href="getting-started" class="btn btn-red stretched-link mt-3">Get started</a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-xl-3">
-          <div class="card h-100">
-            <div class="card-body p-3">
-              <h3 class="card-title text-blue d-inline-block mb-2">Arizona Bootstrap 5</h3>
-              <div class="mb-2">
-                <span class="badge bg-azurite align-text-bottom">Bootstrap 5</span>
-                <span class="badge bg-success align-text-bottom">Stable</span>
-              </div>
-              <p class="mb-2">Arizona Bootstrap 5 is a University of Arizona branded version of Bootstrap 5. This
-                release offers new features, improved grid and utility systems, and better accessibility support.</p>
-              <p class="mb-0">It is stable and production-ready, and is integrated into the Quickstart 3 theme.</p>
-            </div>
-            <div class="card-footer bg-white border-0 p-3">
-              <a href="arizona-bootstrap/v5/" class="btn btn-blue btn-lg w-100">Explore Arizona Bootstrap 5</a>
+        <div class="col-md-6">
+          <div class="card bg-cloud border-0 h-100">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold mb-2 text-azurite">Arizona Bootstrap 5</h3>
+              <p class="card-text text-tinta">Arizona Bootstrap 5 is a University of Arizona branded version of Bootstrap 5. This release offers new features, improved grid and utility systems, and better accessibility support. It is stable and production-ready, and is integrated into the Quickstart 3 theme.</p>
+              <a href="arizona-bootstrap/v5/" class="btn btn-red stretched-link mt-3">Explore</a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-xl-3">
-          <div class="card h-100">
-            <div class="card-body p-3">
-              <h3 class="card-title text-blue mb-2">Design System</h3>
-              <div class="mb-2">
-                <span class="badge bg-azurite align-text-bottom">Foundations &amp; components</span>
-              </div>
-              <p class="mb-0">Explore Arizona Digital’s design foundations, reusable components, and guidance for creating consistent experiences across the university.</p>
-            </div>
-            <div class="card-footer bg-white border-0 p-3">
-              <a href="/design/" class="btn btn-blue btn-lg w-100">Explore the Design System</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-xl-3">
-          <div class="card h-100">
-            <div class="card-body p-3">
-              <h3 class="card-title text-blue d-inline-block mb-2">Quickstart 2 LTS</h3>
+      </div>
+      <div class="row g-4 mt-4">
+        <div class="col-12">
+          <div>
+            <div>
+              <h3 class="text-blue mb-2">Quickstart 2 LTS</h3>
               <div class="mb-2">
                 <span class="badge bg-azurite align-text-bottom">Drupal 10</span>
                 <span class="badge bg-danger align-text-bottom">Long Term Support</span>
@@ -162,11 +171,11 @@
         </div>
       </div>
       <h2 class="mt-5">Legacy Versions</h2>
-      <div class="row g-4 mt-1">
+      <div class="row g-4">
         <div class="col-md-6 col-xl-4">
-          <div class="card h-100">
-            <div class="card-body pt-3 px-3">
-              <h3 class="card-title text-blue d-inline-block mb-2">Arizona Bootstrap 2</h3>
+          <div>
+            <div>
+              <h3 class="text-blue mb-2">Arizona Bootstrap 2</h3>
               <div>
                 <span class="badge bg-azurite align-text-bottom">Bootstrap 4</span>
                 <span class="badge bg-danger align-text-bottom">Legacy</span>
@@ -182,15 +191,15 @@
               <p class="mb-0">Arizona Bootstrap 2 was the University of Arizona’s version of Bootstrap 4, integrated into the
                 Quickstart 2.0 theme.</p>
             </div>
-            <div class="card-footer bg-white border-0 pb-3 px-3">
-              <a href="arizona-bootstrap/" class="btn btn-outline-blue btn-lg w-100">Arizona Bootstrap 2</a>
+            <div class="mt-3">
+              <a href="arizona-bootstrap/" class="btn btn-outline-red">Arizona Bootstrap 2</a>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-xl-4">
-          <div class="card h-100">
-            <div class="card-body p-3">
-              <h3 class="card-title text-blue d-inline-block mb-2">UA Bootstrap</h3>
+          <div>
+            <div>
+              <h3 class="text-blue mb-2">UA Bootstrap</h3>
               <div>
                 <span class="badge bg-azurite align-text-bottom">Bootstrap 3</span>
                 <span class="badge bg-danger align-text-bottom">Legacy</span>
@@ -204,13 +213,14 @@
               </div>
               <p class="mb-0">UA Bootstrap was the University of Arizona’s version of Bootstrap 3, integrated into the
                 Quickstart 1.0 theme.</p>
+              <p class="mt-3 mb-0"><a href="/ua-bootstrap/">UA Bootstrap documentation</a></p>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-xl-4">
-          <div class="card h-100">
-            <div class="card-body p-3">
-              <h3 class="card-title text-blue d-inline-block mb-2">Quickstart 1.0</h3>
+          <div>
+            <div>
+              <h3 class="text-blue mb-2">Quickstart 1.0</h3>
               <div>
                 <span class="badge bg-azurite align-text-bottom">Drupal 7</span>
                 <span class="badge bg-danger align-text-bottom">Legacy</span>
@@ -227,33 +237,40 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="background-wrapper bg-cool-gray py-6">
+    </section>
+    </main>
+    <footer id="community" class="bg-caliche py-5" aria-labelledby="community-title">
       <div class="container">
         <div class="row">
           <div class="col">
-            <h2 class="mt-0">Get Involved</h2>
+            <h2 id="community-title" class="text-blue mt-0">Get Involved</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6 pb-3">
-            <div class="card card-body h-100"><h3 class="card-title h4">Arizona Digital Dev</h3>
-              <p>The Arizona Digital team meets weekly to build and test products like <a href="arizona-bootstrap">Arizona
-                  Bootstrap</a> and <a href="https://quickstart.arizona.edu/">Arizona Quickstart</a>.</p>
-              <ul>
-                <li>Join the <a href="https://arizona.zoom.us/my/azdigital">Friday Zoom meetings</a> from 10am–Noon.</li>
-                <li>Chat on <a href="https://teams.microsoft.com/l/team/19%3A-MwdU6fBIuJVWL2G4F0NmFMqxrJ8kms2-qW5y3qCPe41%40thread.tacv2/conversations?groupId=56dd8bd6-c065-4f07-bef0-9293bb01f97f&amp;tenantId=5ee35505-eb8e-4929-937d-645df5013288">Teams</a></li>
-                <li>Contribute via <a href="https://github.com/az-digital">GitHub</a></li>
-              </ul>
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <div class="card bg-cloud border-0 h-100">
+              <div class="card-body">
+                <h3 class="card-title h5 fw-bold mb-2 text-azurite">Arizona Digital Dev</h3>
+                <p class="card-text text-tinta">The Arizona Digital team meets weekly to build and test products like Arizona Bootstrap and Arizona Quickstart.</p>
+                <ul class="list-unstyled mb-0">
+                  <li><a class="card-link text-azurite fw-semibold tk-proxima-nova-condensed" href="https://arizona.zoom.us/my/azdigital">Friday Zoom meetings, 10am–Noon</a></li>
+                  <li><a class="card-link text-azurite fw-semibold tk-proxima-nova-condensed" href="https://teams.microsoft.com/l/team/19%3A-MwdU6fBIuJVWL2G4F0NmFMqxrJ8kms2-qW5y3qCPe41%40thread.tacv2/conversations?groupId=56dd8bd6-c065-4f07-bef0-9293bb01f97f&amp;tenantId=5ee35505-eb8e-4929-937d-645df5013288">Arizona Digital on Teams</a></li>
+                  <li><a class="card-link text-azurite fw-semibold tk-proxima-nova-condensed" href="https://github.com/az-digital">Arizona Digital on GitHub</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="col-md-6 pb-3">
-            <div class="card card-body h-100"><h3 class="card-title h4">Arizona Digital UX</h3>
-              <p>The Arizona Digital UX team meets every other week to create the university's <a href="/design/">design system</a>, collaborate with Brand on new designs, and ensure a cohesive, user-friendly experience across platforms.</p>
-              <ul>
-                <li>Join the <a href="https://arizona.zoom.us/my/azdigital">biweekly Zoom meetings</a> at 10am on Tuesdays</li>
-                <li>Chat on <a href="https://teams.microsoft.com/l/channel/19%3A5080e51bfa004dcdb6bf2417e6b28f6c%40thread.tacv2/User%20Experience?groupId=56dd8bd6-c065-4f07-bef0-9293bb01f97f&amp;tenantId=5ee35505-eb8e-4929-937d-645df5013288">Teams</a></li>
-              </ul>
+          <div class="col-md-6">
+            <div class="card bg-cloud border-0 h-100">
+              <div class="card-body">
+                <h3 class="card-title h5 fw-bold mb-2 text-azurite">Arizona Digital UX</h3>
+                <p class="card-text text-tinta">The Arizona Digital UX team meets every other week to create the university's design system, collaborate with Brand on new designs, and ensure a cohesive, user-friendly experience across platforms.</p>
+                <ul class="list-unstyled mb-0">
+                  <li><a class="card-link text-azurite fw-semibold tk-proxima-nova-condensed" href="https://arizona.zoom.us/my/azdigital">Biweekly Zoom meetings, Tuesdays at 10am</a></li>
+                  <li><a class="card-link text-azurite fw-semibold tk-proxima-nova-condensed" href="https://teams.microsoft.com/l/channel/19%3A5080e51bfa004dcdb6bf2417e6b28f6c%40thread.tacv2/User%20Experience?groupId=56dd8bd6-c065-4f07-bef0-9293bb01f97f&amp;tenantId=5ee35505-eb8e-4929-937d-645df5013288">Arizona Digital UX on Teams</a></li>
+                  <li><a class="card-link text-azurite fw-semibold tk-proxima-nova-condensed" href="/design/">Design System</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -263,7 +280,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <script src="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/5.x/js/arizona-bootstrap.bundle.min.js"></script>
+    </footer>
   </body>
 </html>
