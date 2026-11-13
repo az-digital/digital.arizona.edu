@@ -10,17 +10,19 @@ permissions:
 jobs:
   deploy-docs-for-v2-release:
     if: ${{ github.event.client_payload.branch  == '2.x' }}
-    uses: ./.github/workflows/deploy-docs-for-v2-release.yml
+    uses: ./.github/workflows/deploy-bootstrap-docs.yml
     secrets:
       REPO_DISPATCH_TOKEN: ${{ secrets.REPO_DISPATCH_TOKEN }}
     with:
       sha: ${{ github.event.client_payload.sha }}
       version: ${{ github.event.client_payload.version }}
+      major: '2'
   deploy-docs-for-v5-release:
     if: ${{ github.event.client_payload.branch == 'main' }}
-    uses: ./.github/workflows/deploy-docs-for-v5-release.yml
+    uses: ./.github/workflows/deploy-bootstrap-docs.yml
     secrets:
       REPO_DISPATCH_TOKEN: ${{ secrets.REPO_DISPATCH_TOKEN }}
     with:
       sha: ${{ github.event.client_payload.sha }}
       version: ${{ github.event.client_payload.version }}
+      major: '5'
