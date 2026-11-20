@@ -1,0 +1,203 @@
+name: Build and deploy Arizona Bootstrap documentation
+on:
+  workflow_call:
+    inputs:
+      sha:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+      major:
+        required: true
+        type: string
+    secrets:
+      REPO_DISPATCH_TOKEN:
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-bootstrap-docs-v${{ inputs.major }}
+  cancel-in-progress: false
+  # Keep pending releases instead of replacing the previous one.
+  queue: max
+
+jobs:
+  # Upstream Docker/build scripts run without a write token or this repo.
+  build:
+    runs-on: ubuntu-latest
+    env:
+      AZ_BOOTSTRAP_SHA: ${{ inputs.sha }}
+      AZ_BOOTSTRAP_VERSION: ${{ inputs.version }}
+      AZ_BOOTSTRAP_MAJOR: ${{ inputs.major }}
+      AZ_REVIEW_BASEURL: /arizona-bootstrap/v${{ inputs.major }}
+      AZ_SITE_HOST: https://digital.arizona.edu
+      AZ_BOOTSTRAP_CLONE_DIR: arizona-bootstrap
+      AZ_BOOTSTRAP_CLONE_FULL_PATH: ${{ github.workspace }}/arizona-bootstrap
+      AZ_BOOTSTRAP_SOURCE_DIR: arizona-bootstrap-source
+      AZ_BOOTSTRAP_FROZEN_DIR: /azbuild/arizona-bootstrap
+    steps:
+      - name: Validate release inputs
+        run: |
+          if ! [[ "$AZ_BOOTSTRAP_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::sha must be a full 40-character commit SHA"
+            exit 1
+          fi
+          if ! [[ "$AZ_BOOTSTRAP_MAJOR" =~ ^(2|5)$ ]]; then
+            echo "::error::major must be 2 or 5"
+            exit 1
+          fi
+          # SemVer: numeric prerelease identifiers cannot have leading zeros.
+          number='(0|[1-9][0-9]*)'
+          identifier='(0|[1-9][0-9]*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*)'
+          semver="^${number}\.${number}\.${number}(-${identifier}(\.${identifier})*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$"
+          if ! [[ "$AZ_BOOTSTRAP_VERSION" =~ $semver ]] || [ "${AZ_BOOTSTRAP_VERSION%%.*}" != "$AZ_BOOTSTRAP_MAJOR" ]; then
+            echo "::error::version must be SemVer for the requested major"
+            exit 1
+          fi
+
+      - name: Require a release tag for this commit
+        run: |
+          tag="v${AZ_BOOTSTRAP_VERSION}"
+          refs=$(git ls-remote --tags https://github.com/az-digital/arizona-bootstrap.git "refs/tags/${tag}" "refs/tags/${tag}^{}")
+          tag_sha=$(echo "$refs" | awk '/\^\{\}$/ { print $1 }')
+          tag_sha="${tag_sha:-$(echo "$refs" | awk '{ print $1 }')}"
+          if [ "$tag_sha" != "$AZ_BOOTSTRAP_SHA" ]; then
+            echo "::error::sha is not the commit tagged ${tag}"
+            exit 1
+          fi
+
+      - name: Get Arizona Bootstrap release source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: az-digital/arizona-bootstrap
+          path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}
+          ref: ${{ env.AZ_BOOTSTRAP_SHA }}
+          persist-credentials: false
+
+      - name: Set variables for Docker images
+        env:
+          OLD_HASH: ${{ hashFiles('arizona-bootstrap/Dockerfile', 'arizona-bootstrap/package.json', 'arizona-bootstrap/package-lock.json', 'arizona-bootstrap/scripts/*') }}
+        run: |
+          echo "AZ_OLD_HASH=${OLD_HASH}" >> "$GITHUB_ENV"
+          echo "AZ_IMAGE_STEM=ghcr.io/arizona-bootstrap/az-nodejs-ephemeral:" >> "$GITHUB_ENV"
+
+      - name: Unconditionally rebuild the Docker image
+        env:
+          LOCK_HASH: ${{ hashFiles('arizona-bootstrap/Dockerfile', 'arizona-bootstrap/package.json', 'arizona-bootstrap/package-lock.json', 'arizona-bootstrap/scripts/*') }}
+        run: |
+          workingtitle=$(docker build -q "$AZ_BOOTSTRAP_CLONE_FULL_PATH")
+          tempname="old${AZ_OLD_HASH}"
+          docker run --name "$tempname" "$workingtitle" true
+          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." "$AZ_BOOTSTRAP_CLONE_FULL_PATH"
+          docker rm "$tempname"
+          ephemeral="${AZ_IMAGE_STEM}${LOCK_HASH}"
+          docker tag "$workingtitle" "$ephemeral"
+          echo "AZ_EPHEMERAL_IMAGE=${ephemeral}" >> "$GITHUB_ENV"
+
+      - name: Build documentation site
+        run: |
+          sudo touch "${AZ_BOOTSTRAP_CLONE_DIR}/config.yml"
+          sudo find "$AZ_BOOTSTRAP_CLONE_DIR" -path "${AZ_BOOTSTRAP_CLONE_DIR}/.git" -prune -o -exec chown 1000:1000 {} \;
+          sudo chown 1000:1000 "$AZ_BOOTSTRAP_CLONE_DIR"
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -e "AZ_SITE_HOST=${AZ_SITE_HOST}" -v "$AZ_BOOTSTRAP_CLONE_FULL_PATH":"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
+
+      - name: Check static output is safe for Pages
+        run: |
+          site="${AZ_BOOTSTRAP_CLONE_DIR:?}/_site"
+          if [ -L "$site" ] || [ ! -s "$site/index.html" ]; then
+            echo "::error::Expected a built site with index.html"
+            exit 1
+          fi
+          # Hugo already rendered these docs; Jekyll must publish every file.
+          skipped=$(find "$site" -mindepth 1 \( -name '_*' -o -name '.*' -o -type l \))
+          if [ -n "$skipped" ]; then
+            echo "::error::Output contains symlinks or files Jekyll would skip:"
+            echo "$skipped"
+            exit 1
+          fi
+
+      - name: Upload documentation build
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: bootstrap-docs-v${{ inputs.major }}
+          path: ${{ env.AZ_BOOTSTRAP_CLONE_DIR }}/_site/
+          if-no-files-found: error
+          retention-days: 1
+
+  # Only copies static output; never executes upstream code with the token.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      AZ_BOOTSTRAP_VERSION: ${{ inputs.version }}
+      AZ_BOOTSTRAP_MAJOR: ${{ inputs.major }}
+      AZ_DEPLOY_DIR: docs/arizona-bootstrap/v${{ inputs.major }}
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+
+      - name: Download documentation build
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: bootstrap-docs-v${{ inputs.major }}
+          path: ${{ runner.temp }}/bootstrap-docs
+
+      - name: Copy documentation into the site
+        run: |
+          if ! [[ "$AZ_BOOTSTRAP_MAJOR" =~ ^(2|5)$ ]] || [ "${AZ_DEPLOY_DIR:?}" != "docs/arizona-bootstrap/v${AZ_BOOTSTRAP_MAJOR}" ]; then
+            echo "::error::Invalid deployment directory"
+            exit 1
+          fi
+          # Check every ancestor and nested symlink before rsync --delete.
+          for directory in docs docs/arizona-bootstrap "$AZ_DEPLOY_DIR"; do
+            if [ -L "$directory" ] || [ "$(realpath -m "$directory")" != "$(realpath "$GITHUB_WORKSPACE")/$directory" ]; then
+              echo "::error::Deploy path must be a real directory inside this repository"
+              exit 1
+            fi
+          done
+          mkdir -p "${AZ_DEPLOY_DIR:?}"
+          if [ -n "$(find "$AZ_DEPLOY_DIR" -type l -print -quit)" ]; then
+            echo "::error::Refusing to deploy into a tree containing symlinks"
+            exit 1
+          fi
+          source="${RUNNER_TEMP:?}/bootstrap-docs"
+          if [ -L "$source" ] || [ ! -s "$source/index.html" ] || [ -n "$(find "$source" -mindepth 1 \( -name '_*' -o -name '.*' -o -type l \) -print -quit)" ]; then
+            echo "::error::Invalid static documentation artifact"
+            exit 1
+          fi
+          rsync --recursive --delete "${source:?}/" "${AZ_DEPLOY_DIR:?}/"
+
+      - name: Commit and push
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add -- "${AZ_DEPLOY_DIR:?}/"
+          if git diff --cached --quiet; then
+            echo "No documentation changes to deploy."
+            exit 0
+          fi
+          # Never commit changes outside this major version's docs.
+          outside=$(git diff --cached --name-only | grep -v "^${AZ_DEPLOY_DIR}/" || true)
+          if [ -n "$outside" ]; then
+            echo "::error::Refusing to commit changes outside ${AZ_DEPLOY_DIR}/"
+            echo "$outside"
+            exit 1
+          fi
+          git commit -m "Arizona Bootstrap documentation updates for ${AZ_BOOTSTRAP_VERSION}"
+          # Storybook and the other major version can push to the same branch.
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "Push attempt ${attempt} failed; retrying in $((attempt * 5))s..."
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push after 5 attempts"
+          exit 1
